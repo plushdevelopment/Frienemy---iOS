@@ -1,0 +1,341 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFE65E7E14B6397C00D351BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE65E7D14B6397C00D351BE /* UIKit.framework */; };
+		FFE65E8014B6397C00D351BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE65E7F14B6397C00D351BE /* Foundation.framework */; };
+		FFE65E8214B6397C00D351BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE65E8114B6397C00D351BE /* CoreGraphics.framework */; };
+		FFE65E8814B6397C00D351BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFE65E8614B6397C00D351BE /* InfoPlist.strings */; };
+		FFE65E8A14B6397C00D351BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65E8914B6397C00D351BE /* main.m */; };
+		FFE65E8E14B6397C00D351BE /* PAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65E8D14B6397C00D351BE /* PAAppDelegate.m */; };
+		FFE65E9114B6397C00D351BE /* PAFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65E9014B6397C00D351BE /* PAFirstViewController.m */; };
+		FFE65E9314B6397C00D351BE /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE65E9214B6397C00D351BE /* first.png */; };
+		FFE65E9514B6397C00D351BE /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE65E9414B6397C00D351BE /* first@2x.png */; };
+		FFE65E9814B6397C00D351BE /* PASecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65E9714B6397C00D351BE /* PASecondViewController.m */; };
+		FFE65E9A14B6397C00D351BE /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE65E9914B6397C00D351BE /* second.png */; };
+		FFE65E9C14B6397C00D351BE /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE65E9B14B6397C00D351BE /* second@2x.png */; };
+		FFE65E9F14B6397C00D351BE /* PAFirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE65E9D14B6397C00D351BE /* PAFirstViewController_iPhone.xib */; };
+		FFE65EA214B6397C00D351BE /* PAFirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE65EA014B6397C00D351BE /* PAFirstViewController_iPad.xib */; };
+		FFE65EA514B6397C00D351BE /* PASecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE65EA314B6397C00D351BE /* PASecondViewController_iPhone.xib */; };
+		FFE65EA814B6397C00D351BE /* PASecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE65EA614B6397C00D351BE /* PASecondViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FFE65E7914B6397C00D351BE /* Frienemy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frienemy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFE65E7D14B6397C00D351BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FFE65E7F14B6397C00D351BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FFE65E8114B6397C00D351BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FFE65E8514B6397C00D351BE /* Frienemy-Info.plist */ = {isa = PBXFileReference; path = "Frienemy-Info.plist"; sourceTree = "<group>"; };
+		FFE65E8714B6397C00D351BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FFE65E8914B6397C00D351BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFE65E8B14B6397C00D351BE /* Frienemy-Prefix.pch */ = {isa = PBXFileReference; path = "Frienemy-Prefix.pch"; sourceTree = "<group>"; };
+		FFE65E8C14B6397C00D351BE /* PAAppDelegate.h */ = {isa = PBXFileReference; path = PAAppDelegate.h; sourceTree = "<group>"; };
+		FFE65E8D14B6397C00D351BE /* PAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAAppDelegate.m; sourceTree = "<group>"; };
+		FFE65E8F14B6397C00D351BE /* PAFirstViewController.h */ = {isa = PBXFileReference; path = PAFirstViewController.h; sourceTree = "<group>"; };
+		FFE65E9014B6397C00D351BE /* PAFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PAFirstViewController.m; sourceTree = "<group>"; };
+		FFE65E9214B6397C00D351BE /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		FFE65E9414B6397C00D351BE /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		FFE65E9614B6397C00D351BE /* PASecondViewController.h */ = {isa = PBXFileReference; path = PASecondViewController.h; sourceTree = "<group>"; };
+		FFE65E9714B6397C00D351BE /* PASecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PASecondViewController.m; sourceTree = "<group>"; };
+		FFE65E9914B6397C00D351BE /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		FFE65E9B14B6397C00D351BE /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		FFE65E9E14B6397C00D351BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PAFirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		FFE65EA114B6397C00D351BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PAFirstViewController_iPad.xib; sourceTree = "<group>"; };
+		FFE65EA414B6397C00D351BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PASecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		FFE65EA714B6397C00D351BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PASecondViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFE65E7614B6397C00D351BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFE65E7E14B6397C00D351BE /* UIKit.framework in Frameworks */,
+				FFE65E8014B6397C00D351BE /* Foundation.framework in Frameworks */,
+				FFE65E8214B6397C00D351BE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFE65E6E14B6397B00D351BE = {
+			isa = PBXGroup;
+			children = (
+				FFE65E8314B6397C00D351BE /* Frienemy */,
+				FFE65E7C14B6397C00D351BE /* Frameworks */,
+				FFE65E7A14B6397C00D351BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFE65E7A14B6397C00D351BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFE65E7914B6397C00D351BE /* Frienemy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFE65E7C14B6397C00D351BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFE65E7D14B6397C00D351BE /* UIKit.framework */,
+				FFE65E7F14B6397C00D351BE /* Foundation.framework */,
+				FFE65E8114B6397C00D351BE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFE65E8314B6397C00D351BE /* Frienemy */ = {
+			isa = PBXGroup;
+			children = (
+				FFE65E8C14B6397C00D351BE /* PAAppDelegate.h */,
+				FFE65E8D14B6397C00D351BE /* PAAppDelegate.m */,
+				FFE65E8F14B6397C00D351BE /* PAFirstViewController.h */,
+				FFE65E9014B6397C00D351BE /* PAFirstViewController.m */,
+				FFE65E9214B6397C00D351BE /* first.png */,
+				FFE65E9414B6397C00D351BE /* first@2x.png */,
+				FFE65E9614B6397C00D351BE /* PASecondViewController.h */,
+				FFE65E9714B6397C00D351BE /* PASecondViewController.m */,
+				FFE65E9914B6397C00D351BE /* second.png */,
+				FFE65E9B14B6397C00D351BE /* second@2x.png */,
+				FFE65E9D14B6397C00D351BE /* PAFirstViewController_iPhone.xib */,
+				FFE65EA014B6397C00D351BE /* PAFirstViewController_iPad.xib */,
+				FFE65EA314B6397C00D351BE /* PASecondViewController_iPhone.xib */,
+				FFE65EA614B6397C00D351BE /* PASecondViewController_iPad.xib */,
+				FFE65E8414B6397C00D351BE /* Supporting Files */,
+			);
+			path = Frienemy;
+			sourceTree = "<group>";
+		};
+		FFE65E8414B6397C00D351BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFE65E8514B6397C00D351BE /* Frienemy-Info.plist */,
+				FFE65E8614B6397C00D351BE /* InfoPlist.strings */,
+				FFE65E8914B6397C00D351BE /* main.m */,
+				FFE65E8B14B6397C00D351BE /* Frienemy-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFE65E7814B6397C00D351BE /* Frienemy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFE65EAB14B6397C00D351BE /* Build configuration list for PBXNativeTarget "Frienemy" */;
+			buildPhases = (
+				FFE65E7514B6397C00D351BE /* Sources */,
+				FFE65E7614B6397C00D351BE /* Frameworks */,
+				FFE65E7714B6397C00D351BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Frienemy;
+			productName = Frienemy;
+			productReference = FFE65E7914B6397C00D351BE /* Frienemy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFE65E7014B6397B00D351BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = FFE65E7314B6397B00D351BE /* Build configuration list for PBXProject "Frienemy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FFE65E6E14B6397B00D351BE;
+			productRefGroup = FFE65E7A14B6397C00D351BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFE65E7814B6397C00D351BE /* Frienemy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFE65E7714B6397C00D351BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFE65E8814B6397C00D351BE /* InfoPlist.strings in Resources */,
+				FFE65E9314B6397C00D351BE /* first.png in Resources */,
+				FFE65E9514B6397C00D351BE /* first@2x.png in Resources */,
+				FFE65E9A14B6397C00D351BE /* second.png in Resources */,
+				FFE65E9C14B6397C00D351BE /* second@2x.png in Resources */,
+				FFE65E9F14B6397C00D351BE /* PAFirstViewController_iPhone.xib in Resources */,
+				FFE65EA214B6397C00D351BE /* PAFirstViewController_iPad.xib in Resources */,
+				FFE65EA514B6397C00D351BE /* PASecondViewController_iPhone.xib in Resources */,
+				FFE65EA814B6397C00D351BE /* PASecondViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFE65E7514B6397C00D351BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFE65E8A14B6397C00D351BE /* main.m in Sources */,
+				FFE65E8E14B6397C00D351BE /* PAAppDelegate.m in Sources */,
+				FFE65E9114B6397C00D351BE /* PAFirstViewController.m in Sources */,
+				FFE65E9814B6397C00D351BE /* PASecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FFE65E8614B6397C00D351BE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFE65E8714B6397C00D351BE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FFE65E9D14B6397C00D351BE /* PAFirstViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFE65E9E14B6397C00D351BE /* en */,
+			);
+			name = PAFirstViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		FFE65EA014B6397C00D351BE /* PAFirstViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFE65EA114B6397C00D351BE /* en */,
+			);
+			name = PAFirstViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		FFE65EA314B6397C00D351BE /* PASecondViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFE65EA414B6397C00D351BE /* en */,
+			);
+			name = PASecondViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		FFE65EA614B6397C00D351BE /* PASecondViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFE65EA714B6397C00D351BE /* en */,
+			);
+			name = PASecondViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFE65EA914B6397C00D351BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFE65EAA14B6397C00D351BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFE65EAC14B6397C00D351BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
+				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FFE65EAD14B6397C00D351BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
+				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFE65E7314B6397B00D351BE /* Build configuration list for PBXProject "Frienemy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFE65EA914B6397C00D351BE /* Debug */,
+				FFE65EAA14B6397C00D351BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFE65EAB14B6397C00D351BE /* Build configuration list for PBXNativeTarget "Frienemy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFE65EAC14B6397C00D351BE /* Debug */,
+				FFE65EAD14B6397C00D351BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFE65E7014B6397B00D351BE /* Project object */;
+}
