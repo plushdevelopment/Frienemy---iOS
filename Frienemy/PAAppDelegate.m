@@ -7,33 +7,60 @@
 //
 
 #import "PAAppDelegate.h"
-
-#import "PAFirstViewController.h"
-
-#import "PASecondViewController.h"
+#import "ASIHTTPRequest.h"
+#import "PASlideViewController.h"
+#import "LoginViewController.h"
 
 @implementation PAAppDelegate
 
 @synthesize window = _window;
-@synthesize tabBarController = _tabBarController;
+@synthesize facebook = _facebook;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self customizeNavigation];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[PAFirstViewController alloc] initWithNibName:@"PAFirstViewController_iPhone" bundle:nil];
-        viewController2 = [[PASecondViewController alloc] initWithNibName:@"PASecondViewController_iPhone" bundle:nil];
-    } else {
-        viewController1 = [[PAFirstViewController alloc] initWithNibName:@"PAFirstViewController_iPad" bundle:nil];
-        viewController2 = [[PASecondViewController alloc] initWithNibName:@"PASecondViewController_iPad" bundle:nil];
-    }
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
-    self.window.rootViewController = self.tabBarController;
+    
+    PASlideViewController *slideViewController = [[PASlideViewController alloc] initWithNibName:@"SlideViewController" bundle:nil];
+    slideViewController.delegate = slideViewController;
+    self.window.rootViewController = slideViewController;
+    
     [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+    [self initializeFacebook];
+    
     return YES;
+}
+
+// Pre 4.2 support
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [self.facebook handleOpenURL:url]; 
+}
+
+// For 4.2+ support
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [self.facebook handleOpenURL:url]; 
+}
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSString* newToken = [deviceToken description];
+	newToken = [newToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+	newToken = [newToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:newToken forKey:@"DeviceToken"];
+    [defaults synchronize];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -76,17 +103,118 @@
 }
 
 /*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
+ // Optional UITabBarControllerDelegate method.
+ - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+ {
+ }
+ */
 
 /*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
+ // Optional UITabBarControllerDelegate method.
+ - (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
+ {
+ }
+ */
+
+#pragma mark - UI Customization
+
+- (void)customizeNavigation
 {
+    UIImage *navBarImage = [UIImage imageNamed:@"nav-bar.png"];
+    
+    [[UINavigationBar appearance] setBackgroundImage:navBarImage 
+                                       forBarMetrics:UIBarMetricsDefault];
+    
+    UIImage *barButton = [UIImage imageNamed:@"nav-bar-btn.png"];
+    
+    [[UIBarButtonItem appearance] setBackgroundImage:barButton forState:UIControlStateNormal 
+                                          barMetrics:UIBarMetricsDefault];
+    
+    UIImage *backButton = [UIImage imageNamed:@"back-btn-big.png"];
+    
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButton forState:UIControlStateNormal 
+                                                    barMetrics:UIBarMetricsDefault];
+    
+    UIImage* tabBarBackground = [UIImage imageNamed:@"tab-bar.png"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"menu-bar-item-bg.png"]];
+    
+    UIImage *minImage = [UIImage imageNamed:@"slider-fill.png"];
+    UIImage *maxImage = [UIImage imageNamed:@"slider-bg.png"];
+    UIImage *thumbImage = [UIImage imageNamed:@"slider-cap.png"];
+    
+    [[UISlider appearance] setMaximumTrackImage:maxImage 
+                                       forState:UIControlStateNormal];
+    [[UISlider appearance] setMinimumTrackImage:minImage 
+                                       forState:UIControlStateNormal];
+    [[UISlider appearance] setThumbImage:thumbImage 
+                                forState:UIControlStateNormal];
+    
+    
 }
-*/
+
+#pragma mark - Facebook
+
+- (void)initializeFacebook
+{
+    self.facebook = [[Facebook alloc] initWithAppId:@"124132700987915" andDelegate:self];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"FBAccessTokenKey"] && [defaults objectForKey:@"FBExpirationDateKey"]) {
+        self.facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        self.facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+        
+        if (![self.facebook isSessionValid]) {
+            NSArray *permissions = [NSArray arrayWithObjects:@"read_stream", 
+                                    @"offline_access", 
+                                    @"friends_relationships", 
+                                    @"friends_relationship_details", 
+                                    @"user_relationships", 
+                                    @"user_relationship_details", 
+                                    @"friends_likes", 
+                                    @"user_likes", 
+                                    @"publish_stream", 
+                                    @"friends_about_me", 
+                                    @"friends_status", 
+                                    @"friends_website", 
+                                    @"friends_education_history", 
+                                    @"friends_work_history", 
+                                    @"friends_birthday", 
+                                    @"friends_hometown", 
+                                    @"friends_location", 
+                                    @"friends_religion_politics", 
+                                    nil];
+            [self.facebook authorize:permissions];
+        }
+    } else {
+        LoginViewController *viewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        [self.window.rootViewController presentViewController:viewController animated:YES completion:NULL];
+    }
+}
+
+- (void)fbDidLogin {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[self.facebook accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[self.facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+    NSString *deviceToken = [defaults objectForKey:@"DeviceToken"];
+    NSString *urlString = [NSString stringWithFormat:@"http://plusharray.com/apns/registerDevice.php?appId=2&deviceToken=%@&appSubscriptionId=0&feedUrl=%@", deviceToken, [self.facebook accessToken]];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+
+#pragma mark - ASIHTTPRequestDelegate
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    
+}
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:PALoginFinishedNotification object:nil];
+    [self.window.rootViewController dismissViewControllerAnimated:YES completion:NULL];
+}
 
 @end

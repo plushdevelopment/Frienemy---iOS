@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
+#import "ASIHTTPRequestDelegate.h"
 
-@interface PAAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
+@interface PAAppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate, ASIHTTPRequestDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) Facebook *facebook;
 
-@property (strong, nonatomic) UITabBarController *tabBarController;
+- (void)customizeNavigation;
+- (void)initializeFacebook;
 
 @end
