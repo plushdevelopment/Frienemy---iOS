@@ -9,3 +9,7 @@
 #import "Constants.h"
 
 NSString * const PALoginFinishedNotification = @"PALoginFinishedNotification";
+NSString * const PAFriendsListFinishedNotification = @"PAFriendsListFinishedNotification";
+NSString * const PAImageDownloadedNotification = @"PAImageDownloadedNotification";
+NSString * const PAImageDownloadedDateKey = @"PAImageDownloadedDateKey";
+

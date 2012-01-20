@@ -7,3 +7,7 @@
 //
 
 extern NSString * const PALoginFinishedNotification;
+extern NSString * const PAFriendsListFinishedNotification;
+extern NSString * const PAImageDownloadedNotification;
+
+extern NSString * const PAImageDownloadedDateKey;

@@ -13,5 +13,6 @@
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import "Constants.h"
-    #import "CoreData+MagicalRecord.h"
+    #import "CoreData+MagicalRecord.h" 
+    #import "Models.h" 
 #endif

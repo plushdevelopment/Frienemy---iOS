@@ -7,6 +7,7 @@
 #import "PASlideViewController.h"
 
 #import "FriendsViewController.h"
+#import "FrienemiesViewController.h"
 #import "SettingsViewController.h"
 
 @implementation PASlideViewController
@@ -80,6 +81,13 @@
         [homeViewControllerDictionary setObject:[FriendsViewController class] forKey:kSlideViewControllerViewControllerClassKey];
         
         [sectionOne setObject:[NSArray arrayWithObject:homeViewControllerDictionary] forKey:kSlideViewControllerSectionViewControllersKey];
+        
+        NSMutableDictionary *frienemiesViewControllerDictionary = [NSMutableDictionary dictionary];
+        [frienemiesViewControllerDictionary setObject:@"Frienemies" forKey:kSlideViewControllerViewControllerTitleKey];
+        [frienemiesViewControllerDictionary setObject:@"FrienemiesViewController" forKey:kSlideViewControllerViewControllerNibNameKey];
+        [frienemiesViewControllerDictionary setObject:[FrienemiesViewController class] forKey:kSlideViewControllerViewControllerClassKey];
+        
+        [sectionOne setObject:[NSArray arrayWithObjects:homeViewControllerDictionary, frienemiesViewControllerDictionary, nil] forKey:kSlideViewControllerSectionViewControllersKey];
         
         [datasource addObject:sectionOne];
         

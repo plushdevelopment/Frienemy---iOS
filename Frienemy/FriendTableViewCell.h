@@ -10,4 +10,12 @@
 
 @interface FriendTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *profileMaskImageView;
+@property (strong, nonatomic) IBOutlet UILabel *frienemyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *detailLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *blueImageView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *profileImageActivityIndicator;
+
 @end

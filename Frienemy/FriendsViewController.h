@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequestDelegate.h"
 
-@interface FriendsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FriendsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate, ASIHTTPRequestDelegate, UISearchDisplayDelegate>
 
-@property (nonatomic, retain) UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, strong) NSArray *filteredResults;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end

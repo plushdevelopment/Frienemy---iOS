@@ -10,6 +10,7 @@
 #import "ASIHTTPRequest.h"
 #import "PASlideViewController.h"
 #import "LoginViewController.h"
+#import "RequestsCoordinator.h"
 
 @implementation PAAppDelegate
 
@@ -19,6 +20,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self customizeNavigation];
+    
+    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Frienemy.sqlite"];
+    
+    [NSManagedObjectContext MR_setDefaultContext:[NSManagedObjectContext MR_context]];
+    
+    // Initialize the RequestsCoordinator
+    [RequestsCoordinator sharedCoordinator];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -91,6 +99,7 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    [[RequestsCoordinator sharedCoordinator] refreshFriends];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -100,6 +109,7 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    [MagicalRecordHelpers cleanUp];
 }
 
 /*
@@ -172,7 +182,15 @@
                                     @"user_relationships", 
                                     @"user_relationship_details", 
                                     @"friends_likes", 
-                                    @"user_likes", 
+                                    @"user_likes",
+                                    @"user_about_me", 
+                                    @"user_birthday",
+                                    @"user_education_history",
+                                    @"email",
+                                    @"user_hometown",
+                                    @"user_religion_politics",
+                                    @"user_website",
+                                    @"user_work_history",
                                     @"publish_stream", 
                                     @"friends_about_me", 
                                     @"friends_status", 
@@ -202,6 +220,11 @@
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:urlString]];
     [request setDelegate:self];
     [request startAsynchronous];
+}
+
+- (void)fbDidNotLogin:(BOOL)cancelled
+{
+    
 }
 
 #pragma mark - ASIHTTPRequestDelegate

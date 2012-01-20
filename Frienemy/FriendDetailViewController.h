@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASIHTTPRequestDelegate.h"
 
-@interface FriendDetailViewController : UIViewController
-{
-    
-    UIScrollView *scrollView;
-}
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@interface FriendDetailViewController : UIViewController <ASIHTTPRequestDelegate>
+
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) Friend *friend;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
+@property (strong, nonatomic) IBOutlet UITextView *bioTextView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *profileImageActivityIndicator;
+
+- (id)initWithFriend:(Friend *)friend;
 
 @end
