@@ -8,16 +8,23 @@
 
 #import "FriendDetailViewController.h"
 #import "ImageRequest.h"
+#import "FriendDetailGeneralTableViewCell.h"
+#import "FriendDetailFieldTableViewCell.h"
+
+enum FriendDetailSectionIndex
+{
+    FDGeneralSection = 0,
+    FDContactInfoSection,
+    FDBasicSection,
+    FDLikesAndInterestsSection,
+    FDEducationAndWorkSection,
+    FDSectionsCount
+};
 
 @implementation FriendDetailViewController
-@synthesize scrollView = _scrollView;
+
+@synthesize tableView = _tableView;
 @synthesize friend = _friend;
-@synthesize profileImageView = _profileImageView;
-@synthesize nameLabel = _friendName;
-@synthesize locationLabel = _location;
-@synthesize lastUpdatedLabel = _lastUpdatedLabel;
-@synthesize bioTextView = _bioLabel;
-@synthesize profileImageActivityIndicator = _profileImageActivityIndicator;
 
 - (NSString *)downloadPathForUid:(NSString *)uid
 {
@@ -57,35 +64,9 @@
 
 - (void)viewDidLoad
 {
-    self.scrollView.contentSize = CGSizeMake(320, 500);
-    
-    UIBarButtonItem* editButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered target:nil action:nil];
-    
-    [self.navigationItem setRightBarButtonItem:editButton];
-    
     UIColor *color = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-gunmetal.jpg"]];
     
     [self.view setBackgroundColor:color];
-
-    self.nameLabel.text = self.friend.name;
-    self.locationLabel.text = self.friend.location;
-    self.lastUpdatedLabel.text = self.friend.updated_time;
-    self.bioTextView.text = self.friend.bio;
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(queue, ^{
-        UIImage *image = [UIImage imageWithContentsOfFile:[self downloadPathForUid:self.friend.uid]];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self.profileImageView setImage:image];
-            [self.view setNeedsLayout];
-        });
-    });
-    
-    if (self.profileImageView.image) {
-        [self.profileImageActivityIndicator stopAnimating];
-    } else {
-        [self.profileImageActivityIndicator startAnimating];
-    }
     
     NSString *URLString = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal", self.friend.uid];
     ImageRequest *request = [ImageRequest requestWithURL:[NSURL URLWithString:URLString]];
@@ -100,16 +81,9 @@
 
 - (void)viewDidUnload
 {
-    [self setScrollView:nil];
-    [self setProfileImageView:nil];
-    [self setNameLabel:nil];
-    [self setLocationLabel:nil];
-    [self setLastUpdatedLabel:nil];
-    [self setBioTextView:nil];
-    [self setProfileImageActivityIndicator:nil];
+    [self setTableView:nil];
+    
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -118,17 +92,184 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - ASIHTTPRequestDelegate
+
 - (void)requestFinished:(ASIHTTPRequest *)request
 {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(queue, ^{
-        UIImage *image = [UIImage imageWithContentsOfFile:[self downloadPathForUid:self.friend.uid]];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self.profileImageView setImage:image];
-            [self.view setNeedsLayout];
-        });
-    });
-    [self.profileImageActivityIndicator stopAnimating];
+    
+}
+
+#pragma mark - UITableViewDataSource
+
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case FDGeneralSection:
+        {
+            
+        }
+            break;
+        case FDContactInfoSection:
+        {
+            
+        }
+            break;
+        case FDBasicSection:
+        {
+            
+        }
+            break;
+        case FDLikesAndInterestsSection:
+        {
+            
+        }
+            break;
+        case FDEducationAndWorkSection:
+        {
+            
+        }
+            break;
+        default:
+        {
+            
+        }
+            break;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = nil;
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case FDGeneralSection:
+        {
+            cell = [FriendDetailGeneralTableViewCell cellForTableView:tableView fromNib:[FriendDetailGeneralTableViewCell nib]];
+        }
+            break;
+        case FDContactInfoSection:
+        {
+            
+        }
+            break;
+        case FDBasicSection:
+        {
+            
+        }
+            break;
+        case FDLikesAndInterestsSection:
+        {
+            
+        }
+            break;
+        case FDEducationAndWorkSection:
+        {
+            
+        }
+            break;
+        default:
+        {
+            
+        }
+            break;
+    }
+    
+    [self tableView:tableView configureCell:cell atIndexPath:indexPath];
+    
+    return cell;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = 0.0;
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case FDGeneralSection:
+        {
+            height = 223.0;
+        }
+            break;
+        case FDContactInfoSection:
+        {
+            
+        }
+            break;
+        case FDBasicSection:
+        {
+            
+        }
+            break;
+        case FDLikesAndInterestsSection:
+        {
+            
+        }
+            break;
+        case FDEducationAndWorkSection:
+        {
+            
+        }
+            break;
+        default:
+        {
+            
+        }
+            break;
+    }
+    
+    return height;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger rowsCount = 0;
+    switch (section) {
+        case FDGeneralSection:
+        {
+            rowsCount = 1;
+        }
+            break;
+        case FDContactInfoSection:
+        {
+            
+        }
+            break;
+        case FDBasicSection:
+        {
+            
+        }
+            break;
+        case FDLikesAndInterestsSection:
+        {
+            
+        }
+            break;
+        case FDEducationAndWorkSection:
+        {
+            
+        }
+            break;
+        default:
+        {
+            
+        }
+            break;
+    }
+    
+    return rowsCount;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return FDSectionsCount;
+}
+
+#pragma mark - UITableViewDelegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 @end

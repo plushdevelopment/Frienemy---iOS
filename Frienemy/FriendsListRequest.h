@@ -10,6 +10,6 @@
 
 @interface FriendsListRequest : ASIHTTPRequest
 
-@property (retain) NSArray *uids;
+@property (strong) NSArray *uids;
 
 @end

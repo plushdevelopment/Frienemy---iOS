@@ -95,9 +95,13 @@
         friend = (Friend *)[self.filteredResults objectAtIndex:indexPath.row];
     }
     
-    
     FriendTableViewCell *friendCell = (FriendTableViewCell *)cell;
     friendCell.nameLabel.text = friend.name;
+    if (friend.bio) {
+        friendCell.detailLabel.text = friend.bio;
+    } else {
+        friendCell.detailLabel.text = friend.quotes;
+    }
     
     if (friend.stalking.boolValue) {
         friendCell.blueImageView.hidden = NO;
@@ -129,24 +133,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    static NSString *CellIdentifier = @"FriendTableViewCell";    
-    FriendTableViewCell *cell = (FriendTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        NSArray* objects = [[NSBundle mainBundle] loadNibNamed:@"FriendTableViewCell" owner:self options:nil];
-        
-        for(id currentObject in objects)
-        {
-            if([currentObject isKindOfClass:[UITableViewCell class]])
-            {
-                cell = (FriendTableViewCell *)currentObject;
-                break;
-            }
-        }
-        
-    }
-    
+    FriendTableViewCell *cell = [FriendTableViewCell cellForTableView:tableView fromNib:[FriendTableViewCell nib]];
     [self tableView:tableView configureCell:cell atIndexPath:indexPath];
     
     return cell;
@@ -239,7 +226,7 @@
                                    entityForName:@"Friend" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFrienemy == NO"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFrienemy == NO AND isCurrentUsersFriend == YES"];
 	[fetchRequest setPredicate:predicate];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 

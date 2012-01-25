@@ -6,9 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PRPNibBasedTableViewCell.h"
 
-@interface FriendTableViewCell : UITableViewCell
+@interface FriendTableViewCell : PRPNibBasedTableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *profileMaskImageView;

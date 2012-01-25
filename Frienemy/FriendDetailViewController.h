@@ -9,16 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ASIHTTPRequestDelegate.h"
 
-@interface FriendDetailViewController : UIViewController <ASIHTTPRequestDelegate>
+@interface FriendDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ASIHTTPRequestDelegate>
 
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) Friend *friend;
-@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
-@property (strong, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
-@property (strong, nonatomic) IBOutlet UITextView *bioTextView;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *profileImageActivityIndicator;
 
 - (id)initWithFriend:(Friend *)friend;
 

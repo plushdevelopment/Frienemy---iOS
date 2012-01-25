@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Concentration" representedClassName="Concentration" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="educations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Education" inverseName="concentration" inverseEntity="Education" syncable="YES"/>
         <userInfo>
             <entry key="primaryAttributeKey" value="id"/>
@@ -15,8 +15,8 @@
         <relationship name="year" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Year" inverseName="educations" inverseEntity="Year" syncable="YES"/>
     </entity>
     <entity name="Employer" representedClassName="Employer" syncable="YES">
-        <attribute name="id" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" attributeType="String" syncable="YES"/>
         <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="employer" inverseEntity="Work" syncable="YES"/>
         <userInfo>
             <entry key="primaryAttributeKey" value="id"/>
@@ -26,23 +26,24 @@
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="hometown" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isCurrentUser" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isCurrentUsersFriend" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="isFrienemy" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locale" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="quotes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relationship_status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="section" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="significant_other" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="stalking" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="uid" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="updated_time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hometown" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="hometownOfFriends" inverseEntity="Location" syncable="YES"/>
         <relationship name="languages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Language" inverseName="friends" inverseEntity="Language" syncable="YES"/>
+        <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="locationOfFriends" inverseEntity="Location" syncable="YES"/>
+        <relationship name="significant_other" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="significant_other" inverseEntity="Friend" syncable="YES"/>
         <relationship name="stalkers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StalkerRelationship" inverseName="toFriend" inverseEntity="StalkerRelationship" syncable="YES"/>
         <relationship name="stalkingRelationships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StalkerRelationship" inverseName="fromFriend" inverseEntity="StalkerRelationship" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User" syncable="YES"/>
@@ -52,32 +53,34 @@
         </userInfo>
     </entity>
     <entity name="Language" representedClassName="Language" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="languages" inverseEntity="Friend" syncable="YES"/>
         <userInfo>
             <entry key="primaryAttributeKey" value="id"/>
         </userInfo>
     </entity>
     <entity name="Location" representedClassName="Location" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hometownOfFriends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="hometown" inverseEntity="Friend" syncable="YES"/>
+        <relationship name="locationOfFriends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="location" inverseEntity="Friend" syncable="YES"/>
         <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="location" inverseEntity="Work" syncable="YES"/>
         <userInfo>
             <entry key="primaryAttributeKey" value="id"/>
         </userInfo>
     </entity>
     <entity name="Position" representedClassName="Position" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="position" inverseEntity="Work" syncable="YES"/>
         <userInfo>
             <entry key="primaryAttributeKey" value="id"/>
         </userInfo>
     </entity>
     <entity name="School" representedClassName="School" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="educations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Education" inverseName="school" inverseEntity="Education" syncable="YES"/>
         <userInfo>
             <entry key="primaryAttributeKey" value="id"/>
@@ -103,8 +106,8 @@
         <relationship name="position" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Position" inverseName="works" inverseEntity="Position" syncable="YES"/>
     </entity>
     <entity name="Year" representedClassName="Year" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="educations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Education" inverseName="year" inverseEntity="Education" syncable="YES"/>
         <userInfo>
             <entry key="primaryAttributeKey" value="id"/>
@@ -114,7 +117,7 @@
         <element name="Concentration" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Education" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Employer" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Friend" positionX="160" positionY="192" width="128" height="405"/>
+        <element name="Friend" positionX="160" positionY="192" width="128" height="420"/>
         <element name="Language" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Location" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Position" positionX="160" positionY="192" width="128" height="90"/>

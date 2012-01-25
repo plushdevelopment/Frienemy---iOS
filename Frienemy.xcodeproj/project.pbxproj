@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF02534014BF52F800DFBF03 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02533F14BF52F800DFBF03 /* Work.m */; };
-		FF02534414BF52F800DFBF03 /* Employer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02534314BF52F800DFBF03 /* Employer.m */; };
-		FF02534714BF52F900DFBF03 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02534614BF52F900DFBF03 /* Location.m */; };
-		FF02534A14BF52F900DFBF03 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02534914BF52F900DFBF03 /* School.m */; };
-		FF02534D14BF52F900DFBF03 /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02534C14BF52F900DFBF03 /* Language.m */; };
-		FF02535014BF52F900DFBF03 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02534F14BF52F900DFBF03 /* Position.m */; };
-		FF02535314BF52F900DFBF03 /* Education.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02535214BF52F900DFBF03 /* Education.m */; };
-		FF02535614BF52F900DFBF03 /* Year.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02535514BF52F900DFBF03 /* Year.m */; };
-		FF02535914BF52F900DFBF03 /* Concentration.m in Sources */ = {isa = PBXBuildFile; fileRef = FF02535814BF52F900DFBF03 /* Concentration.m */; };
 		FF1DD80B14BDCF58002264C9 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD80914BDCF57002264C9 /* SlideViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF1DD80C14BDCF58002264C9 /* SlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1DD80A14BDCF57002264C9 /* SlideViewController.xib */; };
 		FF1DD81A14BDCF81002264C9 /* section_background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1DD81014BDCF81002264C9 /* section_background.png */; };
@@ -58,11 +49,40 @@
 		FF1DD87C14BDFFFC002264C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF1DD87B14BDFFFB002264C9 /* CoreData.framework */; };
 		FF1DD88014BE0159002264C9 /* Frienemy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD87E14BE0159002264C9 /* Frienemy.xcdatamodeld */; };
 		FF1DD88314BE06F6002264C9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD88214BE06F6002264C9 /* Constants.m */; };
-		FF1DD8A114BE1A01002264C9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD8A014BE1A01002264C9 /* User.m */; };
-		FF1DD8A414BE1A22002264C9 /* StalkerRelationship.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD8A314BE1A22002264C9 /* StalkerRelationship.m */; };
-		FF1DD8A714BE1A31002264C9 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD8A614BE1A31002264C9 /* Friend.m */; };
 		FF1DD8AE14BE1C96002264C9 /* FriendsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */; };
 		FFA3495714BF7FC4006AAFA1 /* ImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */; };
+		FFB5DC3014CEE451001B2AB2 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC2F14CEE451001B2AB2 /* NSManagedObject+Additions.m */; };
+		FFB5DC6714CEED49001B2AB2 /* _Concentration.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC3814CEED49001B2AB2 /* _Concentration.m */; };
+		FFB5DC6814CEED49001B2AB2 /* _Education.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC3A14CEED49001B2AB2 /* _Education.m */; };
+		FFB5DC6914CEED49001B2AB2 /* _Employer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC3C14CEED49001B2AB2 /* _Employer.m */; };
+		FFB5DC6A14CEED49001B2AB2 /* _Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC3E14CEED49001B2AB2 /* _Friend.m */; };
+		FFB5DC6B14CEED49001B2AB2 /* _Language.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4014CEED49001B2AB2 /* _Language.m */; };
+		FFB5DC6C14CEED49001B2AB2 /* _Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4214CEED49001B2AB2 /* _Location.m */; };
+		FFB5DC6D14CEED49001B2AB2 /* _Position.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4414CEED49001B2AB2 /* _Position.m */; };
+		FFB5DC6E14CEED49001B2AB2 /* _School.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4614CEED49001B2AB2 /* _School.m */; };
+		FFB5DC6F14CEED49001B2AB2 /* _StalkerRelationship.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4814CEED49001B2AB2 /* _StalkerRelationship.m */; };
+		FFB5DC7014CEED49001B2AB2 /* _User.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4A14CEED49001B2AB2 /* _User.m */; };
+		FFB5DC7114CEED49001B2AB2 /* _Work.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4C14CEED49001B2AB2 /* _Work.m */; };
+		FFB5DC7214CEED49001B2AB2 /* _Year.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC4E14CEED49001B2AB2 /* _Year.m */; };
+		FFB5DC7314CEED49001B2AB2 /* Concentration.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5014CEED49001B2AB2 /* Concentration.m */; };
+		FFB5DC7414CEED49001B2AB2 /* Education.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5214CEED49001B2AB2 /* Education.m */; };
+		FFB5DC7514CEED49001B2AB2 /* Employer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5414CEED49001B2AB2 /* Employer.m */; };
+		FFB5DC7614CEED49001B2AB2 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5614CEED49001B2AB2 /* Friend.m */; };
+		FFB5DC7714CEED49001B2AB2 /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5814CEED49001B2AB2 /* Language.m */; };
+		FFB5DC7814CEED49001B2AB2 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5A14CEED49001B2AB2 /* Location.m */; };
+		FFB5DC7914CEED49001B2AB2 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5C14CEED49001B2AB2 /* Position.m */; };
+		FFB5DC7A14CEED49001B2AB2 /* School.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC5E14CEED49001B2AB2 /* School.m */; };
+		FFB5DC7B14CEED49001B2AB2 /* StalkerRelationship.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC6014CEED49001B2AB2 /* StalkerRelationship.m */; };
+		FFB5DC7C14CEED49001B2AB2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC6214CEED49001B2AB2 /* User.m */; };
+		FFB5DC7D14CEED49001B2AB2 /* Work.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC6414CEED49001B2AB2 /* Work.m */; };
+		FFB5DC7E14CEED49001B2AB2 /* Year.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC6614CEED49001B2AB2 /* Year.m */; };
+		FFC153BC14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC153BB14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.m */; };
+		FFC153C214CA2F2A00377B37 /* PRPNibBasedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC153BF14CA2F2A00377B37 /* PRPNibBasedTableViewCell.m */; };
+		FFC153C314CA2F2A00377B37 /* PRPSmartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC153C114CA2F2A00377B37 /* PRPSmartTableViewCell.m */; };
+		FFC153C714CA343A00377B37 /* FriendDetailGeneralTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC153C614CA343A00377B37 /* FriendDetailGeneralTableViewCell.m */; };
+		FFC153C914CA369200377B37 /* FriendDetailGeneralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC153C814CA369200377B37 /* FriendDetailGeneralTableViewCell.xib */; };
+		FFC153CC14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */; };
+		FFC153CE14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */; };
 		FFD45FDA14BFA8CC00F1D51B /* RequestsCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */; };
 		FFD45FE914BFB2B800F1D51B /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD45FE314BFB2B800F1D51B /* Icon-Small-50.png */; };
 		FFD45FEA14BFB2B800F1D51B /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD45FE414BFB2B800F1D51B /* Icon-Small.png */; };
@@ -201,7 +221,7 @@
 		FFE65ED114B63A6000D351BE /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EB914B63A6000D351BE /* FBDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FFE65ED214B63A6000D351BE /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EBB14B63A6000D351BE /* FBLoginDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FFE65ED314B63A6000D351BE /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EBD14B63A6000D351BE /* FBRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FFE65ED414B63A6000D351BE /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EC114B63A6000D351BE /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE65ED414B63A6000D351BE /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EC114B63A6000D351BE /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = ""; }; };
 		FFE65ED514B63A6000D351BE /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EC314B63A6000D351BE /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FFE65ED614B63A6000D351BE /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EC514B63A6000D351BE /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FFE65ED714B63A6000D351BE /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE65EC714B63A6000D351BE /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -232,24 +252,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF02533E14BF52F800DFBF03 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Work.h; sourceTree = "<group>"; };
-		FF02533F14BF52F800DFBF03 /* Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Work.m; sourceTree = "<group>"; };
-		FF02534214BF52F800DFBF03 /* Employer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employer.h; sourceTree = "<group>"; };
-		FF02534314BF52F800DFBF03 /* Employer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employer.m; sourceTree = "<group>"; };
-		FF02534514BF52F800DFBF03 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		FF02534614BF52F900DFBF03 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		FF02534814BF52F900DFBF03 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = School.h; sourceTree = "<group>"; };
-		FF02534914BF52F900DFBF03 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = School.m; sourceTree = "<group>"; };
-		FF02534B14BF52F900DFBF03 /* Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
-		FF02534C14BF52F900DFBF03 /* Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
-		FF02534E14BF52F900DFBF03 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
-		FF02534F14BF52F900DFBF03 /* Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Position.m; sourceTree = "<group>"; };
-		FF02535114BF52F900DFBF03 /* Education.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Education.h; sourceTree = "<group>"; };
-		FF02535214BF52F900DFBF03 /* Education.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Education.m; sourceTree = "<group>"; };
-		FF02535414BF52F900DFBF03 /* Year.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Year.h; sourceTree = "<group>"; };
-		FF02535514BF52F900DFBF03 /* Year.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Year.m; sourceTree = "<group>"; };
-		FF02535714BF52F900DFBF03 /* Concentration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concentration.h; sourceTree = "<group>"; };
-		FF02535814BF52F900DFBF03 /* Concentration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Concentration.m; sourceTree = "<group>"; };
 		FF1DD80814BDCF57002264C9 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
 		FF1DD80914BDCF57002264C9 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
 		FF1DD80A14BDCF57002264C9 /* SlideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideViewController.xib; sourceTree = "<group>"; };
@@ -314,17 +316,73 @@
 		FF1DD87F14BE0159002264C9 /* Frienemy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Frienemy.xcdatamodel; sourceTree = "<group>"; };
 		FF1DD88114BE06F6002264C9 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FF1DD88214BE06F6002264C9 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		FF1DD89F14BE1A01002264C9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		FF1DD8A014BE1A01002264C9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		FF1DD8A214BE1A22002264C9 /* StalkerRelationship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkerRelationship.h; sourceTree = "<group>"; };
-		FF1DD8A314BE1A22002264C9 /* StalkerRelationship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StalkerRelationship.m; sourceTree = "<group>"; };
-		FF1DD8A514BE1A31002264C9 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
-		FF1DD8A614BE1A31002264C9 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		FF1DD8A814BE1A4C002264C9 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		FF1DD8AC14BE1C96002264C9 /* FriendsListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListRequest.h; sourceTree = "<group>"; };
 		FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListRequest.m; sourceTree = "<group>"; };
 		FFA3495514BF7FC4006AAFA1 /* ImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRequest.h; sourceTree = "<group>"; };
 		FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRequest.m; sourceTree = "<group>"; };
+		FFB5DC2E14CEE451001B2AB2 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
+		FFB5DC2F14CEE451001B2AB2 /* NSManagedObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Additions.m"; sourceTree = "<group>"; };
+		FFB5DC3714CEED49001B2AB2 /* _Concentration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Concentration.h; path = Models/_Concentration.h; sourceTree = "<group>"; };
+		FFB5DC3814CEED49001B2AB2 /* _Concentration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Concentration.m; path = Models/_Concentration.m; sourceTree = "<group>"; };
+		FFB5DC3914CEED49001B2AB2 /* _Education.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Education.h; path = Models/_Education.h; sourceTree = "<group>"; };
+		FFB5DC3A14CEED49001B2AB2 /* _Education.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Education.m; path = Models/_Education.m; sourceTree = "<group>"; };
+		FFB5DC3B14CEED49001B2AB2 /* _Employer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Employer.h; path = Models/_Employer.h; sourceTree = "<group>"; };
+		FFB5DC3C14CEED49001B2AB2 /* _Employer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Employer.m; path = Models/_Employer.m; sourceTree = "<group>"; };
+		FFB5DC3D14CEED49001B2AB2 /* _Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Friend.h; path = Models/_Friend.h; sourceTree = "<group>"; };
+		FFB5DC3E14CEED49001B2AB2 /* _Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Friend.m; path = Models/_Friend.m; sourceTree = "<group>"; };
+		FFB5DC3F14CEED49001B2AB2 /* _Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Language.h; path = Models/_Language.h; sourceTree = "<group>"; };
+		FFB5DC4014CEED49001B2AB2 /* _Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Language.m; path = Models/_Language.m; sourceTree = "<group>"; };
+		FFB5DC4114CEED49001B2AB2 /* _Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Location.h; path = Models/_Location.h; sourceTree = "<group>"; };
+		FFB5DC4214CEED49001B2AB2 /* _Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Location.m; path = Models/_Location.m; sourceTree = "<group>"; };
+		FFB5DC4314CEED49001B2AB2 /* _Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Position.h; path = Models/_Position.h; sourceTree = "<group>"; };
+		FFB5DC4414CEED49001B2AB2 /* _Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Position.m; path = Models/_Position.m; sourceTree = "<group>"; };
+		FFB5DC4514CEED49001B2AB2 /* _School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _School.h; path = Models/_School.h; sourceTree = "<group>"; };
+		FFB5DC4614CEED49001B2AB2 /* _School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _School.m; path = Models/_School.m; sourceTree = "<group>"; };
+		FFB5DC4714CEED49001B2AB2 /* _StalkerRelationship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _StalkerRelationship.h; path = Models/_StalkerRelationship.h; sourceTree = "<group>"; };
+		FFB5DC4814CEED49001B2AB2 /* _StalkerRelationship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _StalkerRelationship.m; path = Models/_StalkerRelationship.m; sourceTree = "<group>"; };
+		FFB5DC4914CEED49001B2AB2 /* _User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _User.h; path = Models/_User.h; sourceTree = "<group>"; };
+		FFB5DC4A14CEED49001B2AB2 /* _User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _User.m; path = Models/_User.m; sourceTree = "<group>"; };
+		FFB5DC4B14CEED49001B2AB2 /* _Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Work.h; path = Models/_Work.h; sourceTree = "<group>"; };
+		FFB5DC4C14CEED49001B2AB2 /* _Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Work.m; path = Models/_Work.m; sourceTree = "<group>"; };
+		FFB5DC4D14CEED49001B2AB2 /* _Year.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Year.h; path = Models/_Year.h; sourceTree = "<group>"; };
+		FFB5DC4E14CEED49001B2AB2 /* _Year.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Year.m; path = Models/_Year.m; sourceTree = "<group>"; };
+		FFB5DC4F14CEED49001B2AB2 /* Concentration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Concentration.h; path = Models/Concentration.h; sourceTree = "<group>"; };
+		FFB5DC5014CEED49001B2AB2 /* Concentration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Concentration.m; path = Models/Concentration.m; sourceTree = "<group>"; };
+		FFB5DC5114CEED49001B2AB2 /* Education.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Education.h; path = Models/Education.h; sourceTree = "<group>"; };
+		FFB5DC5214CEED49001B2AB2 /* Education.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Education.m; path = Models/Education.m; sourceTree = "<group>"; };
+		FFB5DC5314CEED49001B2AB2 /* Employer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Employer.h; path = Models/Employer.h; sourceTree = "<group>"; };
+		FFB5DC5414CEED49001B2AB2 /* Employer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Employer.m; path = Models/Employer.m; sourceTree = "<group>"; };
+		FFB5DC5514CEED49001B2AB2 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Friend.h; path = Models/Friend.h; sourceTree = "<group>"; };
+		FFB5DC5614CEED49001B2AB2 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Friend.m; path = Models/Friend.m; sourceTree = "<group>"; };
+		FFB5DC5714CEED49001B2AB2 /* Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Language.h; path = Models/Language.h; sourceTree = "<group>"; };
+		FFB5DC5814CEED49001B2AB2 /* Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Language.m; path = Models/Language.m; sourceTree = "<group>"; };
+		FFB5DC5914CEED49001B2AB2 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
+		FFB5DC5A14CEED49001B2AB2 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
+		FFB5DC5B14CEED49001B2AB2 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Position.h; path = Models/Position.h; sourceTree = "<group>"; };
+		FFB5DC5C14CEED49001B2AB2 /* Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Position.m; path = Models/Position.m; sourceTree = "<group>"; };
+		FFB5DC5D14CEED49001B2AB2 /* School.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = School.h; path = Models/School.h; sourceTree = "<group>"; };
+		FFB5DC5E14CEED49001B2AB2 /* School.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = School.m; path = Models/School.m; sourceTree = "<group>"; };
+		FFB5DC5F14CEED49001B2AB2 /* StalkerRelationship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StalkerRelationship.h; path = Models/StalkerRelationship.h; sourceTree = "<group>"; };
+		FFB5DC6014CEED49001B2AB2 /* StalkerRelationship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StalkerRelationship.m; path = Models/StalkerRelationship.m; sourceTree = "<group>"; };
+		FFB5DC6114CEED49001B2AB2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		FFB5DC6214CEED49001B2AB2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		FFB5DC6314CEED49001B2AB2 /* Work.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Work.h; path = Models/Work.h; sourceTree = "<group>"; };
+		FFB5DC6414CEED49001B2AB2 /* Work.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Work.m; path = Models/Work.m; sourceTree = "<group>"; };
+		FFB5DC6514CEED49001B2AB2 /* Year.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Year.h; path = Models/Year.h; sourceTree = "<group>"; };
+		FFB5DC6614CEED49001B2AB2 /* Year.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Year.m; path = Models/Year.m; sourceTree = "<group>"; };
+		FFC153BA14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+PRPSubviewAdditions.h"; sourceTree = "<group>"; };
+		FFC153BB14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+PRPSubviewAdditions.m"; sourceTree = "<group>"; };
+		FFC153BE14CA2F2A00377B37 /* PRPNibBasedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRPNibBasedTableViewCell.h; path = ../PRPNibBasedTableViewCell.h; sourceTree = "<group>"; };
+		FFC153BF14CA2F2A00377B37 /* PRPNibBasedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRPNibBasedTableViewCell.m; path = ../PRPNibBasedTableViewCell.m; sourceTree = "<group>"; };
+		FFC153C014CA2F2A00377B37 /* PRPSmartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRPSmartTableViewCell.h; path = ../PRPSmartTableViewCell.h; sourceTree = "<group>"; };
+		FFC153C114CA2F2A00377B37 /* PRPSmartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRPSmartTableViewCell.m; path = ../PRPSmartTableViewCell.m; sourceTree = "<group>"; };
+		FFC153C514CA343A00377B37 /* FriendDetailGeneralTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailGeneralTableViewCell.h; sourceTree = "<group>"; };
+		FFC153C614CA343A00377B37 /* FriendDetailGeneralTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailGeneralTableViewCell.m; sourceTree = "<group>"; };
+		FFC153C814CA369200377B37 /* FriendDetailGeneralTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailGeneralTableViewCell.xib; sourceTree = "<group>"; };
+		FFC153CA14CA6E1100377B37 /* FriendDetailFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailFieldTableViewCell.h; sourceTree = "<group>"; };
+		FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailFieldTableViewCell.m; sourceTree = "<group>"; };
+		FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailFieldTableViewCell.xib; sourceTree = "<group>"; };
 		FFD45FD814BFA8CC00F1D51B /* RequestsCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsCoordinator.h; sourceTree = "<group>"; };
 		FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsCoordinator.m; sourceTree = "<group>"; };
 		FFD45FE314BFB2B800F1D51B /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -648,6 +706,7 @@
 		FF1DD87A14BDFF9C002264C9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FFC153C414CA2F6E00377B37 /* UITableView Categories */,
 				FF1DD87914BDFF52002264C9 /* JSONKit */,
 				FF1DD84714BDFF04002264C9 /* MagicalRecord */,
 				FF1DD80E14BDCF5C002264C9 /* SlideViewController */,
@@ -661,32 +720,11 @@
 		FF1DD87D14BE0141002264C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FFB5DC7F14CEED4F001B2AB2 /* Machine Files */,
+				FFB5DC8014CEED75001B2AB2 /* Human Files */,
+				FFB5DC3614CEEB2E001B2AB2 /* Categories */,
 				FF1DD8A814BE1A4C002264C9 /* Models.h */,
 				FF1DD87E14BE0159002264C9 /* Frienemy.xcdatamodeld */,
-				FF02535714BF52F900DFBF03 /* Concentration.h */,
-				FF02535814BF52F900DFBF03 /* Concentration.m */,
-				FF02535114BF52F900DFBF03 /* Education.h */,
-				FF02535214BF52F900DFBF03 /* Education.m */,
-				FF02534214BF52F800DFBF03 /* Employer.h */,
-				FF02534314BF52F800DFBF03 /* Employer.m */,
-				FF1DD8A514BE1A31002264C9 /* Friend.h */,
-				FF1DD8A614BE1A31002264C9 /* Friend.m */,
-				FF02534B14BF52F900DFBF03 /* Language.h */,
-				FF02534C14BF52F900DFBF03 /* Language.m */,
-				FF02534514BF52F800DFBF03 /* Location.h */,
-				FF02534614BF52F900DFBF03 /* Location.m */,
-				FF02534E14BF52F900DFBF03 /* Position.h */,
-				FF02534F14BF52F900DFBF03 /* Position.m */,
-				FF02534814BF52F900DFBF03 /* School.h */,
-				FF02534914BF52F900DFBF03 /* School.m */,
-				FF1DD8A214BE1A22002264C9 /* StalkerRelationship.h */,
-				FF1DD8A314BE1A22002264C9 /* StalkerRelationship.m */,
-				FF1DD89F14BE1A01002264C9 /* User.h */,
-				FF1DD8A014BE1A01002264C9 /* User.m */,
-				FF02533E14BF52F800DFBF03 /* Work.h */,
-				FF02533F14BF52F800DFBF03 /* Work.m */,
-				FF02535414BF52F900DFBF03 /* Year.h */,
-				FF02535514BF52F900DFBF03 /* Year.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -700,6 +738,86 @@
 				FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */,
 			);
 			name = Requests;
+			sourceTree = "<group>";
+		};
+		FFB5DC3614CEEB2E001B2AB2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5DC2E14CEE451001B2AB2 /* NSManagedObject+Additions.h */,
+				FFB5DC2F14CEE451001B2AB2 /* NSManagedObject+Additions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		FFB5DC7F14CEED4F001B2AB2 /* Machine Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5DC3714CEED49001B2AB2 /* _Concentration.h */,
+				FFB5DC3814CEED49001B2AB2 /* _Concentration.m */,
+				FFB5DC3914CEED49001B2AB2 /* _Education.h */,
+				FFB5DC3A14CEED49001B2AB2 /* _Education.m */,
+				FFB5DC3B14CEED49001B2AB2 /* _Employer.h */,
+				FFB5DC3C14CEED49001B2AB2 /* _Employer.m */,
+				FFB5DC3D14CEED49001B2AB2 /* _Friend.h */,
+				FFB5DC3E14CEED49001B2AB2 /* _Friend.m */,
+				FFB5DC3F14CEED49001B2AB2 /* _Language.h */,
+				FFB5DC4014CEED49001B2AB2 /* _Language.m */,
+				FFB5DC4114CEED49001B2AB2 /* _Location.h */,
+				FFB5DC4214CEED49001B2AB2 /* _Location.m */,
+				FFB5DC4314CEED49001B2AB2 /* _Position.h */,
+				FFB5DC4414CEED49001B2AB2 /* _Position.m */,
+				FFB5DC4514CEED49001B2AB2 /* _School.h */,
+				FFB5DC4614CEED49001B2AB2 /* _School.m */,
+				FFB5DC4714CEED49001B2AB2 /* _StalkerRelationship.h */,
+				FFB5DC4814CEED49001B2AB2 /* _StalkerRelationship.m */,
+				FFB5DC4914CEED49001B2AB2 /* _User.h */,
+				FFB5DC4A14CEED49001B2AB2 /* _User.m */,
+				FFB5DC4B14CEED49001B2AB2 /* _Work.h */,
+				FFB5DC4C14CEED49001B2AB2 /* _Work.m */,
+				FFB5DC4D14CEED49001B2AB2 /* _Year.h */,
+				FFB5DC4E14CEED49001B2AB2 /* _Year.m */,
+			);
+			name = "Machine Files";
+			sourceTree = "<group>";
+		};
+		FFB5DC8014CEED75001B2AB2 /* Human Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5DC4F14CEED49001B2AB2 /* Concentration.h */,
+				FFB5DC5014CEED49001B2AB2 /* Concentration.m */,
+				FFB5DC5114CEED49001B2AB2 /* Education.h */,
+				FFB5DC5214CEED49001B2AB2 /* Education.m */,
+				FFB5DC5314CEED49001B2AB2 /* Employer.h */,
+				FFB5DC5414CEED49001B2AB2 /* Employer.m */,
+				FFB5DC5514CEED49001B2AB2 /* Friend.h */,
+				FFB5DC5614CEED49001B2AB2 /* Friend.m */,
+				FFB5DC5714CEED49001B2AB2 /* Language.h */,
+				FFB5DC5814CEED49001B2AB2 /* Language.m */,
+				FFB5DC5914CEED49001B2AB2 /* Location.h */,
+				FFB5DC5A14CEED49001B2AB2 /* Location.m */,
+				FFB5DC5B14CEED49001B2AB2 /* Position.h */,
+				FFB5DC5C14CEED49001B2AB2 /* Position.m */,
+				FFB5DC5D14CEED49001B2AB2 /* School.h */,
+				FFB5DC5E14CEED49001B2AB2 /* School.m */,
+				FFB5DC5F14CEED49001B2AB2 /* StalkerRelationship.h */,
+				FFB5DC6014CEED49001B2AB2 /* StalkerRelationship.m */,
+				FFB5DC6114CEED49001B2AB2 /* User.h */,
+				FFB5DC6214CEED49001B2AB2 /* User.m */,
+				FFB5DC6314CEED49001B2AB2 /* Work.h */,
+				FFB5DC6414CEED49001B2AB2 /* Work.m */,
+				FFB5DC6514CEED49001B2AB2 /* Year.h */,
+				FFB5DC6614CEED49001B2AB2 /* Year.m */,
+			);
+			name = "Human Files";
+			sourceTree = "<group>";
+		};
+		FFC153C414CA2F6E00377B37 /* UITableView Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FFC153BA14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.h */,
+				FFC153BB14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.m */,
+			);
+			name = "UITableView Categories";
 			sourceTree = "<group>";
 		};
 		FFD45FE114BFB2B800F1D51B /* App Icons */ = {
@@ -834,9 +952,19 @@
 		FFE2DE7C14BA129100C64963 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				FFC153BE14CA2F2A00377B37 /* PRPNibBasedTableViewCell.h */,
+				FFC153BF14CA2F2A00377B37 /* PRPNibBasedTableViewCell.m */,
+				FFC153C014CA2F2A00377B37 /* PRPSmartTableViewCell.h */,
+				FFC153C114CA2F2A00377B37 /* PRPSmartTableViewCell.m */,
 				FFE2DE7714BA128C00C64963 /* FriendTableViewCell.h */,
 				FFE2DE7814BA128C00C64963 /* FriendTableViewCell.m */,
 				FFE2DE7914BA128C00C64963 /* FriendTableViewCell.xib */,
+				FFC153C514CA343A00377B37 /* FriendDetailGeneralTableViewCell.h */,
+				FFC153C614CA343A00377B37 /* FriendDetailGeneralTableViewCell.m */,
+				FFC153C814CA369200377B37 /* FriendDetailGeneralTableViewCell.xib */,
+				FFC153CA14CA6E1100377B37 /* FriendDetailFieldTableViewCell.h */,
+				FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */,
+				FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -1259,6 +1387,8 @@
 				FFD45FEF14BFB2D100F1D51B /* Icon.png in Resources */,
 				FFD45FF114BFB2D800F1D51B /* Icon@2x.png in Resources */,
 				FFD45FF314BFB2EF00F1D51B /* Icon-72.png in Resources */,
+				FFC153C914CA369200377B37 /* FriendDetailGeneralTableViewCell.xib in Resources */,
+				FFC153CE14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1322,22 +1452,40 @@
 				FF1DD87814BDFF4D002264C9 /* JSONKit.m in Sources */,
 				FF1DD88014BE0159002264C9 /* Frienemy.xcdatamodeld in Sources */,
 				FF1DD88314BE06F6002264C9 /* Constants.m in Sources */,
-				FF1DD8A114BE1A01002264C9 /* User.m in Sources */,
-				FF1DD8A414BE1A22002264C9 /* StalkerRelationship.m in Sources */,
-				FF1DD8A714BE1A31002264C9 /* Friend.m in Sources */,
 				FF1DD8AE14BE1C96002264C9 /* FriendsListRequest.m in Sources */,
 				FFEB312514BF313F0091F653 /* FrienemiesViewController.m in Sources */,
-				FF02534014BF52F800DFBF03 /* Work.m in Sources */,
-				FF02534414BF52F800DFBF03 /* Employer.m in Sources */,
-				FF02534714BF52F900DFBF03 /* Location.m in Sources */,
-				FF02534A14BF52F900DFBF03 /* School.m in Sources */,
-				FF02534D14BF52F900DFBF03 /* Language.m in Sources */,
-				FF02535014BF52F900DFBF03 /* Position.m in Sources */,
-				FF02535314BF52F900DFBF03 /* Education.m in Sources */,
-				FF02535614BF52F900DFBF03 /* Year.m in Sources */,
-				FF02535914BF52F900DFBF03 /* Concentration.m in Sources */,
 				FFA3495714BF7FC4006AAFA1 /* ImageRequest.m in Sources */,
 				FFD45FDA14BFA8CC00F1D51B /* RequestsCoordinator.m in Sources */,
+				FFC153BC14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.m in Sources */,
+				FFC153C214CA2F2A00377B37 /* PRPNibBasedTableViewCell.m in Sources */,
+				FFC153C314CA2F2A00377B37 /* PRPSmartTableViewCell.m in Sources */,
+				FFC153C714CA343A00377B37 /* FriendDetailGeneralTableViewCell.m in Sources */,
+				FFC153CC14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m in Sources */,
+				FFB5DC3014CEE451001B2AB2 /* NSManagedObject+Additions.m in Sources */,
+				FFB5DC6714CEED49001B2AB2 /* _Concentration.m in Sources */,
+				FFB5DC6814CEED49001B2AB2 /* _Education.m in Sources */,
+				FFB5DC6914CEED49001B2AB2 /* _Employer.m in Sources */,
+				FFB5DC6A14CEED49001B2AB2 /* _Friend.m in Sources */,
+				FFB5DC6B14CEED49001B2AB2 /* _Language.m in Sources */,
+				FFB5DC6C14CEED49001B2AB2 /* _Location.m in Sources */,
+				FFB5DC6D14CEED49001B2AB2 /* _Position.m in Sources */,
+				FFB5DC6E14CEED49001B2AB2 /* _School.m in Sources */,
+				FFB5DC6F14CEED49001B2AB2 /* _StalkerRelationship.m in Sources */,
+				FFB5DC7014CEED49001B2AB2 /* _User.m in Sources */,
+				FFB5DC7114CEED49001B2AB2 /* _Work.m in Sources */,
+				FFB5DC7214CEED49001B2AB2 /* _Year.m in Sources */,
+				FFB5DC7314CEED49001B2AB2 /* Concentration.m in Sources */,
+				FFB5DC7414CEED49001B2AB2 /* Education.m in Sources */,
+				FFB5DC7514CEED49001B2AB2 /* Employer.m in Sources */,
+				FFB5DC7614CEED49001B2AB2 /* Friend.m in Sources */,
+				FFB5DC7714CEED49001B2AB2 /* Language.m in Sources */,
+				FFB5DC7814CEED49001B2AB2 /* Location.m in Sources */,
+				FFB5DC7914CEED49001B2AB2 /* Position.m in Sources */,
+				FFB5DC7A14CEED49001B2AB2 /* School.m in Sources */,
+				FFB5DC7B14CEED49001B2AB2 /* StalkerRelationship.m in Sources */,
+				FFB5DC7C14CEED49001B2AB2 /* User.m in Sources */,
+				FFB5DC7D14CEED49001B2AB2 /* Work.m in Sources */,
+				FFB5DC7E14CEED49001B2AB2 /* Year.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1405,6 +1553,7 @@
 		FFE65EAC14B6397C00D351BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
 				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
@@ -1416,6 +1565,7 @@
 		FFE65EAD14B6397C00D351BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
 				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
