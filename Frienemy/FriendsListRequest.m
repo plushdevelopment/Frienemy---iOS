@@ -17,7 +17,7 @@
 
 - (void)requestFinished
 {
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_contextForCurrentThread];
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_contextThatNotifiesDefaultContextOnMainThread];
     NSDictionary *jsonResponse = [[self responseString] JSONValue];
     NSArray *jsonFriendsArray = [jsonResponse objectForKey:@"data"];
     NSArray *jsonFriendsIDsArray = [jsonFriendsArray valueForKey:@"id"];

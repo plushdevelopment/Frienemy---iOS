@@ -7,9 +7,9 @@
 //
 
 #import "FriendDetailViewController.h"
-#import "ImageRequest.h"
 #import "FriendDetailGeneralTableViewCell.h"
 #import "FriendDetailFieldTableViewCell.h"
+#import "FriendDetailSectionView.h"
 
 enum FriendDetailSectionIndex
 {
@@ -25,14 +25,6 @@ enum FriendDetailSectionIndex
 
 @synthesize tableView = _tableView;
 @synthesize friend = _friend;
-
-- (NSString *)downloadPathForUid:(NSString *)uid
-{
-    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDir = [documentPaths objectAtIndex:0];
-	NSString *iconPath = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-normal.jpg", uid]];
-    return iconPath;
-}
 
 - (id)initWithFriend:(Friend *)friend
 {
@@ -68,13 +60,6 @@ enum FriendDetailSectionIndex
     
     [self.view setBackgroundColor:color];
     
-    NSString *URLString = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=normal", self.friend.uid];
-    ImageRequest *request = [ImageRequest requestWithURL:[NSURL URLWithString:URLString]];
-    [request setDownloadDestinationPath:[self downloadPathForUid:self.friend.uid]];
-    [request setDelegate:self];
-    [request setTimeOutSeconds:600];
-    [request startAsynchronous];
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -92,12 +77,6 @@ enum FriendDetailSectionIndex
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - ASIHTTPRequestDelegate
-
-- (void)requestFinished:(ASIHTTPRequest *)request
-{
-    
-}
 
 #pragma mark - UITableViewDataSource
 
@@ -107,7 +86,8 @@ enum FriendDetailSectionIndex
     switch (section) {
         case FDGeneralSection:
         {
-            
+            FriendDetailGeneralTableViewCell *detailCell = (FriendDetailGeneralTableViewCell *)cell;
+            [detailCell configureCellForFriend:self.friend];
         }
             break;
         case FDContactInfoSection:
@@ -146,31 +126,37 @@ enum FriendDetailSectionIndex
         case FDGeneralSection:
         {
             cell = [FriendDetailGeneralTableViewCell cellForTableView:tableView fromNib:[FriendDetailGeneralTableViewCell nib]];
+            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
         case FDContactInfoSection:
         {
-            
+            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
+            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
         case FDBasicSection:
         {
-            
+            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
+            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
         case FDLikesAndInterestsSection:
         {
-            
+            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
+            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
         case FDEducationAndWorkSection:
         {
-            
+            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
+            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
         default:
         {
-            
+            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
+            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
     }
@@ -188,32 +174,32 @@ enum FriendDetailSectionIndex
     switch (section) {
         case FDGeneralSection:
         {
-            height = 223.0;
+            height = 118.0;
         }
             break;
         case FDContactInfoSection:
         {
-            
+            height = 46.0;
         }
             break;
         case FDBasicSection:
         {
-            
+            height = 46.0;
         }
             break;
         case FDLikesAndInterestsSection:
         {
-            
+            height = 46.0;
         }
             break;
         case FDEducationAndWorkSection:
         {
-            
+            height = 46.0;
         }
             break;
         default:
         {
-            
+            height = 46.0;
         }
             break;
     }
@@ -232,27 +218,27 @@ enum FriendDetailSectionIndex
             break;
         case FDContactInfoSection:
         {
-            
+            rowsCount = 1;
         }
             break;
         case FDBasicSection:
         {
-            
+            rowsCount = 1;
         }
             break;
         case FDLikesAndInterestsSection:
         {
-            
+            rowsCount = 1;
         }
             break;
         case FDEducationAndWorkSection:
         {
-            
+            rowsCount = 1;
         }
             break;
         default:
         {
-            
+            rowsCount = 0;
         }
             break;
     }
@@ -265,11 +251,74 @@ enum FriendDetailSectionIndex
     return FDSectionsCount;
 }
 
+/*
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = nil;
+    switch (section) {
+        case FDGeneralSection:
+        {
+            
+        }
+            break;
+        case FDContactInfoSection:
+        {
+            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
+            
+            sectionView.titleLabel.text = @"Contact Info";
+            view = sectionView;
+        }
+            break;
+        case FDBasicSection:
+        {
+            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
+            
+            sectionView.titleLabel.text = @"Basic Info";
+            view = sectionView;
+        }
+            break;
+        case FDLikesAndInterestsSection:
+        {
+            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
+            
+            sectionView.titleLabel.text = @"Likes & Interests";
+            view = sectionView;
+        }
+            break;
+        case FDEducationAndWorkSection:
+        {
+            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
+            
+            sectionView.titleLabel.text = @"Education & Work";
+            view = sectionView;
+        }
+            break;
+        default:
+        {
+            
+        }
+            break;
+    }
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    CGFloat height = 0.0;
+    
+    if (section != FDGeneralSection) {
+        height = 25.0;
+    }
+    
+    return height;
+}
+ */
+
 #pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end

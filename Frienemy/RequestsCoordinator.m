@@ -96,13 +96,15 @@
 - (void)friendsRequestDidFinish:(FriendsListRequest *)request
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:PAFriendsListFinishedNotification object:nil];
-    [[NSManagedObjectContext MR_defaultContext] save:nil];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSDate *lastDownloadedDate = [userDefaults valueForKey:PAImageDownloadedDateKey];
-    NSTimeInterval timeInterval = [lastDownloadedDate timeIntervalSinceNow];
-    if ((timeInterval <= -3600.0) || (timeInterval == 0)) {
-        [self getProfileImagesForUids:request.uids];
-    }
+    
+    /*
+     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+     NSDate *lastDownloadedDate = [userDefaults valueForKey:PAImageDownloadedDateKey];
+     NSTimeInterval timeInterval = [lastDownloadedDate timeIntervalSinceNow];
+     if ((timeInterval <= -3600.0) || (timeInterval == 0)) {
+     [self getProfileImagesForUids:request.uids];
+     }
+     */
 }
 
 #pragma mark -

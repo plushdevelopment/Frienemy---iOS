@@ -23,8 +23,6 @@
     
     [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Frienemy.sqlite"];
     
-    [NSManagedObjectContext MR_setDefaultContext:[NSManagedObjectContext MR_context]];
-    
     // Initialize the RequestsCoordinator
     [RequestsCoordinator sharedCoordinator];
     
@@ -109,6 +107,7 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    [[NSManagedObjectContext MR_defaultContext] save:nil];
     [MagicalRecordHelpers cleanUp];
 }
 

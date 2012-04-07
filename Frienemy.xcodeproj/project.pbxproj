@@ -50,6 +50,10 @@
 		FF1DD88014BE0159002264C9 /* Frienemy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD87E14BE0159002264C9 /* Frienemy.xcdatamodeld */; };
 		FF1DD88314BE06F6002264C9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD88214BE06F6002264C9 /* Constants.m */; };
 		FF1DD8AE14BE1C96002264C9 /* FriendsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */; };
+		FF92AF8814D188AF002C947F /* FriendDetailSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */; };
+		FF92AF8A14D188D6002C947F /* FriendDetailSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */; };
+		FF92AF9114D18A5B002C947F /* table_section_background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8F14D18A5B002C947F /* table_section_background.png */; };
+		FF92AF9214D18A5B002C947F /* table_section_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF9014D18A5B002C947F /* table_section_background@2x.png */; };
 		FFA3495714BF7FC4006AAFA1 /* ImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */; };
 		FFB5DC3014CEE451001B2AB2 /* NSManagedObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC2F14CEE451001B2AB2 /* NSManagedObject+Additions.m */; };
 		FFB5DC6714CEED49001B2AB2 /* _Concentration.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5DC3814CEED49001B2AB2 /* _Concentration.m */; };
@@ -319,6 +323,11 @@
 		FF1DD8A814BE1A4C002264C9 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		FF1DD8AC14BE1C96002264C9 /* FriendsListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListRequest.h; sourceTree = "<group>"; };
 		FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListRequest.m; sourceTree = "<group>"; };
+		FF92AF8614D188AF002C947F /* FriendDetailSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailSectionView.h; sourceTree = "<group>"; };
+		FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailSectionView.m; sourceTree = "<group>"; };
+		FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailSectionView.xib; sourceTree = "<group>"; };
+		FF92AF8F14D18A5B002C947F /* table_section_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_section_background.png; sourceTree = "<group>"; };
+		FF92AF9014D18A5B002C947F /* table_section_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_section_background@2x.png"; sourceTree = "<group>"; };
 		FFA3495514BF7FC4006AAFA1 /* ImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRequest.h; sourceTree = "<group>"; };
 		FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRequest.m; sourceTree = "<group>"; };
 		FFB5DC2E14CEE451001B2AB2 /* NSManagedObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Additions.h"; sourceTree = "<group>"; };
@@ -740,6 +749,17 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
+		FF92AF8514D1887C002C947F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFE2DE7C14BA129100C64963 /* TableViewCells */,
+				FF92AF8614D188AF002C947F /* FriendDetailSectionView.h */,
+				FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */,
+				FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		FFB5DC3614CEEB2E001B2AB2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1007,6 +1027,8 @@
 		FFE2DE8E14BA23AF00C64963 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				FF92AF8F14D18A5B002C947F /* table_section_background.png */,
+				FF92AF9014D18A5B002C947F /* table_section_background@2x.png */,
 				FFD45FE114BFB2B800F1D51B /* App Icons */,
 				FFE2DE8F14BA23AF00C64963 /* Tab Bar Icons */,
 			);
@@ -1063,10 +1085,10 @@
 		FFE65E8314B6397C00D351BE /* Frienemy */ = {
 			isa = PBXGroup;
 			children = (
+				FF92AF8514D1887C002C947F /* Views */,
 				FF1DD8AB14BE1C6B002264C9 /* Requests */,
 				FF1DD87D14BE0141002264C9 /* Models */,
 				FFE2DE8214BA146200C64963 /* ViewControllers */,
-				FFE2DE7C14BA129100C64963 /* TableViewCells */,
 				FFE65E8C14B6397C00D351BE /* PAAppDelegate.h */,
 				FFE65E8D14B6397C00D351BE /* PAAppDelegate.m */,
 				FF1DD88114BE06F6002264C9 /* Constants.h */,
@@ -1389,6 +1411,9 @@
 				FFD45FF314BFB2EF00F1D51B /* Icon-72.png in Resources */,
 				FFC153C914CA369200377B37 /* FriendDetailGeneralTableViewCell.xib in Resources */,
 				FFC153CE14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib in Resources */,
+				FF92AF8A14D188D6002C947F /* FriendDetailSectionView.xib in Resources */,
+				FF92AF9114D18A5B002C947F /* table_section_background.png in Resources */,
+				FF92AF9214D18A5B002C947F /* table_section_background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1486,6 +1511,7 @@
 				FFB5DC7C14CEED49001B2AB2 /* User.m in Sources */,
 				FFB5DC7D14CEED49001B2AB2 /* Work.m in Sources */,
 				FFB5DC7E14CEED49001B2AB2 /* Year.m in Sources */,
+				FF92AF8814D188AF002C947F /* FriendDetailSectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

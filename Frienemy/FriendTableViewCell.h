@@ -7,8 +7,10 @@
 //
 
 #import "PRPNibBasedTableViewCell.h"
+#import "ASIHTTPRequestDelegate.h"
+#import "ImageRequest.h"
 
-@interface FriendTableViewCell : PRPNibBasedTableViewCell
+@interface FriendTableViewCell : PRPNibBasedTableViewCell <ASIHTTPRequestDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *profileMaskImageView;
@@ -17,5 +19,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *blueImageView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *profileImageActivityIndicator;
+@property (strong, nonatomic) Friend *friend;
+@property (strong, nonatomic) ImageRequest *request;
+
+- (void)configureCellForFriend:(Friend *)friend;
 
 @end

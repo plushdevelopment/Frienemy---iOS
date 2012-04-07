@@ -10,7 +10,6 @@
 #import "FriendTableViewCell.h"
 #import "FriendDetailViewController.h"
 #import "FriendsListRequest.h"
-#import "ImageRequest.h"
 #import "RequestsCoordinator.h"
 
 @interface FriendsViewController (Private)
@@ -27,7 +26,6 @@
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self.tableView name:PAImageDownloadedNotification object:nil];
     [self.fetchedResultsController setDelegate:nil];
 }
 
@@ -41,8 +39,6 @@
     
     [self.view setBackgroundColor:color];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self.tableView selector:@selector(reloadData) name:PAImageDownloadedNotification object:nil];
-    
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
@@ -51,9 +47,6 @@
 	}
     
     [[self tableView] setContentOffset:CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height)];
-    
-    [self.searchDisplayController.searchResultsTableView setBackgroundColor:[UIColor blackColor]];
-    [self.searchDisplayController.searchResultsTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -96,39 +89,7 @@
     }
     
     FriendTableViewCell *friendCell = (FriendTableViewCell *)cell;
-    friendCell.nameLabel.text = friend.name;
-    if (friend.bio) {
-        friendCell.detailLabel.text = friend.bio;
-    } else {
-        friendCell.detailLabel.text = friend.quotes;
-    }
-    
-    if (friend.stalking.boolValue) {
-        friendCell.blueImageView.hidden = NO;
-        friendCell.frienemyLabel.hidden = NO;
-    } else {
-        friendCell.blueImageView.hidden = YES;
-        friendCell.frienemyLabel.hidden = YES;
-    }
-    
-    [friendCell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
-    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDir = [documentPaths objectAtIndex:0];
-	NSString *imagePath = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", friend.uid]];
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(queue, ^{
-        UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
-        if (image) {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [[friendCell profileImageView] setImage:image];
-                [[friendCell profileMaskImageView] setHidden:NO];
-                [[friendCell profileImageActivityIndicator] stopAnimating];
-                [friendCell setNeedsLayout];
-            });
-        }
-    });
+    [friendCell configureCellForFriend:friend];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -315,8 +276,9 @@
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
 	[self filterContentForSearchText:searchString scope:
-	 [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
-	
+    [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+	[self.searchDisplayController.searchResultsTableView setBackgroundColor:[UIColor blackColor]];
+    [self.searchDisplayController.searchResultsTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	// Return YES to cause the search result table view to be reloaded.
 	return YES;
 }
