@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50b" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Concentration" representedClassName="Concentration" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
@@ -48,9 +48,6 @@
         <relationship name="stalkingRelationships" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StalkerRelationship" inverseName="fromFriend" inverseEntity="StalkerRelationship" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User" syncable="YES"/>
         <relationship name="work" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="friend" inverseEntity="Work" syncable="YES"/>
-        <userInfo>
-            <entry key="primaryAttributeKey" value="uid"/>
-        </userInfo>
     </entity>
     <entity name="Language" representedClassName="Language" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>

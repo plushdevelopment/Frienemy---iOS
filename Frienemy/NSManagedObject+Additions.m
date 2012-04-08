@@ -37,7 +37,7 @@
 {
     NSDictionary *attributes = [[self entity] attributesByName];
     for (NSString *attribute in attributes) {
-        id value;
+        id value = nil;
         if ([attribute isEqualToString:@"uid"]) {
             value = [keyedValues objectForKey:@"id"];
         } else {

@@ -7,7 +7,6 @@
 {
     [super PA_setValuesForKeysWithDictionary:keyedValues dateFormatter:dateFormatter];
     self.section = [self.name substringToIndex:1];
-
 }
 
 - (NSString *)downloadPath

@@ -21,7 +21,7 @@
 {
     [self customizeNavigation];
     
-    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Frienemy.sqlite"];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Frienemy.sqlite"];
     
     // Initialize the RequestsCoordinator
     [RequestsCoordinator sharedCoordinator];
@@ -108,7 +108,7 @@
      See also applicationDidEnterBackground:.
      */
     [[NSManagedObjectContext MR_defaultContext] save:nil];
-    [MagicalRecordHelpers cleanUp];
+    [MagicalRecord cleanUp];
 }
 
 /*

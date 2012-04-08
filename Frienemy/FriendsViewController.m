@@ -9,7 +9,6 @@
 #import "FriendsViewController.h"
 #import "FriendTableViewCell.h"
 #import "FriendDetailViewController.h"
-#import "FriendsListRequest.h"
 #import "RequestsCoordinator.h"
 
 @interface FriendsViewController (Private)

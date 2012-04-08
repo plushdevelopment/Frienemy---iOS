@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Frienemy/PAAppDelegate.m"
-         timestampString = "348673418.557361"
+         timestampString = "355540222.50943"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "214"
-         endingLineNumber = "214"
+         startingLineNumber = "213"
+         endingLineNumber = "213"
          landmarkName = "-fbDidLogin"
          landmarkType = "5">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Frienemy/PAAppDelegate.m"
-         timestampString = "348673418.557361"
+         timestampString = "355540222.50943"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "227"
-         endingLineNumber = "227"
+         startingLineNumber = "226"
+         endingLineNumber = "226"
          landmarkName = "-fbDidNotLogin:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -51,11 +51,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Frienemy/FriendsViewController.m"
-         timestampString = "349199740.967665"
+         timestampString = "355543365.842555"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -65,26 +65,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Frienemy/RequestsCoordinator.m"
-         timestampString = "349191719.613322"
+         timestampString = "355540222.50943"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "130"
-         endingLineNumber = "130"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
          landmarkName = "-queueFinished:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Frienemy/FriendsListRequest.m"
-         timestampString = "349111388.816097"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "24"
-         endingLineNumber = "24"
-         landmarkName = "-requestFinished"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

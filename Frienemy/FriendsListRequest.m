@@ -33,7 +33,6 @@
             friend.isCurrentUsersFriend = [NSNumber numberWithBool:YES];
         }
     } else {
-        
         // Find out which friends are frienemies now
         NSPredicate *frienemyPredicate = [NSPredicate predicateWithFormat:@"NOT (uid IN %@)", jsonFriendsIDsArray];
         NSArray *frienemies = [friends filteredArrayUsingPredicate:frienemyPredicate];
@@ -42,10 +41,12 @@
         }
         
         // Find all the friends that already exist and set their isFrienemy flag to no
+        NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
         NSPredicate *existingFriendsPredicate = [NSPredicate predicateWithFormat:@"uid IN %@", jsonFriendsIDsArray];
-        NSArray *existingFriends = [friends filteredArrayUsingPredicate:existingFriendsPredicate];
+        NSArray *existingFriends = [[friends filteredArrayUsingPredicate:existingFriendsPredicate] sortedArrayUsingDescriptors:sortDescriptors];
         NSPredicate *existingFriendsPredicate2 = [NSPredicate predicateWithFormat:@"id IN %@", [existingFriends valueForKey:@"uid"]];
-        NSArray *existingJSONFriends = [jsonFriendsArray filteredArrayUsingPredicate:existingFriendsPredicate2];
+        NSArray *existingJSONFriends = [[jsonFriendsArray filteredArrayUsingPredicate:existingFriendsPredicate2] sortedArrayUsingDescriptors:sortDescriptors];
+        NSAssert((existingFriends.count == existingJSONFriends.count), @"Friend counts must match");
         for (int i = 0; i < existingFriends.count; i++) {
             NSDictionary *friendDict = [existingJSONFriends objectAtIndex:i];
             Friend *friend = [existingFriends objectAtIndex:i];
