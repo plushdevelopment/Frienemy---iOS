@@ -17,11 +17,11 @@
 
 - (void)requestFinished
 {
+    NSLog(@"%@", [self responseString]);
     NSManagedObjectContext *context = [NSManagedObjectContext MR_contextThatNotifiesDefaultContextOnMainThread];
     NSDictionary *jsonResponse = [[self responseString] JSONValue];
     NSArray *jsonFriendsArray = [jsonResponse objectForKey:@"data"];
     NSArray *jsonFriendsIDsArray = [jsonFriendsArray valueForKey:@"id"];
-    //NSArray *friends = [Friend MR_findAllSortedBy:@"uid" ascending:YES inContext:context];
     NSPredicate *allFriendsPredicate = [NSPredicate predicateWithFormat:@"isCurrentUsersFriend == YES"];
     NSArray *friends = [Friend MR_findAllSortedBy:@"uid" ascending:YES withPredicate:allFriendsPredicate inContext:context];
     

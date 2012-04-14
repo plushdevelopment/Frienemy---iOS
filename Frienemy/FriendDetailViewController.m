@@ -21,6 +21,16 @@ enum FriendDetailSectionIndex
     FDSectionsCount
 };
 
+enum FDBasicRowIndex
+{
+    FDBasicSexRow = 0,
+    FDBasicBirthdayRow,
+    FDBasicCurrentCityRow,
+    FDBasicRelationshipRow,
+    FDBasicReligionRow,
+    FDBasicRowCount
+};
+
 @implementation FriendDetailViewController
 
 @synthesize tableView = _tableView;
@@ -83,6 +93,7 @@ enum FriendDetailSectionIndex
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger section = indexPath.section;
+    NSInteger row = indexPath.row;
     switch (section) {
         case FDGeneralSection:
         {
@@ -97,7 +108,25 @@ enum FriendDetailSectionIndex
             break;
         case FDBasicSection:
         {
-            
+            switch (row) {
+                case FDBasicSexRow:
+                    
+                    break;
+                case FDBasicBirthdayRow:
+                    
+                    break;
+                case FDBasicCurrentCityRow:
+                    
+                    break;
+                case FDBasicRelationshipRow:
+                    
+                    break;
+                case FDBasicReligionRow:
+                    
+                    break;
+                default:
+                    break;
+            }
         }
             break;
         case FDLikesAndInterestsSection:
@@ -223,7 +252,7 @@ enum FriendDetailSectionIndex
             break;
         case FDBasicSection:
         {
-            rowsCount = 1;
+            rowsCount = FDBasicRowCount;
         }
             break;
         case FDLikesAndInterestsSection:
