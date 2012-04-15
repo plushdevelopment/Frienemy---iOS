@@ -43,6 +43,8 @@
 		FF92AF9114D18A5B002C947F /* table_section_background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8F14D18A5B002C947F /* table_section_background.png */; };
 		FF92AF9214D18A5B002C947F /* table_section_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF9014D18A5B002C947F /* table_section_background@2x.png */; };
 		FFA3495714BF7FC4006AAFA1 /* ImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */; };
+		FFAEA804153B455800CD7038 /* FriendDetailEducationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAEA803153B455800CD7038 /* FriendDetailEducationTableViewCell.m */; };
+		FFAEA806153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAEA805153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib */; };
 		FFB5C9C71530F810002047DF /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5C98F1530F810002047DF /* MagicalImportFunctions.m */; };
 		FFB5C9C81530F810002047DF /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5C9911530F810002047DF /* NSAttributeDescription+MagicalDataImport.m */; };
 		FFB5C9C91530F810002047DF /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB5C9931530F810002047DF /* NSEntityDescription+MagicalDataImport.m */; };
@@ -312,6 +314,9 @@
 		FF92AF9014D18A5B002C947F /* table_section_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_section_background@2x.png"; sourceTree = "<group>"; };
 		FFA3495514BF7FC4006AAFA1 /* ImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRequest.h; sourceTree = "<group>"; };
 		FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRequest.m; sourceTree = "<group>"; };
+		FFAEA802153B455800CD7038 /* FriendDetailEducationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailEducationTableViewCell.h; sourceTree = "<group>"; };
+		FFAEA803153B455800CD7038 /* FriendDetailEducationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailEducationTableViewCell.m; sourceTree = "<group>"; };
+		FFAEA805153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailEducationTableViewCell.xib; sourceTree = "<group>"; };
 		FFB5C98E1530F810002047DF /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
 		FFB5C98F1530F810002047DF /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
 		FFB5C9901530F810002047DF /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
@@ -1070,6 +1075,9 @@
 				FFC153CA14CA6E1100377B37 /* FriendDetailFieldTableViewCell.h */,
 				FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */,
 				FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */,
+				FFAEA802153B455800CD7038 /* FriendDetailEducationTableViewCell.h */,
+				FFAEA803153B455800CD7038 /* FriendDetailEducationTableViewCell.m */,
+				FFAEA805153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -1498,6 +1506,7 @@
 				FF92AF9214D18A5B002C947F /* table_section_background@2x.png in Resources */,
 				FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */,
 				FF885FA21539098B005F37EC /* friends_tb.png in Resources */,
+				FFAEA806153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1608,6 +1617,7 @@
 				FFB5C9DF1530F810002047DF /* MagicalRecord+ShorthandSupport.m in Sources */,
 				FFB5C9E01530F810002047DF /* MagicalRecord.m in Sources */,
 				FF885FA015390360005F37EC /* FBFrictionlessRequestSettings.m in Sources */,
+				FFAEA804153B455800CD7038 /* FriendDetailEducationTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

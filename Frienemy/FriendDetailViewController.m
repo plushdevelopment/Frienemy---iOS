@@ -10,6 +10,7 @@
 #import "FriendDetailGeneralTableViewCell.h"
 #import "FriendDetailFieldTableViewCell.h"
 #import "FriendDetailSectionView.h"
+#import "FriendDetailEducationTableViewCell.h"
 
 enum FriendDetailSectionIndex
 {
@@ -167,10 +168,9 @@ enum FDBasicRowIndex
             break;
         case FDEducationSection:
         {
-            FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+            FriendDetailEducationTableViewCell *detailCell = (FriendDetailEducationTableViewCell *)cell;
             Education *education = [self.educationArray objectAtIndex:row];
-			detailCell.fieldKeyLabel.text = education.year.name;
-			detailCell.fieldValueLabel.text = education.school.name;
+			[detailCell configureCellForEducation:education];
         }
             break;
         case FDWorkSection:
@@ -208,7 +208,7 @@ enum FDBasicRowIndex
             break;
         case FDEducationSection:
         {
-            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
+            cell = [FriendDetailEducationTableViewCell cellForTableView:tableView fromNib:[FriendDetailEducationTableViewCell nib]];
             [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
@@ -306,45 +306,36 @@ enum FDBasicRowIndex
     return FDSectionsCount;
 }
 
-/*
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = nil;
     switch (section) {
         case FDGeneralSection:
         {
-            
-        }
-            break;
-        case FDContactInfoSection:
-        {
-            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
-            
-            sectionView.titleLabel.text = @"Contact Info";
-            view = sectionView;
+            UIView *sectionView = [[UIView alloc] initWithFrame:CGRectZero];
+			view = sectionView;
         }
             break;
         case FDBasicSection:
         {
-            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
-            
-            sectionView.titleLabel.text = @"Basic Info";
-            view = sectionView;
+            UIView *sectionView = [[UIView alloc] initWithFrame:CGRectZero];
+			view = sectionView;
         }
             break;
-        case FDLikesAndInterestsSection:
+        case FDEducationSection:
         {
             FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
             
-            sectionView.titleLabel.text = @"Likes & Interests";
+            sectionView.titleLabel.text = @"Education";
             view = sectionView;
         }
             break;
-        case FDEducationAndWorkSection:
+        case FDWorkSection:
         {
             FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
             
-            sectionView.titleLabel.text = @"Education & Work";
+            sectionView.titleLabel.text = @"Work";
             view = sectionView;
         }
             break;
@@ -361,13 +352,14 @@ enum FDBasicRowIndex
 {
     CGFloat height = 0.0;
     
-    if (section != FDGeneralSection) {
-        height = 25.0;
-    }
+    if ((section == FDGeneralSection) || (section == FDBasicSection)) {
+        height = 0.0;
+    } else {
+		height = 25.0;
+	}
     
     return height;
 }
- */
 
 #pragma mark - UITableViewDelegate
 
