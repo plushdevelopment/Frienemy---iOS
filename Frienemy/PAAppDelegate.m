@@ -226,6 +226,22 @@
     
 }
 
+- (void)fbDidLogout
+{
+    
+}
+
+- (void)fbDidExtendToken:(NSString*)accessToken
+               expiresAt:(NSDate*)expiresAt
+{
+    
+}
+
+- (void)fbSessionInvalidated
+{
+    
+}
+
 #pragma mark - ASIHTTPRequestDelegate
 
 - (void)requestFailed:(ASIHTTPRequest *)request

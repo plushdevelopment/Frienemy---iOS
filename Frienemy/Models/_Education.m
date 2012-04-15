@@ -9,6 +9,7 @@ const struct EducationAttributes EducationAttributes = {
 
 const struct EducationRelationships EducationRelationships = {
 	.concentration = @"concentration",
+	.friend = @"friend",
 	.school = @"school",
 	.year = @"year",
 };
@@ -67,6 +68,10 @@ const struct EducationFetchedProperties EducationFetchedProperties = {
 	[self didAccessValueForKey:@"concentration"];
 	return result;
 }
+	
+
+@dynamic friend;
+
 	
 
 @dynamic school;

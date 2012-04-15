@@ -7,6 +7,7 @@
 extern const struct FriendAttributes {
 	__unsafe_unretained NSString *bio;
 	__unsafe_unretained NSString *birthday;
+	__unsafe_unretained NSString *email;
 	__unsafe_unretained NSString *gender;
 	__unsafe_unretained NSString *isCurrentUser;
 	__unsafe_unretained NSString *isCurrentUsersFriend;
@@ -14,8 +15,10 @@ extern const struct FriendAttributes {
 	__unsafe_unretained NSString *link;
 	__unsafe_unretained NSString *locale;
 	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *political;
 	__unsafe_unretained NSString *quotes;
 	__unsafe_unretained NSString *relationship_status;
+	__unsafe_unretained NSString *religion;
 	__unsafe_unretained NSString *section;
 	__unsafe_unretained NSString *stalking;
 	__unsafe_unretained NSString *uid;
@@ -25,6 +28,7 @@ extern const struct FriendAttributes {
 } FriendAttributes;
 
 extern const struct FriendRelationships {
+	__unsafe_unretained NSString *education;
 	__unsafe_unretained NSString *hometown;
 	__unsafe_unretained NSString *languages;
 	__unsafe_unretained NSString *location;
@@ -38,6 +42,7 @@ extern const struct FriendRelationships {
 extern const struct FriendFetchedProperties {
 } FriendFetchedProperties;
 
+@class Education;
 @class Location;
 @class Language;
 @class Location;
@@ -46,6 +51,9 @@ extern const struct FriendFetchedProperties {
 @class StalkerRelationship;
 @class User;
 @class Work;
+
+
+
 
 
 
@@ -89,6 +97,14 @@ extern const struct FriendFetchedProperties {
 
 
 //- (BOOL)validateBirthday:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSString *email;
+
+
+//- (BOOL)validateEmail:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -161,6 +177,14 @@ extern const struct FriendFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSString *political;
+
+
+//- (BOOL)validatePolitical:(id*)value_ error:(NSError**)error_;
+
+
+
+
 @property (nonatomic, strong) NSString *quotes;
 
 
@@ -173,6 +197,14 @@ extern const struct FriendFetchedProperties {
 
 
 //- (BOOL)validateRelationship_status:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSString *religion;
+
+
+//- (BOOL)validateReligion:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -226,6 +258,13 @@ extern const struct FriendFetchedProperties {
 
 //- (BOOL)validateWebsite:(id*)value_ error:(NSError**)error_;
 
+
+
+
+
+@property (nonatomic, strong) NSSet* education;
+
+- (NSMutableSet*)educationSet;
 
 
 
@@ -290,6 +329,11 @@ extern const struct FriendFetchedProperties {
 
 @interface _Friend (CoreDataGeneratedAccessors)
 
+- (void)addEducation:(NSSet*)value_;
+- (void)removeEducation:(NSSet*)value_;
+- (void)addEducationObject:(Education*)value_;
+- (void)removeEducationObject:(Education*)value_;
+
 - (void)addLanguages:(NSSet*)value_;
 - (void)removeLanguages:(NSSet*)value_;
 - (void)addLanguagesObject:(Language*)value_;
@@ -323,6 +367,12 @@ extern const struct FriendFetchedProperties {
 
 - (NSString*)primitiveBirthday;
 - (void)setPrimitiveBirthday:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveEmail;
+- (void)setPrimitiveEmail:(NSString*)value;
 
 
 
@@ -378,6 +428,12 @@ extern const struct FriendFetchedProperties {
 
 
 
+- (NSString*)primitivePolitical;
+- (void)setPrimitivePolitical:(NSString*)value;
+
+
+
+
 - (NSString*)primitiveQuotes;
 - (void)setPrimitiveQuotes:(NSString*)value;
 
@@ -386,6 +442,12 @@ extern const struct FriendFetchedProperties {
 
 - (NSString*)primitiveRelationship_status;
 - (void)setPrimitiveRelationship_status:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveReligion;
+- (void)setPrimitiveReligion:(NSString*)value;
 
 
 
@@ -427,6 +489,11 @@ extern const struct FriendFetchedProperties {
 - (void)setPrimitiveWebsite:(NSString*)value;
 
 
+
+
+
+- (NSMutableSet*)primitiveEducation;
+- (void)setPrimitiveEducation:(NSMutableSet*)value;
 
 
 

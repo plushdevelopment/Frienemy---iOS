@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) Friend *friend;
+@property (nonatomic, strong) NSArray *educationArray;
+@property (nonatomic, strong) NSArray *workArray;
 
 - (id)initWithFriend:(Friend *)friend;
 

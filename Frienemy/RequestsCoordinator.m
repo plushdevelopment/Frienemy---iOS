@@ -80,7 +80,7 @@
     NSString *accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
     
     if (accessToken) {
-        NSString *fieldsString = @"&fields=id,name,gender,locale,languages,link,username,updated_time,bio,birthday,email,hometown,interested_in,location,political,quotes,relationship_status,religion,significant_other,website";
+        NSString *fieldsString = @"&fields=id,name,gender,locale,languages,link,username,updated_time,bio,birthday,education,email,hometown,interested_in,location,political,quotes,relationship_status,religion,significant_other,website,work";
         NSString *urlString = [NSString 
                                stringWithFormat:@"https://graph.facebook.com/me/friends?access_token=%@%@&limit=5000", 
                                [accessToken stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], fieldsString];

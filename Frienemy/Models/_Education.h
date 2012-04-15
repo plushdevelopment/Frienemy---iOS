@@ -10,6 +10,7 @@ extern const struct EducationAttributes {
 
 extern const struct EducationRelationships {
 	__unsafe_unretained NSString *concentration;
+	__unsafe_unretained NSString *friend;
 	__unsafe_unretained NSString *school;
 	__unsafe_unretained NSString *year;
 } EducationRelationships;
@@ -18,6 +19,7 @@ extern const struct EducationFetchedProperties {
 } EducationFetchedProperties;
 
 @class Concentration;
+@class Friend;
 @class School;
 @class Year;
 
@@ -47,6 +49,13 @@ extern const struct EducationFetchedProperties {
 @property (nonatomic, strong) NSSet* concentration;
 
 - (NSMutableSet*)concentrationSet;
+
+
+
+
+@property (nonatomic, strong) Friend* friend;
+
+//- (BOOL)validateFriend:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -88,6 +97,11 @@ extern const struct EducationFetchedProperties {
 
 - (NSMutableSet*)primitiveConcentration;
 - (void)setPrimitiveConcentration:(NSMutableSet*)value;
+
+
+
+- (Friend*)primitiveFriend;
+- (void)setPrimitiveFriend:(Friend*)value;
 
 
 

@@ -25,4 +25,11 @@
     return iconPath;
 }
 
+- (NSArray *)sections
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    return array;
+}
+
 @end

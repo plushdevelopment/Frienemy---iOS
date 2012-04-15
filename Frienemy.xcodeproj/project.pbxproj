@@ -35,6 +35,9 @@
 		FF1DD88014BE0159002264C9 /* Frienemy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD87E14BE0159002264C9 /* Frienemy.xcdatamodeld */; };
 		FF1DD88314BE06F6002264C9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD88214BE06F6002264C9 /* Constants.m */; };
 		FF1DD8AE14BE1C96002264C9 /* FriendsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */; };
+		FF885FA015390360005F37EC /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9114BA23AF00C64963 /* friends_tb@2x.png */; };
+		FF885FA21539098B005F37EC /* friends_tb.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9014BA23AF00C64963 /* friends_tb.png */; };
 		FF92AF8814D188AF002C947F /* FriendDetailSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */; };
 		FF92AF8A14D188D6002C947F /* FriendDetailSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */; };
 		FF92AF9114D18A5B002C947F /* table_section_background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8F14D18A5B002C947F /* table_section_background.png */; };
@@ -219,8 +222,6 @@
 		FFE2DE8714BA16D400C64963 /* FriendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE8514BA16D400C64963 /* FriendDetailViewController.xib */; };
 		FFE2DE8B14BA1C9000C64963 /* ElementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE2DE8914BA1C9000C64963 /* ElementsViewController.m */; };
 		FFE2DE8C14BA1C9000C64963 /* ElementsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE8A14BA1C9000C64963 /* ElementsViewController.xib */; };
-		FFE2DE9614BA23AF00C64963 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9014BA23AF00C64963 /* friends.png */; };
-		FFE2DE9714BA23AF00C64963 /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9114BA23AF00C64963 /* friends@2x.png */; };
 		FFE2DE9814BA23AF00C64963 /* frienemies.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9214BA23AF00C64963 /* frienemies.png */; };
 		FFE2DE9914BA23AF00C64963 /* frienemies@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9314BA23AF00C64963 /* frienemies@2x.png */; };
 		FFE2DE9A14BA23AF00C64963 /* stalkers.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9414BA23AF00C64963 /* stalkers.png */; };
@@ -302,6 +303,8 @@
 		FF1DD8A814BE1A4C002264C9 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		FF1DD8AC14BE1C96002264C9 /* FriendsListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListRequest.h; sourceTree = "<group>"; };
 		FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListRequest.m; sourceTree = "<group>"; };
+		FF885F9E15390360005F37EC /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		FF92AF8614D188AF002C947F /* FriendDetailSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailSectionView.h; sourceTree = "<group>"; };
 		FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailSectionView.m; sourceTree = "<group>"; };
 		FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailSectionView.xib; sourceTree = "<group>"; };
@@ -546,13 +549,13 @@
 		FFE2DE7E14BA145D00C64963 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		FFE2DE7F14BA145D00C64963 /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
 		FFE2DE8314BA16D400C64963 /* FriendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailViewController.h; sourceTree = "<group>"; };
-		FFE2DE8414BA16D400C64963 /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; };
+		FFE2DE8414BA16D400C64963 /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; usesTabs = 1; };
 		FFE2DE8514BA16D400C64963 /* FriendDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailViewController.xib; sourceTree = "<group>"; };
 		FFE2DE8814BA1C9000C64963 /* ElementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementsViewController.h; sourceTree = "<group>"; };
 		FFE2DE8914BA1C9000C64963 /* ElementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementsViewController.m; sourceTree = "<group>"; };
 		FFE2DE8A14BA1C9000C64963 /* ElementsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElementsViewController.xib; sourceTree = "<group>"; };
-		FFE2DE9014BA23AF00C64963 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
-		FFE2DE9114BA23AF00C64963 /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
+		FFE2DE9014BA23AF00C64963 /* friends_tb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends_tb.png; sourceTree = "<group>"; };
+		FFE2DE9114BA23AF00C64963 /* friends_tb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends_tb@2x.png"; sourceTree = "<group>"; };
 		FFE2DE9214BA23AF00C64963 /* frienemies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frienemies.png; sourceTree = "<group>"; };
 		FFE2DE9314BA23AF00C64963 /* frienemies@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frienemies@2x.png"; sourceTree = "<group>"; };
 		FFE2DE9414BA23AF00C64963 /* stalkers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stalkers.png; sourceTree = "<group>"; };
@@ -727,6 +730,17 @@
 				FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		FFAEA7FD153A11AB00CD7038 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFE65E8C14B6397C00D351BE /* PAAppDelegate.h */,
+				FFE65E8D14B6397C00D351BE /* PAAppDelegate.m */,
+				FFD45FD814BFA8CC00F1D51B /* RequestsCoordinator.h */,
+				FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		FFB5C98B1530F810002047DF /* MagicalRecord */ = {
@@ -1109,8 +1123,8 @@
 		FFE2DE8F14BA23AF00C64963 /* Tab Bar Icons */ = {
 			isa = PBXGroup;
 			children = (
-				FFE2DE9014BA23AF00C64963 /* friends.png */,
-				FFE2DE9114BA23AF00C64963 /* friends@2x.png */,
+				FFE2DE9014BA23AF00C64963 /* friends_tb.png */,
+				FFE2DE9114BA23AF00C64963 /* friends_tb@2x.png */,
 				FFE2DE9214BA23AF00C64963 /* frienemies.png */,
 				FFE2DE9314BA23AF00C64963 /* frienemies@2x.png */,
 				FFE2DE9414BA23AF00C64963 /* stalkers.png */,
@@ -1156,16 +1170,13 @@
 		FFE65E8314B6397C00D351BE /* Frienemy */ = {
 			isa = PBXGroup;
 			children = (
+				FFAEA7FD153A11AB00CD7038 /* Controllers */,
 				FF92AF8514D1887C002C947F /* Views */,
 				FF1DD8AB14BE1C6B002264C9 /* Requests */,
 				FF1DD87D14BE0141002264C9 /* Models */,
 				FFE2DE8214BA146200C64963 /* ViewControllers */,
-				FFE65E8C14B6397C00D351BE /* PAAppDelegate.h */,
-				FFE65E8D14B6397C00D351BE /* PAAppDelegate.m */,
 				FF1DD88114BE06F6002264C9 /* Constants.h */,
 				FF1DD88214BE06F6002264C9 /* Constants.m */,
-				FFD45FD814BFA8CC00F1D51B /* RequestsCoordinator.h */,
-				FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */,
 			);
 			path = Frienemy;
 			sourceTree = "<group>";
@@ -1191,6 +1202,8 @@
 				FF1DD83E14BDE187002264C9 /* LoginWithFacebookNormal@2x.png */,
 				FF1DD83F14BDE187002264C9 /* LoginWithFacebookPressed.png */,
 				FF1DD84014BDE187002264C9 /* LoginWithFacebookPressed@2x.png */,
+				FF885F9E15390360005F37EC /* FBFrictionlessRequestSettings.h */,
+				FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */,
 				FFE65EB314B63A6000D351BE /* Facebook.h */,
 				FFE65EB414B63A6000D351BE /* Facebook.m */,
 				FFE65EB614B63A6000D351BE /* FBConnect.h */,
@@ -1311,7 +1324,7 @@
 		FFE65E7014B6397B00D351BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = FFE65E7314B6397B00D351BE /* Build configuration list for PBXProject "Frienemy" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1447,8 +1460,6 @@
 				FFE2DE8114BA145D00C64963 /* FriendsViewController.xib in Resources */,
 				FFE2DE8714BA16D400C64963 /* FriendDetailViewController.xib in Resources */,
 				FFE2DE8C14BA1C9000C64963 /* ElementsViewController.xib in Resources */,
-				FFE2DE9614BA23AF00C64963 /* friends.png in Resources */,
-				FFE2DE9714BA23AF00C64963 /* friends@2x.png in Resources */,
 				FFE2DE9814BA23AF00C64963 /* frienemies.png in Resources */,
 				FFE2DE9914BA23AF00C64963 /* frienemies@2x.png in Resources */,
 				FFE2DE9A14BA23AF00C64963 /* stalkers.png in Resources */,
@@ -1485,6 +1496,8 @@
 				FF92AF8A14D188D6002C947F /* FriendDetailSectionView.xib in Resources */,
 				FF92AF9114D18A5B002C947F /* table_section_background.png in Resources */,
 				FF92AF9214D18A5B002C947F /* table_section_background@2x.png in Resources */,
+				FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */,
+				FF885FA21539098B005F37EC /* friends_tb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1594,6 +1607,7 @@
 				FFB5C9DE1530F810002047DF /* MagicalRecord+Setup.m in Sources */,
 				FFB5C9DF1530F810002047DF /* MagicalRecord+ShorthandSupport.m in Sources */,
 				FFB5C9E01530F810002047DF /* MagicalRecord.m in Sources */,
+				FF885FA015390360005F37EC /* FBFrictionlessRequestSettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1661,11 +1675,16 @@
 		FFE65EAC14B6397C00D351BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1673,11 +1692,16 @@
 		FFE65EAD14B6397C00D351BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

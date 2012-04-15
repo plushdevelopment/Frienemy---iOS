@@ -5,5 +5,6 @@
 
 - (NSString *)downloadPath;
 - (NSString *)normalDownloadPath;
+- (NSArray *)sections;
 
 @end

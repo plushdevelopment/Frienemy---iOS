@@ -6,6 +6,7 @@
 const struct FriendAttributes FriendAttributes = {
 	.bio = @"bio",
 	.birthday = @"birthday",
+	.email = @"email",
 	.gender = @"gender",
 	.isCurrentUser = @"isCurrentUser",
 	.isCurrentUsersFriend = @"isCurrentUsersFriend",
@@ -13,8 +14,10 @@ const struct FriendAttributes FriendAttributes = {
 	.link = @"link",
 	.locale = @"locale",
 	.name = @"name",
+	.political = @"political",
 	.quotes = @"quotes",
 	.relationship_status = @"relationship_status",
+	.religion = @"religion",
 	.section = @"section",
 	.stalking = @"stalking",
 	.uid = @"uid",
@@ -24,6 +27,7 @@ const struct FriendAttributes FriendAttributes = {
 };
 
 const struct FriendRelationships FriendRelationships = {
+	.education = @"education",
 	.hometown = @"hometown",
 	.languages = @"languages",
 	.location = @"location",
@@ -94,6 +98,13 @@ const struct FriendFetchedProperties FriendFetchedProperties = {
 
 
 @dynamic birthday;
+
+
+
+
+
+
+@dynamic email;
 
 
 
@@ -206,6 +217,13 @@ const struct FriendFetchedProperties FriendFetchedProperties = {
 
 
 
+@dynamic political;
+
+
+
+
+
+
 @dynamic quotes;
 
 
@@ -214,6 +232,13 @@ const struct FriendFetchedProperties FriendFetchedProperties = {
 
 
 @dynamic relationship_status;
+
+
+
+
+
+
+@dynamic religion;
 
 
 
@@ -280,6 +305,19 @@ const struct FriendFetchedProperties FriendFetchedProperties = {
 
 
 
+
+@dynamic education;
+
+	
+- (NSMutableSet*)educationSet {
+	[self willAccessValueForKey:@"education"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"education"];
+  
+	[self didAccessValueForKey:@"education"];
+	return result;
+}
+	
 
 @dynamic hometown;
 

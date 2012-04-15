@@ -14,10 +14,9 @@
 enum FriendDetailSectionIndex
 {
     FDGeneralSection = 0,
-    FDContactInfoSection,
     FDBasicSection,
-    FDLikesAndInterestsSection,
-    FDEducationAndWorkSection,
+    FDEducationSection,
+    FDWorkSection,
     FDSectionsCount
 };
 
@@ -26,8 +25,10 @@ enum FDBasicRowIndex
     FDBasicSexRow = 0,
     FDBasicBirthdayRow,
     FDBasicCurrentCityRow,
+    FDBasicHometownRow,
     FDBasicRelationshipRow,
     FDBasicReligionRow,
+    FDBasicPoliticsRow,
     FDBasicRowCount
 };
 
@@ -35,12 +36,18 @@ enum FDBasicRowIndex
 
 @synthesize tableView = _tableView;
 @synthesize friend = _friend;
+@synthesize educationArray = _educationArray;
+@synthesize workArray = _workArray;
 
 - (id)initWithFriend:(Friend *)friend
 {
     self = [self initWithNibName:@"FriendDetailViewController" bundle:nil];
     if (self) {
         self.friend = friend;
+        NSSortDescriptor *educationSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"year.name" ascending:YES];
+        self.educationArray = [self.friend.education.allObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:educationSortDescriptor]];
+        NSSortDescriptor *workSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"start_date" ascending:YES];
+		self.workArray = [self.friend.work.allObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:workSortDescriptor]];
     }
     return self;
 }
@@ -101,42 +108,77 @@ enum FDBasicRowIndex
             [detailCell configureCellForFriend:self.friend];
         }
             break;
-        case FDContactInfoSection:
-        {
-            
-        }
-            break;
         case FDBasicSection:
         {
             switch (row) {
                 case FDBasicSexRow:
-                    
+                {
+                    FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+                    detailCell.fieldKeyLabel.text = @"Sex";
+                    detailCell.fieldValueLabel.text = self.friend.gender;
+                }
                     break;
                 case FDBasicBirthdayRow:
-                    
+                {
+                    FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+                    detailCell.fieldKeyLabel.text = @"Birthday";
+                    detailCell.fieldValueLabel.text = self.friend.birthday;
+                }    
                     break;
                 case FDBasicCurrentCityRow:
-                    
+                {
+                    FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+                    detailCell.fieldKeyLabel.text = @"Hometown";
+                    detailCell.fieldValueLabel.text = self.friend.hometown.name;
+                }   
+                    break;
+                case FDBasicHometownRow:
+                {
+                    FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+                    detailCell.fieldKeyLabel.text = @"Current City";
+                    detailCell.fieldValueLabel.text = self.friend.location.name;
+                }
                     break;
                 case FDBasicRelationshipRow:
-                    
+                {
+                    FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+                    detailCell.fieldKeyLabel.text = @"Relationship Status";
+                    detailCell.fieldValueLabel.text = self.friend.relationship_status;
+                }   
                     break;
                 case FDBasicReligionRow:
-                    
+                {
+                    FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+                    detailCell.fieldKeyLabel.text = @"Religious Views";
+                    detailCell.fieldValueLabel.text = self.friend.religion;
+                }   
+                    break;
+                case FDBasicPoliticsRow:
+                {
+                    FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+                    detailCell.fieldKeyLabel.text = @"Political Views";
+                    detailCell.fieldValueLabel.text = self.friend.political;
+                }   
                     break;
                 default:
                     break;
             }
         }
             break;
-        case FDLikesAndInterestsSection:
+        case FDEducationSection:
         {
-            
+            FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+            Education *education = [self.educationArray objectAtIndex:row];
+			detailCell.fieldKeyLabel.text = education.year.name;
+			detailCell.fieldValueLabel.text = education.school.name;
         }
             break;
-        case FDEducationAndWorkSection:
+        case FDWorkSection:
         {
-            
+            FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+            Work *work = [self.workArray objectAtIndex:row];
+			detailCell.fieldKeyLabel.text = work.start_date;
+			detailCell.fieldValueLabel.text = work.employer.name;
         }
             break;
         default:
@@ -158,25 +200,19 @@ enum FDBasicRowIndex
             [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
-        case FDContactInfoSection:
-        {
-            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
-            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
-        }
-            break;
         case FDBasicSection:
         {
             cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
             [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
-        case FDLikesAndInterestsSection:
+        case FDEducationSection:
         {
             cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
             [self tableView:tableView configureCell:cell atIndexPath:indexPath];
         }
             break;
-        case FDEducationAndWorkSection:
+        case FDWorkSection:
         {
             cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
             [self tableView:tableView configureCell:cell atIndexPath:indexPath];
@@ -206,22 +242,17 @@ enum FDBasicRowIndex
             height = 118.0;
         }
             break;
-        case FDContactInfoSection:
-        {
-            height = 46.0;
-        }
-            break;
         case FDBasicSection:
         {
             height = 46.0;
         }
             break;
-        case FDLikesAndInterestsSection:
+        case FDEducationSection:
         {
             height = 46.0;
         }
             break;
-        case FDEducationAndWorkSection:
+        case FDWorkSection:
         {
             height = 46.0;
         }
@@ -245,24 +276,19 @@ enum FDBasicRowIndex
             rowsCount = 1;
         }
             break;
-        case FDContactInfoSection:
-        {
-            rowsCount = 1;
-        }
-            break;
         case FDBasicSection:
         {
             rowsCount = FDBasicRowCount;
         }
             break;
-        case FDLikesAndInterestsSection:
+        case FDEducationSection:
         {
-            rowsCount = 1;
+            rowsCount = self.educationArray.count;
         }
             break;
-        case FDEducationAndWorkSection:
+        case FDWorkSection:
         {
-            rowsCount = 1;
+            rowsCount = self.workArray.count;
         }
             break;
         default:
