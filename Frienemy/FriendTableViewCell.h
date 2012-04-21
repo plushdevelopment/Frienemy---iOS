@@ -9,6 +9,7 @@
 #import "PRPNibBasedTableViewCell.h"
 #import "ASIHTTPRequestDelegate.h"
 #import "ImageRequest.h"
+#import "SmallerStalkButton.h"
 
 @interface FriendTableViewCell : PRPNibBasedTableViewCell <ASIHTTPRequestDelegate>
 
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *profileImageActivityIndicator;
 @property (strong, nonatomic) Friend *friend;
 @property (strong, nonatomic) ImageRequest *request;
+@property (strong, nonatomic) IBOutlet SmallerStalkButton *stalkButton;
 
 - (void)configureCellForFriend:(Friend *)friend;
 

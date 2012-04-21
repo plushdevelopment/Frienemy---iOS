@@ -11,6 +11,7 @@
 #import "FriendDetailFieldTableViewCell.h"
 #import "FriendDetailSectionView.h"
 #import "FriendDetailEducationTableViewCell.h"
+#import "FriendDetailWorkTableViewCell.h"
 
 enum FriendDetailSectionIndex
 {
@@ -175,10 +176,9 @@ enum FDBasicRowIndex
             break;
         case FDWorkSection:
         {
-            FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
+            FriendDetailWorkTableViewCell *detailCell = (FriendDetailWorkTableViewCell *)cell;
             Work *work = [self.workArray objectAtIndex:row];
-			detailCell.fieldKeyLabel.text = work.start_date;
-			detailCell.fieldValueLabel.text = work.employer.name;
+			[detailCell configureCellForWork:work];
         }
             break;
         default:
@@ -208,25 +208,42 @@ enum FDBasicRowIndex
             break;
         case FDEducationSection:
         {
-            cell = [FriendDetailEducationTableViewCell cellForTableView:tableView fromNib:[FriendDetailEducationTableViewCell nib]];
-            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
+			if (self.educationArray.count > 0) {
+				cell = [FriendDetailEducationTableViewCell cellForTableView:tableView fromNib:[FriendDetailEducationTableViewCell nib]];
+				[self tableView:tableView configureCell:cell atIndexPath:indexPath];
+			} else {
+				cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+				cell.backgroundColor = [UIColor clearColor];
+				cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+				cell.textLabel.textColor = [UIColor whiteColor];
+				cell.textLabel.text = @"None specified";
+			}
         }
             break;
         case FDWorkSection:
         {
-            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
-            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
+			if (self.workArray.count > 0) {
+				cell = [FriendDetailWorkTableViewCell cellForTableView:tableView fromNib:[FriendDetailWorkTableViewCell nib]];
+				[self tableView:tableView configureCell:cell atIndexPath:indexPath];
+			} else {
+				cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+				cell.backgroundColor = [UIColor clearColor];
+				cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+				cell.textLabel.textColor = [UIColor whiteColor];
+				cell.textLabel.text = @"None specified";
+			}
         }
             break;
         default:
         {
-            cell = [FriendDetailFieldTableViewCell cellForTableView:tableView fromNib:[FriendDetailFieldTableViewCell nib]];
-            [self tableView:tableView configureCell:cell atIndexPath:indexPath];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+			cell.backgroundColor = [UIColor clearColor];
+			cell.textLabel.font = [UIFont systemFontOfSize:12.0];
+			cell.textLabel.textColor = [UIColor whiteColor];
+			cell.textLabel.text = @"None specified";
         }
             break;
     }
-    
-    [self tableView:tableView configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
@@ -244,22 +261,30 @@ enum FDBasicRowIndex
             break;
         case FDBasicSection:
         {
-            height = 46.0;
+            height = 25.0;
         }
             break;
         case FDEducationSection:
         {
-            height = 46.0;
+            if (self.educationArray.count) {
+				height = 46.0;
+			} else {
+				height = 46.0;
+			}
         }
             break;
         case FDWorkSection:
         {
-            height = 46.0;
+			if (self.workArray.count) {
+				height = 63.0;
+			} else {
+				height = 46.0;
+			}
         }
             break;
         default:
         {
-            height = 46.0;
+            height = 25.0;
         }
             break;
     }
@@ -283,12 +308,20 @@ enum FDBasicRowIndex
             break;
         case FDEducationSection:
         {
-            rowsCount = self.educationArray.count;
+            if (self.educationArray.count > 0) {
+				rowsCount = self.educationArray.count;
+			} else {
+				rowsCount = 1;
+			}
         }
             break;
         case FDWorkSection:
         {
-            rowsCount = self.workArray.count;
+			if (self.workArray.count > 0) {
+				rowsCount = self.workArray.count;
+			} else {
+				rowsCount = 1;
+			}
         }
             break;
         default:

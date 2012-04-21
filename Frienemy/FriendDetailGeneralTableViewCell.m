@@ -17,6 +17,8 @@
 @synthesize profileImageView = _profileImageView;
 @synthesize profileMaskImageView = _profileMaskImageView;
 @synthesize activityIndicatorView = _activityIndicatorView;
+@synthesize stalkButton = _stalkButton;
+@synthesize stalkingLabel = _stalkingLabel;
 @synthesize friend = _friend;
 
 - (void)configureCellForFriend:(Friend *)friend
@@ -34,7 +36,12 @@
         self.locationLabel.text = @"";
         self.locationIconImageView.hidden = YES;
     }
-    
+    [self.stalkButton setStalking:self.friend.stalking.boolValue];
+    if (self.friend.stalking.boolValue) {
+        self.stalkingLabel.text = @"Stalking";
+    } else {
+        self.stalkingLabel.text = @"Not Stalking";
+    }
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     dispatch_async(queue, ^{
         UIImage *image = [UIImage imageWithContentsOfFile:[self.friend normalDownloadPath]];
@@ -81,5 +88,16 @@
     [self.activityIndicatorView stopAnimating];
 }
 
+
+- (IBAction)toggleStalkState:(id)sender
+{
+    self.friend.stalking = [NSNumber numberWithBool:!self.friend.stalking.boolValue];
+    self.stalkButton.selected = self.friend.stalking.boolValue;
+    if (self.friend.stalking.boolValue) {
+        self.stalkingLabel.text = @"Stalking";
+    } else {
+        self.stalkingLabel.text = @"Not Stalking";
+    }
+}
 
 @end

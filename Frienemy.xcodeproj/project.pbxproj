@@ -38,10 +38,14 @@
 		FF885FA015390360005F37EC /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9114BA23AF00C64963 /* friends_tb@2x.png */; };
 		FF885FA21539098B005F37EC /* friends_tb.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9014BA23AF00C64963 /* friends_tb.png */; };
+		FF8FBD5B15436322002358A0 /* SmallerStalkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8FBD5A15436322002358A0 /* SmallerStalkButton.m */; };
 		FF92AF8814D188AF002C947F /* FriendDetailSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */; };
 		FF92AF8A14D188D6002C947F /* FriendDetailSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */; };
 		FF92AF9114D18A5B002C947F /* table_section_background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8F14D18A5B002C947F /* table_section_background.png */; };
 		FF92AF9214D18A5B002C947F /* table_section_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF9014D18A5B002C947F /* table_section_background@2x.png */; };
+		FF9DCD7A15434730008F0F43 /* FriendDetailWorkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9DCD7915434730008F0F43 /* FriendDetailWorkTableViewCell.m */; };
+		FF9DCD7C1543474C008F0F43 /* FriendDetailWorkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF9DCD7B1543474B008F0F43 /* FriendDetailWorkTableViewCell.xib */; };
+		FF9DCD8015434EE2008F0F43 /* StalkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9DCD7F15434EE2008F0F43 /* StalkButton.m */; };
 		FFA3495714BF7FC4006AAFA1 /* ImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */; };
 		FFAEA804153B455800CD7038 /* FriendDetailEducationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFAEA803153B455800CD7038 /* FriendDetailEducationTableViewCell.m */; };
 		FFAEA806153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAEA805153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib */; };
@@ -307,11 +311,18 @@
 		FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListRequest.m; sourceTree = "<group>"; };
 		FF885F9E15390360005F37EC /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
 		FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
+		FF8FBD5915436322002358A0 /* SmallerStalkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallerStalkButton.h; sourceTree = "<group>"; };
+		FF8FBD5A15436322002358A0 /* SmallerStalkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallerStalkButton.m; sourceTree = "<group>"; };
 		FF92AF8614D188AF002C947F /* FriendDetailSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailSectionView.h; sourceTree = "<group>"; };
 		FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailSectionView.m; sourceTree = "<group>"; };
 		FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailSectionView.xib; sourceTree = "<group>"; };
 		FF92AF8F14D18A5B002C947F /* table_section_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_section_background.png; sourceTree = "<group>"; };
 		FF92AF9014D18A5B002C947F /* table_section_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_section_background@2x.png"; sourceTree = "<group>"; };
+		FF9DCD7815434730008F0F43 /* FriendDetailWorkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailWorkTableViewCell.h; sourceTree = "<group>"; };
+		FF9DCD7915434730008F0F43 /* FriendDetailWorkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailWorkTableViewCell.m; sourceTree = "<group>"; };
+		FF9DCD7B1543474B008F0F43 /* FriendDetailWorkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailWorkTableViewCell.xib; sourceTree = "<group>"; };
+		FF9DCD7E15434EE2008F0F43 /* StalkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StalkButton.h; sourceTree = "<group>"; };
+		FF9DCD7F15434EE2008F0F43 /* StalkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StalkButton.m; sourceTree = "<group>"; };
 		FFA3495514BF7FC4006AAFA1 /* ImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRequest.h; sourceTree = "<group>"; };
 		FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRequest.m; sourceTree = "<group>"; };
 		FFAEA802153B455800CD7038 /* FriendDetailEducationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailEducationTableViewCell.h; sourceTree = "<group>"; };
@@ -706,11 +717,8 @@
 		FF1DD87D14BE0141002264C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FFB5DC7F14CEED4F001B2AB2 /* Machine Files */,
-				FFB5DC8014CEED75001B2AB2 /* Human Files */,
-				FFB5DC3614CEEB2E001B2AB2 /* Categories */,
 				FF1DD8A814BE1A4C002264C9 /* Models.h */,
-				FF1DD87E14BE0159002264C9 /* Frienemy.xcdatamodeld */,
+				FFB48A11153F1D3500A6E8C7 /* Core Data */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -729,12 +737,24 @@
 		FF92AF8514D1887C002C947F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF9DCD7D15434EC1008F0F43 /* Controls */,
 				FFE2DE7C14BA129100C64963 /* TableViewCells */,
 				FF92AF8614D188AF002C947F /* FriendDetailSectionView.h */,
 				FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */,
 				FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		FF9DCD7D15434EC1008F0F43 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				FF9DCD7E15434EE2008F0F43 /* StalkButton.h */,
+				FF9DCD7F15434EE2008F0F43 /* StalkButton.m */,
+				FF8FBD5915436322002358A0 /* SmallerStalkButton.h */,
+				FF8FBD5A15436322002358A0 /* SmallerStalkButton.m */,
+			);
+			name = Controls;
 			sourceTree = "<group>";
 		};
 		FFAEA7FD153A11AB00CD7038 /* Controllers */ = {
@@ -746,6 +766,17 @@
 				FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FFB48A11153F1D3500A6E8C7 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5DC7F14CEED4F001B2AB2 /* Machine Files */,
+				FFB5DC8014CEED75001B2AB2 /* Human Files */,
+				FFB5DC3614CEEB2E001B2AB2 /* Categories */,
+				FF1DD87E14BE0159002264C9 /* Frienemy.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		FFB5C98B1530F810002047DF /* MagicalRecord */ = {
@@ -1078,6 +1109,9 @@
 				FFAEA802153B455800CD7038 /* FriendDetailEducationTableViewCell.h */,
 				FFAEA803153B455800CD7038 /* FriendDetailEducationTableViewCell.m */,
 				FFAEA805153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib */,
+				FF9DCD7815434730008F0F43 /* FriendDetailWorkTableViewCell.h */,
+				FF9DCD7915434730008F0F43 /* FriendDetailWorkTableViewCell.m */,
+				FF9DCD7B1543474B008F0F43 /* FriendDetailWorkTableViewCell.xib */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -1507,6 +1541,7 @@
 				FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */,
 				FF885FA21539098B005F37EC /* friends_tb.png in Resources */,
 				FFAEA806153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib in Resources */,
+				FF9DCD7C1543474C008F0F43 /* FriendDetailWorkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1618,6 +1653,9 @@
 				FFB5C9E01530F810002047DF /* MagicalRecord.m in Sources */,
 				FF885FA015390360005F37EC /* FBFrictionlessRequestSettings.m in Sources */,
 				FFAEA804153B455800CD7038 /* FriendDetailEducationTableViewCell.m in Sources */,
+				FF9DCD7A15434730008F0F43 /* FriendDetailWorkTableViewCell.m in Sources */,
+				FF9DCD8015434EE2008F0F43 /* StalkButton.m in Sources */,
+				FF8FBD5B15436322002358A0 /* SmallerStalkButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

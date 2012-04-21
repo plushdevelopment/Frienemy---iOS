@@ -19,6 +19,7 @@
 @synthesize profileImageActivityIndicator = _profileImageActivityIndicator;
 @synthesize friend = _friend;
 @synthesize request = _request;
+@synthesize stalkButton = _stalkButton;
 
 - (void)imageDidLoad:(UIImage *)image
 {
@@ -55,18 +56,20 @@
         self.detailLabel.text = self.friend.quotes;
     }
     
+    [self.stalkButton setStalking:self.friend.stalking.boolValue];
+    
     if (self.friend.stalking.boolValue) {
-        self.blueImageView.hidden = NO;
-        self.frienemyLabel.hidden = NO;
+        self.stalkButton.hidden = NO;
     } else {
-        self.blueImageView.hidden = YES;
-        self.frienemyLabel.hidden = YES;
+        self.stalkButton.hidden = YES;
     }
     
-    [self loadImage];
-    
-    if (!self.profileImageView.image)
+    //if (![self.profileImageView image]) {
         [self.profileImageActivityIndicator startAnimating];
+        [self.profileMaskImageView setHidden:YES];
+    //}
+    
+    [self loadImage];
     
     NSString *URLString = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", self.friend.uid];
     self.request = [ImageRequest requestWithURL:[NSURL URLWithString:URLString]];
@@ -104,7 +107,7 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    
+    [self.profileImageActivityIndicator stopAnimating];
 }
 
 @end

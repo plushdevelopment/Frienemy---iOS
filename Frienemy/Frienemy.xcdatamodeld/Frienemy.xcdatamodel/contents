@@ -121,7 +121,7 @@
         <element name="Employer" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Friend" positionX="160" positionY="192" width="128" height="480"/>
         <element name="Language" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Location" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Location" positionX="160" positionY="192" width="128" height="120"/>
         <element name="Position" positionX="160" positionY="192" width="128" height="90"/>
         <element name="School" positionX="160" positionY="192" width="128" height="90"/>
         <element name="StalkerRelationship" positionX="160" positionY="192" width="128" height="90"/>
