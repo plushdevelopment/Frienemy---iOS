@@ -32,4 +32,11 @@
     return array;
 }
 
+- (void)resetStalkerRank
+{
+    for (StalkerRelationship *relationship in self.stalkingRelationships) {
+        [self.managedObjectContext deleteObject:relationship];
+    }
+}
+
 @end

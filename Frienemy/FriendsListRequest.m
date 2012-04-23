@@ -8,7 +8,6 @@
 
 #import "FriendsListRequest.h"
 #import "JSON.h"
-#import "RequestsCoordinator.h"
 #import "NSManagedObject+Additions.h"
 
 @implementation FriendsListRequest

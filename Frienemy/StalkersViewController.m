@@ -1,42 +1,57 @@
 //
-//  FirstViewController.m
-//  SocialBooTheme
+//  StalkersViewController.m
+//  Frienemy
 //
-//  Created by Tope on 20/10/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Ross Chapman on 4/23/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "FriendsViewController.h"
-#import "FriendTableViewCell.h"
+#import "StalkersViewController.h"
 #import "FriendDetailViewController.h"
-#import "RequestsCoordinator.h"
+#import "StalkerTableViewCell.h"
 
-@interface FriendsViewController (Private)
+@interface StalkersViewController ()
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope;
 @end
 
-@implementation FriendsViewController
+@implementation StalkersViewController
 
 @synthesize tableView = _tableView;
 @synthesize accessToken = _accessToken;
 @synthesize filteredResults = _filteredResults;
 @synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize currentUser = _currentUser;
 
-- (void)dealloc
+- (id)initWithFriend:(Friend *)currentUser
 {
-    [self.fetchedResultsController setDelegate:nil];
+	self = [self initWithNibName:@"StalkersViewController" bundle:nil];
+	if (self) {
+		self.currentUser = currentUser;
+	}
+	return self;
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Friends";
+	
+	self.title = @"Stalkers";
     
-    UIColor *color = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-gunmetal.jpg"]];
-    
+	UIColor *color = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-gunmetal.jpg"]];
     [self.view setBackgroundColor:color];
+	
+	if (!self.currentUser)
+		self.currentUser = [Friend MR_findFirstByAttribute:@"isCurrentUser" withValue:[NSNumber numberWithBool:YES]];
     
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
@@ -54,51 +69,41 @@
     [self.tableView reloadData];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - UITableViewDataSource
 
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Friend *friend = nil;
+    StalkerRelationship *relationship = nil;
     if ([tableView isEqual:self.tableView]) {
-        friend = (Friend *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        relationship = (StalkerRelationship *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     } else {
-        friend = (Friend *)[self.filteredResults objectAtIndex:indexPath.row];
+        relationship = (StalkerRelationship *)[self.filteredResults objectAtIndex:indexPath.row];
     }
     
-    FriendTableViewCell *friendCell = (FriendTableViewCell *)cell;
-    [friendCell configureCellForFriend:friend];
+    StalkerTableViewCell *friendCell = (StalkerTableViewCell *)cell;
+    [friendCell configureCellForFriend:relationship];
+	friendCell.rankLabel.text = [NSString stringWithFormat:@"%d", (indexPath.row + 1)];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FriendTableViewCell *cell = [FriendTableViewCell cellForTableView:tableView fromNib:[FriendTableViewCell nib]];
+    StalkerTableViewCell *cell = [StalkerTableViewCell cellForTableView:tableView fromNib:[StalkerTableViewCell nib]];
     [self tableView:tableView configureCell:cell atIndexPath:indexPath];
     
     return cell;
 }
-
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -117,19 +122,6 @@
     return rowsCount;
 }
 
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    NSMutableArray *indexArray = nil;
-    if ([tableView isEqual:self.tableView]) {
-        indexArray = [NSMutableArray arrayWithArray:[[self fetchedResultsController] sectionIndexTitles]];
-	
-        [indexArray insertObject:UITableViewIndexSearch atIndex:0];
-    } else {
-        
-        indexArray = nil;
-    }
-	return indexArray;
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     NSInteger rowsCount = 0;
@@ -141,32 +133,15 @@
     return rowsCount;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    if ([tableView isEqual:self.tableView]) {
-        if (title == UITableViewIndexSearch)
-        {
-            // if magnifying glass
-            [tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
-            return -1;
-        }
-        
-        
-        return [[self fetchedResultsController ] sectionForSectionIndexTitle:title atIndex:index - 1]; // subtract 1 due to search idx
-    } else {
-        return index;
-    }
-    
-}
-
 #pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Friend *friend = nil;
     if ([tableView isEqual:self.tableView]) {
-        friend = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        friend = [(StalkerRelationship *)[self.fetchedResultsController objectAtIndexPath:indexPath] fromFriend];
     } else {
-        friend = [self.filteredResults objectAtIndex:indexPath.row];
+        friend = [(StalkerRelationship *)[self.filteredResults objectAtIndex:indexPath.row] fromFriend];
     }
     FriendDetailViewController *detail = [[FriendDetailViewController alloc] initWithFriend:friend];
     
@@ -177,7 +152,7 @@
 
 - (NSPredicate *)fetchPredicate
 {
-    return [NSPredicate predicateWithFormat:@"isFrienemy == NO AND isCurrentUsersFriend == YES"];
+    return [NSPredicate predicateWithFormat:@"toFriend == %@", self.currentUser];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {
@@ -188,21 +163,22 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription 
-                                   entityForName:@"Friend" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
+                                   entityForName:@"StalkerRelationship" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
     [fetchRequest setEntity:entity];
     
     
 	[fetchRequest setPredicate:[self fetchPredicate]];
     
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
-                              initWithKey:@"name" ascending:YES];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
+    NSSortDescriptor *rankSort = [[NSSortDescriptor alloc] 
+                              initWithKey:@"rank" ascending:NO];
+	NSSortDescriptor *nameSort = [NSSortDescriptor sortDescriptorWithKey:@"fromFriend.name" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:rankSort, nameSort, nil]];
     
     [fetchRequest setFetchBatchSize:20];
-    
+	
     NSFetchedResultsController *theFetchedResultsController = 
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-                                        managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:@"section" 
+                                        managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil 
                                                    cacheName:nil];
     self.fetchedResultsController = theFetchedResultsController;
     _fetchedResultsController.delegate = self;
@@ -269,7 +245,7 @@
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
 	
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[c] %@"
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"fromFriend.name CONTAINS[c] %@"
                                                 argumentArray:[NSArray arrayWithObject:searchText]];
 	
 	self.filteredResults = [self.fetchedResultsController.fetchedObjects filteredArrayUsingPredicate:predicate];
@@ -280,7 +256,7 @@
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
 	[self filterContentForSearchText:searchString scope:
-    [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+	 [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
 	[self.searchDisplayController.searchResultsTableView setBackgroundColor:[UIColor blackColor]];
     [self.searchDisplayController.searchResultsTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	// Return YES to cause the search result table view to be reloaded.

@@ -8,6 +8,7 @@
 
 #import "RequestsCoordinator.h"
 #import "FriendsListRequest.h"
+#import "UserRequest.h"
 #import "WallRequest.h"
 #import "ImageRequest.h"
 
@@ -99,7 +100,7 @@
 - (void)friendsRequestDidFinish:(FriendsListRequest *)request
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:PAFriendsListFinishedNotification object:nil];
-    [self refreshStalkers];
+    [self refreshUser];
     /*
      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
      NSDate *lastDownloadedDate = [userDefaults valueForKey:PAImageDownloadedDateKey];
@@ -112,12 +113,26 @@
 
 - (void)refreshUser
 {
-	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+    
+    if (accessToken) {
+        
+        NSString *urlString = [NSString 
+                               stringWithFormat:@"https://graph.facebook.com/me?access_token=%@", 
+                               [accessToken stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        UserRequest *request = [UserRequest requestWithURL:url];
+        [request setTimeOutSeconds:600];
+        [request setDelegate:self];
+        [request setDidFinishSelector:@selector(userRequestDidFinish:)];
+        [request startAsynchronous];
+    }
 }
 
 - (void)userRequestDidFinish:(ASIHTTPRequest *)request
 {
-	
+	[self refreshStalkers];
 }
 
 - (void)refreshStalkers

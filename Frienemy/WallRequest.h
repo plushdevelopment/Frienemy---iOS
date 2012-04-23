@@ -10,4 +10,6 @@
 
 @interface WallRequest : ASIHTTPRequest
 
+@property (strong, nonatomic) NSString *userUID;
+
 @end

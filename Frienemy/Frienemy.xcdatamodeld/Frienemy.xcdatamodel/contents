@@ -93,8 +93,8 @@
     </entity>
     <entity name="StalkerRelationship" representedClassName="StalkerRelationship" syncable="YES">
         <attribute name="rank" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
-        <relationship name="fromFriend" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="stalkingRelationships" inverseEntity="Friend" syncable="YES"/>
-        <relationship name="toFriend" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="stalkers" inverseEntity="Friend" syncable="YES"/>
+        <relationship name="fromFriend" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="stalkingRelationships" inverseEntity="Friend" syncable="YES"/>
+        <relationship name="toFriend" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="stalkers" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
