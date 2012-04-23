@@ -175,6 +175,11 @@
 
 #pragma mark - NSFetchedResultsController
 
+- (NSPredicate *)fetchPredicate
+{
+    return [NSPredicate predicateWithFormat:@"isFrienemy == NO AND isCurrentUsersFriend == YES"];
+}
+
 - (NSFetchedResultsController *)fetchedResultsController {
     
     if (_fetchedResultsController != nil) {
@@ -186,8 +191,8 @@
                                    entityForName:@"Friend" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
     [fetchRequest setEntity:entity];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFrienemy == NO AND isCurrentUsersFriend == YES"];
-	[fetchRequest setPredicate:predicate];
+    
+	[fetchRequest setPredicate:[self fetchPredicate]];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
                               initWithKey:@"name" ascending:YES];

@@ -19,5 +19,7 @@
 
 - (void)getProfileImagesForUids:(NSArray *)uids;
 - (void)refreshFriends;
+- (void)refreshUser;
+- (void)refreshStalkers;
 
 @end

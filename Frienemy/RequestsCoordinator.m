@@ -8,11 +8,14 @@
 
 #import "RequestsCoordinator.h"
 #import "FriendsListRequest.h"
+#import "WallRequest.h"
 #import "ImageRequest.h"
 
 @interface RequestsCoordinator (Private)
 - (void)queueFinished:(ASINetworkQueue *)queue;
 - (void)friendsRequestDidFinish:(FriendsListRequest *)request;
+- (void)userRequestDidFinish:(ASIHTTPRequest *)request;
+- (void)stalkerRequestDidFinish:(WallRequest *)request;
 @end
 
 
@@ -96,7 +99,7 @@
 - (void)friendsRequestDidFinish:(FriendsListRequest *)request
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:PAFriendsListFinishedNotification object:nil];
-    
+    [self refreshStalkers];
     /*
      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
      NSDate *lastDownloadedDate = [userDefaults valueForKey:PAImageDownloadedDateKey];
@@ -105,6 +108,40 @@
      [self getProfileImagesForUids:request.uids];
      }
      */
+}
+
+- (void)refreshUser
+{
+	
+}
+
+- (void)userRequestDidFinish:(ASIHTTPRequest *)request
+{
+	
+}
+
+- (void)refreshStalkers
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+    
+    if (accessToken) {
+        
+        NSString *urlString = [NSString 
+                               stringWithFormat:@"https://graph.facebook.com/me/feed?access_token=%@&limit=50", 
+                               [accessToken stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        WallRequest *request = [WallRequest requestWithURL:url];
+        [request setTimeOutSeconds:600];
+        [request setDelegate:self];
+        [request setDidFinishSelector:@selector(stalkerRequestDidFinish:)];
+        [request startAsynchronous];
+    }
+}
+
+- (void)stalkerRequestDidFinish:(WallRequest *)request
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:PAWallFinishedNotification object:nil];
 }
 
 #pragma mark -

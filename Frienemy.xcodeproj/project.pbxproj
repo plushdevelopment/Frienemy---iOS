@@ -39,6 +39,9 @@
 		FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9114BA23AF00C64963 /* friends_tb@2x.png */; };
 		FF885FA21539098B005F37EC /* friends_tb.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9014BA23AF00C64963 /* friends_tb.png */; };
 		FF8FBD5B15436322002358A0 /* SmallerStalkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8FBD5A15436322002358A0 /* SmallerStalkButton.m */; };
+		FF8FBD631543705D002358A0 /* FrienemiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8FBD611543705D002358A0 /* FrienemiesViewController.m */; };
+		FF8FBD641543705D002358A0 /* FrienemiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF8FBD621543705D002358A0 /* FrienemiesViewController.xib */; };
+		FF8FBD6B1543895B002358A0 /* WallRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8FBD6A1543895B002358A0 /* WallRequest.m */; };
 		FF92AF8814D188AF002C947F /* FriendDetailSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */; };
 		FF92AF8A14D188D6002C947F /* FriendDetailSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */; };
 		FF92AF9114D18A5B002C947F /* table_section_background.png in Resources */ = {isa = PBXBuildFile; fileRef = FF92AF8F14D18A5B002C947F /* table_section_background.png */; };
@@ -269,8 +272,6 @@
 		FFE65F1B14B63F0100D351BE /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE65F1A14B63F0100D351BE /* libz.1.2.5.dylib */; };
 		FFE65F1D14B63F0E00D351BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE65F1C14B63F0E00D351BE /* SystemConfiguration.framework */; };
 		FFE65F1F14B63F1400D351BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE65F1E14B63F1400D351BE /* MobileCoreServices.framework */; };
-		FFEB312514BF313F0091F653 /* FrienemiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEB312314BF313E0091F653 /* FrienemiesViewController.m */; };
-		FFEB312614BF313F0091F653 /* FrienemiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFEB312414BF313F0091F653 /* FrienemiesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -313,6 +314,11 @@
 		FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		FF8FBD5915436322002358A0 /* SmallerStalkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallerStalkButton.h; sourceTree = "<group>"; };
 		FF8FBD5A15436322002358A0 /* SmallerStalkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallerStalkButton.m; sourceTree = "<group>"; };
+		FF8FBD601543705D002358A0 /* FrienemiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrienemiesViewController.h; sourceTree = "<group>"; };
+		FF8FBD611543705D002358A0 /* FrienemiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrienemiesViewController.m; sourceTree = "<group>"; usesTabs = 1; };
+		FF8FBD621543705D002358A0 /* FrienemiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrienemiesViewController.xib; sourceTree = "<group>"; };
+		FF8FBD691543895B002358A0 /* WallRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallRequest.h; sourceTree = "<group>"; };
+		FF8FBD6A1543895B002358A0 /* WallRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallRequest.m; sourceTree = "<group>"; usesTabs = 1; };
 		FF92AF8614D188AF002C947F /* FriendDetailSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailSectionView.h; sourceTree = "<group>"; };
 		FF92AF8714D188AF002C947F /* FriendDetailSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailSectionView.m; sourceTree = "<group>"; };
 		FF92AF8914D188D6002C947F /* FriendDetailSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailSectionView.xib; sourceTree = "<group>"; };
@@ -445,7 +451,7 @@
 		FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailFieldTableViewCell.m; sourceTree = "<group>"; };
 		FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailFieldTableViewCell.xib; sourceTree = "<group>"; };
 		FFD45FD814BFA8CC00F1D51B /* RequestsCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsCoordinator.h; sourceTree = "<group>"; };
-		FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsCoordinator.m; sourceTree = "<group>"; };
+		FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsCoordinator.m; sourceTree = "<group>"; usesTabs = 1; };
 		FFD45FE314BFB2B800F1D51B /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		FFD45FE414BFB2B800F1D51B /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		FFD45FE514BFB2B800F1D51B /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
@@ -562,7 +568,7 @@
 		FFE2DE7814BA128C00C64963 /* FriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCell.m; sourceTree = "<group>"; };
 		FFE2DE7914BA128C00C64963 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
 		FFE2DE7D14BA145D00C64963 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
-		FFE2DE7E14BA145D00C64963 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		FFE2DE7E14BA145D00C64963 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; usesTabs = 1; };
 		FFE2DE7F14BA145D00C64963 /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
 		FFE2DE8314BA16D400C64963 /* FriendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailViewController.h; sourceTree = "<group>"; };
 		FFE2DE8414BA16D400C64963 /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; usesTabs = 1; };
@@ -649,9 +655,6 @@
 		FFE65F1A14B63F0100D351BE /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		FFE65F1C14B63F0E00D351BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FFE65F1E14B63F1400D351BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		FFEB312214BF313E0091F653 /* FrienemiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrienemiesViewController.h; sourceTree = "<group>"; };
-		FFEB312314BF313E0091F653 /* FrienemiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrienemiesViewController.m; sourceTree = "<group>"; };
-		FFEB312414BF313F0091F653 /* FrienemiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FrienemiesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -730,6 +733,8 @@
 				FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */,
 				FFA3495514BF7FC4006AAFA1 /* ImageRequest.h */,
 				FFA3495614BF7FC4006AAFA1 /* ImageRequest.m */,
+				FF8FBD691543895B002358A0 /* WallRequest.h */,
+				FF8FBD6A1543895B002358A0 /* WallRequest.m */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -1136,9 +1141,9 @@
 				FF1DD83814BDE009002264C9 /* LoginViewController.h */,
 				FF1DD83914BDE009002264C9 /* LoginViewController.m */,
 				FF1DD83A14BDE00A002264C9 /* LoginViewController.xib */,
-				FFEB312214BF313E0091F653 /* FrienemiesViewController.h */,
-				FFEB312314BF313E0091F653 /* FrienemiesViewController.m */,
-				FFEB312414BF313F0091F653 /* FrienemiesViewController.xib */,
+				FF8FBD601543705D002358A0 /* FrienemiesViewController.h */,
+				FF8FBD611543705D002358A0 /* FrienemiesViewController.m */,
+				FF8FBD621543705D002358A0 /* FrienemiesViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1526,7 +1531,6 @@
 				FF1DD84314BDE187002264C9 /* LoginWithFacebookPressed.png in Resources */,
 				FF1DD84414BDE187002264C9 /* LoginWithFacebookPressed@2x.png in Resources */,
 				FF1DD84614BDE357002264C9 /* header-image.png in Resources */,
-				FFEB312614BF313F0091F653 /* FrienemiesViewController.xib in Resources */,
 				FFD45FE914BFB2B800F1D51B /* Icon-Small-50.png in Resources */,
 				FFD45FEA14BFB2B800F1D51B /* Icon-Small.png in Resources */,
 				FFD45FEB14BFB2B800F1D51B /* Icon-Small@2x.png in Resources */,
@@ -1542,6 +1546,7 @@
 				FF885FA21539098B005F37EC /* friends_tb.png in Resources */,
 				FFAEA806153B45A200CD7038 /* FriendDetailEducationTableViewCell.xib in Resources */,
 				FF9DCD7C1543474C008F0F43 /* FriendDetailWorkTableViewCell.xib in Resources */,
+				FF8FBD641543705D002358A0 /* FrienemiesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1591,7 +1596,6 @@
 				FF1DD88014BE0159002264C9 /* Frienemy.xcdatamodeld in Sources */,
 				FF1DD88314BE06F6002264C9 /* Constants.m in Sources */,
 				FF1DD8AE14BE1C96002264C9 /* FriendsListRequest.m in Sources */,
-				FFEB312514BF313F0091F653 /* FrienemiesViewController.m in Sources */,
 				FFA3495714BF7FC4006AAFA1 /* ImageRequest.m in Sources */,
 				FFD45FDA14BFA8CC00F1D51B /* RequestsCoordinator.m in Sources */,
 				FFC153BC14CA2F0800377B37 /* UITableView+PRPSubviewAdditions.m in Sources */,
@@ -1656,6 +1660,8 @@
 				FF9DCD7A15434730008F0F43 /* FriendDetailWorkTableViewCell.m in Sources */,
 				FF9DCD8015434EE2008F0F43 /* StalkButton.m in Sources */,
 				FF8FBD5B15436322002358A0 /* SmallerStalkButton.m in Sources */,
+				FF8FBD631543705D002358A0 /* FrienemiesViewController.m in Sources */,
+				FF8FBD6B1543895B002358A0 /* WallRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

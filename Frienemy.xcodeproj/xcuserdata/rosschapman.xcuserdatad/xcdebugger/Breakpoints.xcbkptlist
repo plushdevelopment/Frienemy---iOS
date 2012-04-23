@@ -9,13 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Frienemy/FrienemiesViewController.m"
-         timestampString = "348106611.822657"
+         timestampString = "356742104.675396"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "151"
-         endingLineNumber = "151"
-         landmarkName = "-requestFailed:"
-         landmarkType = "5">
+         startingLineNumber = "157"
+         endingLineNumber = "157">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -51,7 +49,7 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Frienemy/FriendsViewController.m"
-         timestampString = "355543365.842555"
+         timestampString = "356741856.93036"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "53"
@@ -65,12 +63,51 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Frienemy/RequestsCoordinator.m"
-         timestampString = "355540222.50943"
+         timestampString = "356800231.811683"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "129"
-         endingLineNumber = "129"
+         startingLineNumber = "155"
+         endingLineNumber = "155"
          landmarkName = "-queueFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Frienemy/FriendsViewController.m"
+         timestampString = "356742976.654309"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
+         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Frienemy/NSManagedObject+Additions.m"
+         timestampString = "356807405.345894"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
+         landmarkName = "-PA_setValuesForKeysWithDictionary:dateFormatter:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Frienemy/WallRequest.m"
+         timestampString = "356813046.992516"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
+         landmarkName = "-requestFinished"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

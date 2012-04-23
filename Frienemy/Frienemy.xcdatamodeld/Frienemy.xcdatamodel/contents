@@ -14,6 +14,9 @@
         <relationship name="friend" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="education" inverseEntity="Friend" syncable="YES"/>
         <relationship name="school" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="School" inverseName="educations" inverseEntity="School" syncable="YES"/>
         <relationship name="year" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Year" inverseName="educations" inverseEntity="Year" syncable="YES"/>
+        <userInfo>
+            <entry key="uid" value="school.name"/>
+        </userInfo>
     </entity>
     <entity name="Employer" representedClassName="Employer" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -106,6 +109,9 @@
         <relationship name="friend" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Friend" inverseName="work" inverseEntity="Friend" syncable="YES"/>
         <relationship name="location" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="works" inverseEntity="Location" syncable="YES"/>
         <relationship name="position" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Position" inverseName="works" inverseEntity="Position" syncable="YES"/>
+        <userInfo>
+            <entry key="uid" value="employer.name"/>
+        </userInfo>
     </entity>
     <entity name="Year" representedClassName="Year" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>

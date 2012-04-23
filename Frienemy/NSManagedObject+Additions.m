@@ -104,6 +104,18 @@
                         break;
                     }
                 }
+                //  Not very reuseable but facebook is forcing my hand
+                //  Potential bug here
+                if (!object) {
+                    NSString *uid = [[entityDesc userInfo] valueForKey:@"uid"];
+                    if (uid) {
+                        if ([[entityDesc name] isEqualToString:@"Work"] || [[entityDesc name] isEqualToString:@"Education"]) {
+                            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", uid, [subValue valueForKeyPath:uid]];
+                            object = [[NSClassFromString([entityDesc name]) class] MR_findFirstWithPredicate:predicate inContext:self.managedObjectContext];
+                        }
+                    }
+                }
+                
                 if (!object)
                     object = [[NSClassFromString([entityDesc name]) class] MR_createInContext:self.managedObjectContext];
                 
