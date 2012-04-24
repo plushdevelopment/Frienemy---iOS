@@ -8,6 +8,7 @@
 
 #import "WallRequest.h"
 #import "JSON.h"
+#import "NSManagedObject+Additions.h"
 
 @implementation WallRequest
 
@@ -15,14 +16,12 @@
 
 - (void)requestFinished
 {
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_contextThatNotifiesDefaultContextOnMainThread];
-	
-	// Reset the stalking value for all friends
-	[StalkerRelationship MR_truncateAllInContext:context];
-	
 	// Parse the response into arrays and dictionaries
     NSDictionary *jsonResponse = [[self responseString] JSONValue];
 	NSArray *jsonArray = [jsonResponse valueForKey:@"data"];
+	
+	// Create our context
+	NSManagedObjectContext *context = [NSManagedObjectContext MR_contextThatNotifiesDefaultContextOnMainThread];
 	
 	// Fetch the current user so we dont stalk ourselves
 	Friend *currentUser;
@@ -32,7 +31,13 @@
 		currentUser = [Friend MR_findFirstByAttribute:@"isCurrentUser" withValue:[NSNumber numberWithBool:YES] inContext:context];
 	}
 	
+	// Reset the stalking value for all friends
 	NSPredicate *relationshipPredicate = [NSPredicate predicateWithFormat:@"toFriend.uid == %@", currentUser.uid];
+	NSArray *relationships = [StalkerRelationship MR_findAllWithPredicate:relationshipPredicate inContext:context];
+	for (StalkerRelationship *relationship in relationships) {
+		[context deleteObject:relationship];
+	}
+	[context MR_save];
 	
 	for (NSDictionary *wallPostDictionary in jsonArray) {
 		NSDictionary *fromDictionary = [wallPostDictionary valueForKey:@"from"];
@@ -40,13 +45,15 @@
 		if (fromUID && ![fromUID isEqualToString:currentUser.uid]) {
 			NSPredicate *wallPostFriendPredicate = [NSPredicate predicateWithFormat:@"uid == %@", fromUID];
 			Friend *wallPostFriend = [Friend MR_findFirstWithPredicate:wallPostFriendPredicate inContext:context];
-			if (wallPostFriend) {
-				StalkerRelationship *relationship = [[wallPostFriend.stalkingRelationships.allObjects filteredArrayUsingPredicate:relationshipPredicate] lastObject];
-				if (!relationship) {
-					relationship = [StalkerRelationship MR_createInContext:context];
-					relationship.toFriend = currentUser;
-					relationship.fromFriend = wallPostFriend;
-				}
+			if (!wallPostFriend) {
+				wallPostFriend = [Friend MR_createInContext:context];
+				[wallPostFriend PA_setValuesForKeysWithDictionary:fromDictionary dateFormatter:nil];
+			}
+			StalkerRelationship *relationship = [[wallPostFriend.stalkingRelationships.allObjects filteredArrayUsingPredicate:relationshipPredicate] lastObject];
+			if (!relationship) {
+				relationship = [StalkerRelationship MR_createInContext:context];
+				relationship.toFriend = currentUser;
+				relationship.fromFriend = wallPostFriend;
 				relationship.rank = [NSNumber numberWithInteger:(relationship.rankValue + 1)];
 			}
 		}
@@ -58,7 +65,10 @@
 			if (commentFromUID && ![commentFromUID isEqualToString:currentUser.uid]) {
 				NSPredicate *commentFriendPredicate = [NSPredicate predicateWithFormat:@"uid == %@", commentFromUID];
 				Friend *commentFriend = [Friend MR_findFirstWithPredicate:commentFriendPredicate inContext:context];
-				if (commentFriend) {
+				if (!commentFriend) {
+					commentFriend = [Friend MR_createInContext:context];
+					[commentFriend PA_setValuesForKeysWithDictionary:commentFromDictionary dateFormatter:nil];
+				}
 					StalkerRelationship *commentRelationship = [[commentFriend.stalkingRelationships.allObjects filteredArrayUsingPredicate:relationshipPredicate] lastObject];
 					if (!commentRelationship) {
 						commentRelationship = [StalkerRelationship MR_createInContext:context];
@@ -66,7 +76,6 @@
 						commentRelationship.fromFriend = commentFriend;
 					}
 					commentRelationship.rank = [NSNumber numberWithInteger:(commentRelationship.rankValue + 1)];
-				}
 			}
 		}
 		
@@ -76,7 +85,10 @@
 			if (likeFromUID && ![likeFromUID isEqualToString:currentUser.uid]) {
 				NSPredicate *likeFriendPredicate = [NSPredicate predicateWithFormat:@"uid == %@", likeFromUID];
 				Friend *likeFriend = [Friend MR_findFirstWithPredicate:likeFriendPredicate inContext:context];
-				if (likeFriend) {
+				if (!likeFriend) {
+					likeFriend = [Friend MR_createInContext:context];
+					[likeFriend PA_setValuesForKeysWithDictionary:likeDictionary dateFormatter:nil];
+				}
 					StalkerRelationship *likeRelationship = [[likeFriend.stalkingRelationships.allObjects filteredArrayUsingPredicate:relationshipPredicate] lastObject];
 					if (!likeRelationship) {
 						likeRelationship = [StalkerRelationship MR_createInContext:context];
@@ -84,7 +96,6 @@
 						likeRelationship.fromFriend = likeFriend;
 					}
 					likeRelationship.rank = [NSNumber numberWithInteger:(likeRelationship.rankValue + 1)];
-				}
 			}
 		}
 		

@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSArray *workArray;
 
 - (id)initWithFriend:(Friend *)friend;
+- (IBAction)showStalkers:(id)sender;
 
 @end

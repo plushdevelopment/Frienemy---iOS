@@ -12,6 +12,7 @@
 #import "FriendDetailSectionView.h"
 #import "FriendDetailEducationTableViewCell.h"
 #import "FriendDetailWorkTableViewCell.h"
+#import "StalkersViewController.h"
 
 enum FriendDetailSectionIndex
 {
@@ -52,6 +53,12 @@ enum FDBasicRowIndex
 		self.workArray = [self.friend.work.allObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:workSortDescriptor]];
     }
     return self;
+}
+
+- (IBAction)showStalkers:(id)sender
+{
+	StalkersViewController *viewController = [[StalkersViewController alloc] initWithFriend:self.friend];
+	[self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -108,6 +115,7 @@ enum FDBasicRowIndex
         {
             FriendDetailGeneralTableViewCell *detailCell = (FriendDetailGeneralTableViewCell *)cell;
             [detailCell configureCellForFriend:self.friend];
+			[detailCell.stalkersButton addTarget:self action:@selector(showStalkers:) forControlEvents:UIControlEventTouchUpInside];
         }
             break;
         case FDBasicSection:

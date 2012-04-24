@@ -18,8 +18,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *profileMaskImageView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
-@property (strong, nonatomic) IBOutlet StalkButton *stalkButton;
-@property (strong, nonatomic) IBOutlet UILabel *stalkingLabel;
+@property (strong, nonatomic) IBOutlet UIButton *stalkingButton;
+@property (strong, nonatomic) IBOutlet UILabel *stalkerRankLabel;
+@property (strong, nonatomic) IBOutlet UIButton *stalkersButton;
 
 @property (strong, nonatomic) Friend *friend;
 

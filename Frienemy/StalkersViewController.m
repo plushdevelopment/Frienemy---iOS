@@ -9,6 +9,7 @@
 #import "StalkersViewController.h"
 #import "FriendDetailViewController.h"
 #import "StalkerTableViewCell.h"
+#import "WallRequest.h"
 
 @interface StalkersViewController ()
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -61,6 +62,23 @@
 	}
     
     [[self tableView] setContentOffset:CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height)];
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+    
+    if (accessToken) {
+        
+        NSString *urlString = [NSString 
+                               stringWithFormat:@"https://graph.facebook.com/%@/feed?access_token=%@&limit=50", self.currentUser.uid, 
+                               [accessToken stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        WallRequest *request = [WallRequest requestWithURL:url];
+		[request setUserUID:self.currentUser.uid];
+        [request setTimeOutSeconds:600];
+        [request setDelegate:self];
+        [request setDidFinishSelector:@selector(requestFinished:)];
+        [request startAsynchronous];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -261,6 +279,18 @@
     [self.searchDisplayController.searchResultsTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	// Return YES to cause the search result table view to be reloaded.
 	return YES;
+}
+
+#pragma mark - ASIHTTPRequestDelegate
+
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+	[self.tableView reloadData];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+	[self.tableView reloadData];
 }
 
 @end

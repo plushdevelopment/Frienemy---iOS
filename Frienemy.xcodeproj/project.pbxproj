@@ -35,6 +35,14 @@
 		FF1DD88014BE0159002264C9 /* Frienemy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD87E14BE0159002264C9 /* Frienemy.xcdatamodeld */; };
 		FF1DD88314BE06F6002264C9 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD88214BE06F6002264C9 /* Constants.m */; };
 		FF1DD8AE14BE1C96002264C9 /* FriendsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */; };
+		FF3E98B21546078D00CA2BD8 /* button_not_stalking.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98A91546078D00CA2BD8 /* button_not_stalking.png */; };
+		FF3E98B31546078D00CA2BD8 /* button_stalker_rank.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98AA1546078D00CA2BD8 /* button_stalker_rank.png */; };
+		FF3E98B41546078D00CA2BD8 /* button_stalkers.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98AB1546078D00CA2BD8 /* button_stalkers.png */; };
+		FF3E98B51546078D00CA2BD8 /* button_stalking.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98AC1546078D00CA2BD8 /* button_stalking.png */; };
+		FF3E98B61546078D00CA2BD8 /* button_not_stalking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98AE1546078D00CA2BD8 /* button_not_stalking@2x.png */; };
+		FF3E98B71546078D00CA2BD8 /* button_stalker_rank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98AF1546078D00CA2BD8 /* button_stalker_rank@2x.png */; };
+		FF3E98B81546078D00CA2BD8 /* button_stalkers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98B01546078D00CA2BD8 /* button_stalkers@2x.png */; };
+		FF3E98B91546078D00CA2BD8 /* button_stalking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98B11546078D00CA2BD8 /* button_stalking@2x.png */; };
 		FF885FA015390360005F37EC /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9114BA23AF00C64963 /* friends_tb@2x.png */; };
 		FF885FA21539098B005F37EC /* friends_tb.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9014BA23AF00C64963 /* friends_tb.png */; };
@@ -315,6 +323,14 @@
 		FF1DD8A814BE1A4C002264C9 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		FF1DD8AC14BE1C96002264C9 /* FriendsListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListRequest.h; sourceTree = "<group>"; };
 		FF1DD8AD14BE1C96002264C9 /* FriendsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListRequest.m; sourceTree = "<group>"; };
+		FF3E98A91546078D00CA2BD8 /* button_not_stalking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_not_stalking.png; sourceTree = "<group>"; };
+		FF3E98AA1546078D00CA2BD8 /* button_stalker_rank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_stalker_rank.png; sourceTree = "<group>"; };
+		FF3E98AB1546078D00CA2BD8 /* button_stalkers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_stalkers.png; sourceTree = "<group>"; };
+		FF3E98AC1546078D00CA2BD8 /* button_stalking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_stalking.png; sourceTree = "<group>"; };
+		FF3E98AE1546078D00CA2BD8 /* button_not_stalking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_not_stalking@2x.png"; sourceTree = "<group>"; };
+		FF3E98AF1546078D00CA2BD8 /* button_stalker_rank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_stalker_rank@2x.png"; sourceTree = "<group>"; };
+		FF3E98B01546078D00CA2BD8 /* button_stalkers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_stalkers@2x.png"; sourceTree = "<group>"; };
+		FF3E98B11546078D00CA2BD8 /* button_stalking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_stalking@2x.png"; sourceTree = "<group>"; };
 		FF885F9E15390360005F37EC /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
 		FF885F9F15390360005F37EC /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		FF8FBD5915436322002358A0 /* SmallerStalkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallerStalkButton.h; sourceTree = "<group>"; };
@@ -754,6 +770,37 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
+		FF3E98A71546078D00CA2BD8 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				FF3E98A81546078D00CA2BD8 /* normal */,
+				FF3E98AD1546078D00CA2BD8 /* retina */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		FF3E98A81546078D00CA2BD8 /* normal */ = {
+			isa = PBXGroup;
+			children = (
+				FF3E98A91546078D00CA2BD8 /* button_not_stalking.png */,
+				FF3E98AA1546078D00CA2BD8 /* button_stalker_rank.png */,
+				FF3E98AB1546078D00CA2BD8 /* button_stalkers.png */,
+				FF3E98AC1546078D00CA2BD8 /* button_stalking.png */,
+			);
+			path = normal;
+			sourceTree = "<group>";
+		};
+		FF3E98AD1546078D00CA2BD8 /* retina */ = {
+			isa = PBXGroup;
+			children = (
+				FF3E98AE1546078D00CA2BD8 /* button_not_stalking@2x.png */,
+				FF3E98AF1546078D00CA2BD8 /* button_stalker_rank@2x.png */,
+				FF3E98B01546078D00CA2BD8 /* button_stalkers@2x.png */,
+				FF3E98B11546078D00CA2BD8 /* button_stalking@2x.png */,
+			);
+			path = retina;
+			sourceTree = "<group>";
+		};
 		FF92AF8514D1887C002C947F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -997,6 +1044,7 @@
 		FFE2DDA214BA0DF600C64963 /* Theme Images */ = {
 			isa = PBXGroup;
 			children = (
+				FF3E98A71546078D00CA2BD8 /* buttons */,
 				FF1DD84514BDE353002264C9 /* header-image.png */,
 				FF1DD83414BDDA5F002264C9 /* menu-bar-btn.png */,
 				FF1DD83514BDDA64002264C9 /* menu-bar-btn@2x.png */,
@@ -1570,6 +1618,14 @@
 				FF8FBD641543705D002358A0 /* FrienemiesViewController.xib in Resources */,
 				FF8FBDAC15458703002358A0 /* StalkersViewController.xib in Resources */,
 				FF8FBDB51545BAF3002358A0 /* StalkerTableViewCell.xib in Resources */,
+				FF3E98B21546078D00CA2BD8 /* button_not_stalking.png in Resources */,
+				FF3E98B31546078D00CA2BD8 /* button_stalker_rank.png in Resources */,
+				FF3E98B41546078D00CA2BD8 /* button_stalkers.png in Resources */,
+				FF3E98B51546078D00CA2BD8 /* button_stalking.png in Resources */,
+				FF3E98B61546078D00CA2BD8 /* button_not_stalking@2x.png in Resources */,
+				FF3E98B71546078D00CA2BD8 /* button_stalker_rank@2x.png in Resources */,
+				FF3E98B81546078D00CA2BD8 /* button_stalkers@2x.png in Resources */,
+				FF3E98B91546078D00CA2BD8 /* button_stalking@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
