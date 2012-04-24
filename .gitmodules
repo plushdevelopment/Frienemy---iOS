@@ -1,6 +1,15 @@
-[submodule "Frienemy/Libraries/MagicalRecord"]
-	path = Frienemy/Libraries/MagicalRecord
-url=git@github.com:plushdevelopment/MagicalRecord.gitMagicalRecord.git
 [submodule "Libraries/facebook"]
 	path = Libraries/facebook
 	url = git://github.com/facebook/facebook-ios-sdk.git
+[submodule "Libraries/MagicalRecord"]
+	path = Libraries/MagicalRecord
+	url = git@github.com:plushdevelopment/MagicalRecord.git
+[submodule "Libraries/ASIHTTPRequest"]
+	path = Libraries/ASIHTTPRequest
+	url = git@github.com:plushdevelopment/asi-http-request.git
+[submodule "Libraries/SlideViewController"]
+	path = Libraries/SlideViewController
+	url = git@github.com:plushdevelopment/SlideViewController.git
+[submodule "Libraries/UITableView+PACategories"]
+	path = Libraries/UITableView+PACategories
+	url = git@github.com:plushdevelopment/UITableView-PACategories.git
