@@ -1,6 +1,6 @@
 [submodule "Libraries/facebook"]
 	path = Libraries/facebook
-	url = git://github.com/facebook/facebook-ios-sdk.git
+url=git@github.com:plushdevelopment/facebook-ios-sdk.git
 [submodule "Libraries/MagicalRecord"]
 	path = Libraries/MagicalRecord
 	url = git@github.com:plushdevelopment/MagicalRecord.git
