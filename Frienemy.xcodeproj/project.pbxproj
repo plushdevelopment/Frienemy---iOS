@@ -250,45 +250,29 @@
 		FFE9BEA91547121E00B9C7F4 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BE9B1547121E00B9C7F4 /* SBJsonBase.m */; };
 		FFE9BEAA1547121E00B9C7F4 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BE9D1547121E00B9C7F4 /* SBJsonParser.m */; };
 		FFE9BEAB1547121E00B9C7F4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BE9F1547121E00B9C7F4 /* SBJsonWriter.m */; };
-		FFE9BF05154713BD00B9C7F4 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEAE154713BD00B9C7F4 /* ASIAuthenticationDialog.m */; };
-		FFE9BF06154713BD00B9C7F4 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB1154713BD00B9C7F4 /* ASIDataCompressor.m */; };
-		FFE9BF07154713BD00B9C7F4 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB3154713BD00B9C7F4 /* ASIDataDecompressor.m */; };
-		FFE9BF08154713BD00B9C7F4 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB5154713BD00B9C7F4 /* ASIDownloadCache.m */; };
-		FFE9BF09154713BD00B9C7F4 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB7154713BD00B9C7F4 /* ASIFormDataRequest.m */; };
-		FFE9BF0A154713BD00B9C7F4 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB9154713BD00B9C7F4 /* ASIHTTPRequest.m */; };
-		FFE9BF0B154713BD00B9C7F4 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEBD154713BD00B9C7F4 /* ASIInputStream.m */; };
-		FFE9BF0C154713BD00B9C7F4 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEBF154713BD00B9C7F4 /* ASINetworkQueue.m */; };
-		FFE9BF0D154713BD00B9C7F4 /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEC3154713BD00B9C7F4 /* ASIWebPageRequest.m */; };
-		FFE9BF0E154713BD00B9C7F4 /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEC6154713BD00B9C7F4 /* ASICloudFilesCDNRequest.m */; };
-		FFE9BF0F154713BD00B9C7F4 /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEC8154713BD00B9C7F4 /* ASICloudFilesContainer.m */; };
-		FFE9BF10154713BD00B9C7F4 /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BECA154713BD00B9C7F4 /* ASICloudFilesContainerRequest.m */; };
-		FFE9BF11154713BD00B9C7F4 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BECC154713BD00B9C7F4 /* ASICloudFilesContainerXMLParserDelegate.m */; };
-		FFE9BF12154713BD00B9C7F4 /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BECE154713BD00B9C7F4 /* ASICloudFilesObject.m */; };
-		FFE9BF13154713BD00B9C7F4 /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED0154713BD00B9C7F4 /* ASICloudFilesObjectRequest.m */; };
-		FFE9BF14154713BD00B9C7F4 /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED2154713BD00B9C7F4 /* ASICloudFilesRequest.m */; };
-		FFE9BF15154713BD00B9C7F4 /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED6154713BD00B9C7F4 /* ASIS3Bucket.m */; };
-		FFE9BF16154713BD00B9C7F4 /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED8154713BD00B9C7F4 /* ASIS3BucketObject.m */; };
-		FFE9BF17154713BD00B9C7F4 /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEDA154713BD00B9C7F4 /* ASIS3BucketRequest.m */; };
-		FFE9BF18154713BD00B9C7F4 /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEDC154713BD00B9C7F4 /* ASIS3ObjectRequest.m */; };
-		FFE9BF19154713BD00B9C7F4 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEDE154713BD00B9C7F4 /* ASIS3Request.m */; };
-		FFE9BF1A154713BD00B9C7F4 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEE0154713BD00B9C7F4 /* ASIS3ServiceRequest.m */; };
-		FFE9BF1B154713BD00B9C7F4 /* ASICloudFilesRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEE3154713BD00B9C7F4 /* ASICloudFilesRequestTests.m */; };
-		FFE9BF1C154713BD00B9C7F4 /* ASIDataCompressorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEE5154713BD00B9C7F4 /* ASIDataCompressorTests.m */; };
-		FFE9BF1D154713BD00B9C7F4 /* ASIDownloadCacheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEE7154713BD00B9C7F4 /* ASIDownloadCacheTests.m */; };
-		FFE9BF1E154713BD00B9C7F4 /* ASIFormDataRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEE9154713BD00B9C7F4 /* ASIFormDataRequestTests.m */; };
-		FFE9BF1F154713BD00B9C7F4 /* ASIHTTPRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEEB154713BD00B9C7F4 /* ASIHTTPRequestTests.m */; };
-		FFE9BF20154713BD00B9C7F4 /* ASINetworkQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEED154713BD00B9C7F4 /* ASINetworkQueueTests.m */; };
-		FFE9BF21154713BD00B9C7F4 /* ASIS3RequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEEF154713BD00B9C7F4 /* ASIS3RequestTests.m */; };
-		FFE9BF22154713BD00B9C7F4 /* ASITestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEF1154713BD00B9C7F4 /* ASITestCase.m */; };
-		FFE9BF23154713BD00B9C7F4 /* ASIWebPageRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEF3154713BD00B9C7F4 /* ASIWebPageRequestTests.m */; };
-		FFE9BF24154713BD00B9C7F4 /* BlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEF5154713BD00B9C7F4 /* BlocksTests.m */; };
-		FFE9BF25154713BD00B9C7F4 /* ClientCertificateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEF7154713BD00B9C7F4 /* ClientCertificateTests.m */; };
-		FFE9BF26154713BD00B9C7F4 /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEF8154713BD00B9C7F4 /* GHUnitTestMain.m */; };
-		FFE9BF27154713BD00B9C7F4 /* PerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEFA154713BD00B9C7F4 /* PerformanceTests.m */; };
-		FFE9BF28154713BD00B9C7F4 /* ProxyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEFC154713BD00B9C7F4 /* ProxyTests.m */; };
-		FFE9BF29154713BD00B9C7F4 /* StressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEFE154713BD00B9C7F4 /* StressTests.m */; };
+		FFE9BF05154713BD00B9C7F4 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEAE154713BD00B9C7F4 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF06154713BD00B9C7F4 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB1154713BD00B9C7F4 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF07154713BD00B9C7F4 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB3154713BD00B9C7F4 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF08154713BD00B9C7F4 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB5154713BD00B9C7F4 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF09154713BD00B9C7F4 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB7154713BD00B9C7F4 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF0A154713BD00B9C7F4 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEB9154713BD00B9C7F4 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF0B154713BD00B9C7F4 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEBD154713BD00B9C7F4 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF0C154713BD00B9C7F4 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEBF154713BD00B9C7F4 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF0E154713BD00B9C7F4 /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEC6154713BD00B9C7F4 /* ASICloudFilesCDNRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF0F154713BD00B9C7F4 /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEC8154713BD00B9C7F4 /* ASICloudFilesContainer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF10154713BD00B9C7F4 /* ASICloudFilesContainerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BECA154713BD00B9C7F4 /* ASICloudFilesContainerRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF11154713BD00B9C7F4 /* ASICloudFilesContainerXMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BECC154713BD00B9C7F4 /* ASICloudFilesContainerXMLParserDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF12154713BD00B9C7F4 /* ASICloudFilesObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BECE154713BD00B9C7F4 /* ASICloudFilesObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF13154713BD00B9C7F4 /* ASICloudFilesObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED0154713BD00B9C7F4 /* ASICloudFilesObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF14154713BD00B9C7F4 /* ASICloudFilesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED2154713BD00B9C7F4 /* ASICloudFilesRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF15154713BD00B9C7F4 /* ASIS3Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED6154713BD00B9C7F4 /* ASIS3Bucket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF16154713BD00B9C7F4 /* ASIS3BucketObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BED8154713BD00B9C7F4 /* ASIS3BucketObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF17154713BD00B9C7F4 /* ASIS3BucketRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEDA154713BD00B9C7F4 /* ASIS3BucketRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF18154713BD00B9C7F4 /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEDC154713BD00B9C7F4 /* ASIS3ObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF19154713BD00B9C7F4 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEDE154713BD00B9C7F4 /* ASIS3Request.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FFE9BF1A154713BD00B9C7F4 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BEE0154713BD00B9C7F4 /* ASIS3ServiceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FFE9BF2A154713BD00B9C7F4 /* README-GHUnit in Resources */ = {isa = PBXBuildFile; fileRef = FFE9BF01154713BD00B9C7F4 /* README-GHUnit */; };
-		FFE9BF2B154713BD00B9C7F4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BF04154713BD00B9C7F4 /* Reachability.m */; };
+		FFE9BF2B154713BD00B9C7F4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BF04154713BD00B9C7F4 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FFE9BF351547148200B9C7F4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FFE9BF2D1547148200B9C7F4 /* .gitignore */; };
 		FFE9BF361547148200B9C7F4 /* PRPNibBasedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BF2F1547148200B9C7F4 /* PRPNibBasedTableViewCell.m */; };
 		FFE9BF371547148200B9C7F4 /* PRPSmartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE9BF311547148200B9C7F4 /* PRPSmartTableViewCell.m */; };
@@ -1902,7 +1886,6 @@
 				FFE9BF0A154713BD00B9C7F4 /* ASIHTTPRequest.m in Sources */,
 				FFE9BF0B154713BD00B9C7F4 /* ASIInputStream.m in Sources */,
 				FFE9BF0C154713BD00B9C7F4 /* ASINetworkQueue.m in Sources */,
-				FFE9BF0D154713BD00B9C7F4 /* ASIWebPageRequest.m in Sources */,
 				FFE9BF0E154713BD00B9C7F4 /* ASICloudFilesCDNRequest.m in Sources */,
 				FFE9BF0F154713BD00B9C7F4 /* ASICloudFilesContainer.m in Sources */,
 				FFE9BF10154713BD00B9C7F4 /* ASICloudFilesContainerRequest.m in Sources */,
@@ -1916,21 +1899,6 @@
 				FFE9BF18154713BD00B9C7F4 /* ASIS3ObjectRequest.m in Sources */,
 				FFE9BF19154713BD00B9C7F4 /* ASIS3Request.m in Sources */,
 				FFE9BF1A154713BD00B9C7F4 /* ASIS3ServiceRequest.m in Sources */,
-				FFE9BF1B154713BD00B9C7F4 /* ASICloudFilesRequestTests.m in Sources */,
-				FFE9BF1C154713BD00B9C7F4 /* ASIDataCompressorTests.m in Sources */,
-				FFE9BF1D154713BD00B9C7F4 /* ASIDownloadCacheTests.m in Sources */,
-				FFE9BF1E154713BD00B9C7F4 /* ASIFormDataRequestTests.m in Sources */,
-				FFE9BF1F154713BD00B9C7F4 /* ASIHTTPRequestTests.m in Sources */,
-				FFE9BF20154713BD00B9C7F4 /* ASINetworkQueueTests.m in Sources */,
-				FFE9BF21154713BD00B9C7F4 /* ASIS3RequestTests.m in Sources */,
-				FFE9BF22154713BD00B9C7F4 /* ASITestCase.m in Sources */,
-				FFE9BF23154713BD00B9C7F4 /* ASIWebPageRequestTests.m in Sources */,
-				FFE9BF24154713BD00B9C7F4 /* BlocksTests.m in Sources */,
-				FFE9BF25154713BD00B9C7F4 /* ClientCertificateTests.m in Sources */,
-				FFE9BF26154713BD00B9C7F4 /* GHUnitTestMain.m in Sources */,
-				FFE9BF27154713BD00B9C7F4 /* PerformanceTests.m in Sources */,
-				FFE9BF28154713BD00B9C7F4 /* ProxyTests.m in Sources */,
-				FFE9BF29154713BD00B9C7F4 /* StressTests.m in Sources */,
 				FFE9BF2B154713BD00B9C7F4 /* Reachability.m in Sources */,
 				FFE9BF361547148200B9C7F4 /* PRPNibBasedTableViewCell.m in Sources */,
 				FFE9BF371547148200B9C7F4 /* PRPSmartTableViewCell.m in Sources */,
