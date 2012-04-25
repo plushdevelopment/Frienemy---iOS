@@ -18,7 +18,7 @@
     NSDictionary *jsonResponse = [[self responseString] JSONValue];
     
     Friend *friend = [Friend PA_managedObjectForProperty:@"isCurrentUser" value:[NSNumber numberWithBool:YES] inContext:context];
-    [friend PA_setValuesForKeysWithDictionary:jsonResponse dateFormatter:nil];
+    [friend PA_setValuesForKeysWithDictionary:jsonResponse dateFormatter:nil ignoreRelationships:YES];
     friend.isCurrentUsersFriend = [NSNumber numberWithBool:NO];
     friend.isCurrentUser = [NSNumber numberWithBool:YES];
     

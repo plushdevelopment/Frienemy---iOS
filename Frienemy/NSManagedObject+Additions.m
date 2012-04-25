@@ -33,7 +33,7 @@
 	return object;
 }
 
-- (void)PA_setValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter
+- (void)PA_setValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter ignoreRelationships:(BOOL)ignore
 {
     NSDictionary *attributes = [[self entity] attributesByName];
     for (NSString *attribute in attributes) {
@@ -67,62 +67,63 @@
 		}
         [self setValue:value forKey:attribute];
     }
-    
-    NSDictionary *relationships = [[self entity] relationshipsByName];
-	for (NSString *relationship in [relationships allKeys]) {
-		id value = [keyedValues objectForKey:relationship];
-		if (value == nil) {
-			continue;
-		}
-		
-		NSEntityDescription *entityDesc = [[[[self entity] relationshipsByName] objectForKey:relationship] destinationEntity];
-		if (![[relationships objectForKey:relationship] isToMany]) {
-			NSManagedObject *object = nil;
-			Class aClass = [NSClassFromString([entityDesc name]) class];
-			for (NSAttributeDescription *desc in [[aClass MR_entityDescription] attributesByName]) {
-				if ([desc.description isEqualToString:@"uid"]) {
-                    object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:[value valueForKey:@"id"] inContext:self.managedObjectContext];
-                    break;
-                }
-			}
-            if (!object)
-                object = [[NSClassFromString([entityDesc name]) class] MR_createInContext:self.managedObjectContext];
-            
-            if (object) {
-                [object PA_setValuesForKeysWithDictionary:value dateFormatter:dateFormatter];
-                [self setValue:object forKey:relationship];
+    if (!ignore) {
+        NSDictionary *relationships = [[self entity] relationshipsByName];
+        for (NSString *relationship in [relationships allKeys]) {
+            id value = [keyedValues objectForKey:relationship];
+            if (value == nil) {
                 continue;
             }
-		} else {
-			NSMutableSet *relationshipSet = [self mutableSetValueForKey:relationship];
-			for (id subValue in value) {
-				NSManagedObject *object = nil;
-				Class aClass = [NSClassFromString([entityDesc name]) class];
-				for (NSAttributeDescription *desc in [[aClass MR_entityDescription] attributesByName]) {
+            
+            NSEntityDescription *entityDesc = [[[[self entity] relationshipsByName] objectForKey:relationship] destinationEntity];
+            if (![[relationships objectForKey:relationship] isToMany]) {
+                NSManagedObject *object = nil;
+                Class aClass = [NSClassFromString([entityDesc name]) class];
+                for (NSAttributeDescription *desc in [[aClass MR_entityDescription] attributesByName]) {
                     if ([desc.description isEqualToString:@"uid"]) {
-                        object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:[subValue valueForKey:@"id"] inContext:self.managedObjectContext];
+                        object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:[value valueForKey:@"id"] inContext:self.managedObjectContext];
                         break;
                     }
                 }
-                //  Not very reuseable but facebook is forcing my hand
-                //  Potential bug here
-                if (!object) {
-                    NSString *uid = [[entityDesc userInfo] valueForKey:@"uid"];
-                    if (uid) {
-                        if ([[entityDesc name] isEqualToString:@"Work"] || [[entityDesc name] isEqualToString:@"Education"]) {
-                            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", uid, [subValue valueForKeyPath:uid]];
-                            object = [[NSClassFromString([entityDesc name]) class] MR_findFirstWithPredicate:predicate inContext:self.managedObjectContext];
-                        }
-                    }
-                }
-                
-                if (!object)
+            if (!object)
                     object = [[NSClassFromString([entityDesc name]) class] MR_createInContext:self.managedObjectContext];
                 
                 if (object) {
-                    [object PA_setValuesForKeysWithDictionary:subValue dateFormatter:dateFormatter];
-                    [relationshipSet addObject:object];
+                    [object PA_setValuesForKeysWithDictionary:value dateFormatter:dateFormatter ignoreRelationships:YES];
+                    [self setValue:object forKey:relationship];
                     continue;
+                }
+            } else {
+                NSMutableSet *relationshipSet = [self mutableSetValueForKey:relationship];
+                for (id subValue in value) {
+                    NSManagedObject *object = nil;
+                    Class aClass = [NSClassFromString([entityDesc name]) class];
+                    for (NSAttributeDescription *desc in [[aClass MR_entityDescription] attributesByName]) {
+                        if ([desc.description isEqualToString:@"uid"]) {
+                            object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:[subValue valueForKey:@"id"] inContext:self.managedObjectContext];
+                            break;
+                        }
+                    }
+                    //  Not very reuseable but facebook is forcing my hand
+                    //  Potential bug here
+                    if (!object) {
+                        NSString *uid = [[entityDesc userInfo] valueForKey:@"uid"];
+                        if (uid) {
+                            if ([[entityDesc name] isEqualToString:@"Work"] || [[entityDesc name] isEqualToString:@"Education"]) {
+                                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", uid, [subValue valueForKeyPath:uid]];
+                                object = [[NSClassFromString([entityDesc name]) class] MR_findFirstWithPredicate:predicate inContext:self.managedObjectContext];
+                            }
+                        }
+                    }
+                    
+                    if (!object)
+                        object = [[NSClassFromString([entityDesc name]) class] MR_createInContext:self.managedObjectContext];
+                    
+                    if (object) {
+                        [object PA_setValuesForKeysWithDictionary:subValue dateFormatter:dateFormatter ignoreRelationships:YES];
+                        [relationshipSet addObject:object];
+                        continue;
+                    }
                 }
             }
         }

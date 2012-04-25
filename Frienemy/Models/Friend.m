@@ -5,7 +5,12 @@
 
 - (void)PA_setValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter
 {
-    [super PA_setValuesForKeysWithDictionary:keyedValues dateFormatter:dateFormatter];
+    
+}
+
+- (void)PA_setValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter ignoreRelationships:(BOOL)ignore
+{
+    [super PA_setValuesForKeysWithDictionary:keyedValues dateFormatter:dateFormatter ignoreRelationships:ignore];
     self.section = [self.name substringToIndex:1];
 }
 

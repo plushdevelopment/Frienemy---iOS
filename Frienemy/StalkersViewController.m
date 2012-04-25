@@ -23,12 +23,18 @@
 @synthesize filteredResults = _filteredResults;
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize currentUser = _currentUser;
+@synthesize canSelectRows = _canSelectRows;
 
 - (id)initWithFriend:(Friend *)currentUser
 {
 	self = [self initWithNibName:@"StalkersViewController" bundle:nil];
 	if (self) {
 		self.currentUser = currentUser;
+		if (self.currentUser.isCurrentUserValue) {
+			self.canSelectRows = YES;
+		} else {
+			self.canSelectRows = NO;
+		}
 	}
 	return self;
 }
@@ -155,15 +161,19 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Friend *friend = nil;
-    if ([tableView isEqual:self.tableView]) {
-        friend = [(StalkerRelationship *)[self.fetchedResultsController objectAtIndexPath:indexPath] fromFriend];
-    } else {
-        friend = [(StalkerRelationship *)[self.filteredResults objectAtIndex:indexPath.row] fromFriend];
-    }
-    FriendDetailViewController *detail = [[FriendDetailViewController alloc] initWithFriend:friend];
-    
-    [self.navigationController pushViewController:detail animated:YES];
+	if (self.canSelectRows) {
+		Friend *friend = nil;
+		if ([tableView isEqual:self.tableView]) {
+			friend = [(StalkerRelationship *)[self.fetchedResultsController objectAtIndexPath:indexPath] fromFriend];
+		} else {
+			friend = [(StalkerRelationship *)[self.filteredResults objectAtIndex:indexPath.row] fromFriend];
+		}
+		FriendDetailViewController *detail = [[FriendDetailViewController alloc] initWithFriend:friend];
+		
+		[self.navigationController pushViewController:detail animated:YES];
+	} else {
+		[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	}
 }
 
 #pragma mark - NSFetchedResultsController

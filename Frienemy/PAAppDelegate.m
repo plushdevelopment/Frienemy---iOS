@@ -108,6 +108,7 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+    [[NSManagedObjectContext MR_defaultContext] MR_save];
     [MagicalRecord cleanUp];
 }
 

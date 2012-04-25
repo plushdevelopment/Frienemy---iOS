@@ -132,7 +132,6 @@
 
 - (void)userRequestDidFinish:(ASIHTTPRequest *)request
 {
-	[self refreshStalkers];
 }
 
 - (void)refreshStalkers

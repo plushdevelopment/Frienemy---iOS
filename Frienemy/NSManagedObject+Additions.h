@@ -12,6 +12,6 @@
 
 + (id)PA_managedObjectForProperty:(NSString *)propertyName value:(id)propertyValue inContext:(NSManagedObjectContext *)managedObjectContext;
 
-- (void)PA_setValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter;
+- (void)PA_setValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter ignoreRelationships:(BOOL)ignore;
 
 @end

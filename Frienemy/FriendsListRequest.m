@@ -26,8 +26,8 @@
     if (friends.count == 0) {
         // We have no friends so lets just save them all
         for (NSDictionary *jsonFriend in jsonFriendsArray) {
-            Friend *friend = [Friend MR_createInContext:context];
-            [friend PA_setValuesForKeysWithDictionary:jsonFriend dateFormatter:nil];
+            Friend *friend = [Friend PA_managedObjectForProperty:@"uid" value:[jsonFriend valueForKey:@"id"] inContext:context];
+            [friend PA_setValuesForKeysWithDictionary:jsonFriend dateFormatter:nil ignoreRelationships:NO];
             friend.isCurrentUsersFriend = [NSNumber numberWithBool:YES];
         }
     } else {
@@ -48,7 +48,7 @@
         for (int i = 0; i < existingFriends.count; i++) {
             NSDictionary *friendDict = [existingJSONFriends objectAtIndex:i];
             Friend *friend = [existingFriends objectAtIndex:i];
-            [friend PA_setValuesForKeysWithDictionary:friendDict dateFormatter:nil];
+            [friend PA_setValuesForKeysWithDictionary:friendDict dateFormatter:nil ignoreRelationships:YES];
             friend.isFrienemy = [NSNumber numberWithBool:NO];
         }
         
@@ -56,8 +56,8 @@
         NSPredicate *newFriendPredicate = [NSPredicate predicateWithFormat:@"NOT (id IN %@)", [friends valueForKey:@"uid"]];
         NSArray *jsonNewFriendsArray = [jsonFriendsArray filteredArrayUsingPredicate:newFriendPredicate];
         for (NSDictionary *jsonFriend in jsonNewFriendsArray) {
-            Friend *friend = [Friend MR_createInContext:context];
-            [friend PA_setValuesForKeysWithDictionary:jsonFriend dateFormatter:nil];
+            Friend *friend = [Friend PA_managedObjectForProperty:@"uid" value:[jsonFriend valueForKey:@"id"] inContext:context];
+            [friend PA_setValuesForKeysWithDictionary:jsonFriend dateFormatter:nil ignoreRelationships:NO];
             friend.isCurrentUsersFriend = [NSNumber numberWithBool:YES];
         }
     }

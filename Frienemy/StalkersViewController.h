@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *filteredResults;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, strong) Friend *currentUser;
+@property (nonatomic) BOOL canSelectRows;
 
 - (id)initWithFriend:(Friend *)currentUser;
 

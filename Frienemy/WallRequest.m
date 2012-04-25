@@ -32,22 +32,20 @@
 	}
 	
 	// Reset the stalking value for all friends
-	NSPredicate *relationshipPredicate = [NSPredicate predicateWithFormat:@"toFriend.uid == %@", currentUser.uid];
+	NSPredicate *relationshipPredicate = [NSPredicate predicateWithFormat:@"toFriend == %@", currentUser];
 	NSArray *relationships = [StalkerRelationship MR_findAllWithPredicate:relationshipPredicate inContext:context];
 	for (StalkerRelationship *relationship in relationships) {
-		[context deleteObject:relationship];
+		relationship.rank = [NSNumber numberWithInt:0];
 	}
-	[context MR_save];
 	
 	for (NSDictionary *wallPostDictionary in jsonArray) {
 		NSDictionary *fromDictionary = [wallPostDictionary valueForKey:@"from"];
 		NSString *fromUID = [fromDictionary valueForKey:@"id"];
 		if (fromUID && ![fromUID isEqualToString:currentUser.uid]) {
-			NSPredicate *wallPostFriendPredicate = [NSPredicate predicateWithFormat:@"uid == %@", fromUID];
-			Friend *wallPostFriend = [Friend MR_findFirstWithPredicate:wallPostFriendPredicate inContext:context];
+			Friend *wallPostFriend = [Friend MR_findFirstByAttribute:@"uid" withValue:fromUID inContext:context];
 			if (!wallPostFriend) {
 				wallPostFriend = [Friend MR_createInContext:context];
-				[wallPostFriend PA_setValuesForKeysWithDictionary:fromDictionary dateFormatter:nil];
+				[wallPostFriend PA_setValuesForKeysWithDictionary:fromDictionary dateFormatter:nil ignoreRelationships:YES];
 			}
 			StalkerRelationship *relationship = [[wallPostFriend.stalkingRelationships.allObjects filteredArrayUsingPredicate:relationshipPredicate] lastObject];
 			if (!relationship) {
@@ -60,14 +58,13 @@
 		
 		// Walk the comments
 		for (NSDictionary *commentDictionary in [wallPostDictionary valueForKeyPath:@"comments.data"]) {
-			NSDictionary *commentFromDictionary = [wallPostDictionary valueForKey:@"from"];
+			NSDictionary *commentFromDictionary = [commentDictionary valueForKeyPath:@"from"];
 			NSString *commentFromUID = [commentFromDictionary valueForKey:@"id"];
 			if (commentFromUID && ![commentFromUID isEqualToString:currentUser.uid]) {
-				NSPredicate *commentFriendPredicate = [NSPredicate predicateWithFormat:@"uid == %@", commentFromUID];
-				Friend *commentFriend = [Friend MR_findFirstWithPredicate:commentFriendPredicate inContext:context];
+				Friend *commentFriend = [Friend MR_findFirstByAttribute:@"uid" withValue:commentFromUID inContext:context];
 				if (!commentFriend) {
 					commentFriend = [Friend MR_createInContext:context];
-					[commentFriend PA_setValuesForKeysWithDictionary:commentFromDictionary dateFormatter:nil];
+					[commentFriend PA_setValuesForKeysWithDictionary:commentFromDictionary dateFormatter:nil ignoreRelationships:YES];
 				}
 					StalkerRelationship *commentRelationship = [[commentFriend.stalkingRelationships.allObjects filteredArrayUsingPredicate:relationshipPredicate] lastObject];
 					if (!commentRelationship) {
@@ -83,11 +80,10 @@
 		for (NSDictionary *likeDictionary in [wallPostDictionary valueForKeyPath:@"likes.data"]) {
 			NSString *likeFromUID = [likeDictionary valueForKey:@"id"];
 			if (likeFromUID && ![likeFromUID isEqualToString:currentUser.uid]) {
-				NSPredicate *likeFriendPredicate = [NSPredicate predicateWithFormat:@"uid == %@", likeFromUID];
-				Friend *likeFriend = [Friend MR_findFirstWithPredicate:likeFriendPredicate inContext:context];
+				Friend *likeFriend = [Friend MR_findFirstByAttribute:@"uid" withValue:likeFromUID inContext:context];
 				if (!likeFriend) {
 					likeFriend = [Friend MR_createInContext:context];
-					[likeFriend PA_setValuesForKeysWithDictionary:likeDictionary dateFormatter:nil];
+					[likeFriend PA_setValuesForKeysWithDictionary:likeDictionary dateFormatter:nil ignoreRelationships:YES];
 				}
 					StalkerRelationship *likeRelationship = [[likeFriend.stalkingRelationships.allObjects filteredArrayUsingPredicate:relationshipPredicate] lastObject];
 					if (!likeRelationship) {
