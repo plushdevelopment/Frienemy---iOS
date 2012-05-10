@@ -12,3 +12,8 @@ extern NSString * const PAWallFinishedNotification;
 extern NSString * const PAImageDownloadedNotification;
 
 extern NSString * const PAImageDownloadedDateKey;
+
+extern NSString * const FQLFriendsListQuery;
+extern NSString * const FQLCurrentUserQuery;
+extern NSString * const FQLCurrentUserWallQuery;
+extern NSString * const FQLUserWallQueryFormatString;

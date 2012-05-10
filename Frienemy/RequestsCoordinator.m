@@ -11,11 +11,11 @@
 #import "UserRequest.h"
 #import "WallRequest.h"
 #import "ImageRequest.h"
+#import "NSString+Encode.h"
 
 @interface RequestsCoordinator (Private)
 - (void)queueFinished:(ASINetworkQueue *)queue;
 - (void)friendsRequestDidFinish:(FriendsListRequest *)request;
-- (void)userRequestDidFinish:(ASIHTTPRequest *)request;
 - (void)stalkerRequestDidFinish:(WallRequest *)request;
 @end
 
@@ -65,7 +65,6 @@
 
 - (void)getProfileImagesForUids:(NSArray *)uids
 {
-    
     for (NSString *uid in uids) {
         NSString *URLString = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture", uid];
         ImageRequest *request = [ImageRequest requestWithURL:[NSURL URLWithString:URLString]];
@@ -84,12 +83,18 @@
     NSString *accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
     
     if (accessToken) {
-        NSString *fieldsString = @"&fields=id,name,gender,locale,languages,link,username,updated_time,bio,birthday,education,email,hometown,interested_in,location,political,quotes,relationship_status,religion,significant_other,website,work";
-        NSString *urlString = [NSString 
-                               stringWithFormat:@"https://graph.facebook.com/me/friends?access_token=%@%@&limit=5000", 
-                               [accessToken stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], fieldsString];
-        NSURL *url = [NSURL URLWithString:urlString];
-        FriendsListRequest *request = [FriendsListRequest requestWithURL:url];
+		NSMutableString *queryString = [NSMutableString string];
+		[queryString appendString:@"https://graph.facebook.com/fql?q="];
+		[queryString appendString:@"{\"friendsList\":\""];
+		[queryString appendString:FQLFriendsListQuery];
+		[queryString appendString:@"\",\"currentUser\":\""];
+		[queryString appendString:FQLCurrentUserQuery];
+		[queryString appendString:@"\"}"];
+		[queryString appendString:@"&access_token="];
+		[queryString appendString:accessToken];
+		NSString *encodedFql = [queryString urlencode];
+        NSURL *url = [NSURL URLWithString:encodedFql];
+		FriendsListRequest *request = [FriendsListRequest requestWithURL:url];
         [request setTimeOutSeconds:600];
         [request setDelegate:self];
         [request setDidFinishSelector:@selector(friendsRequestDidFinish:)];
@@ -97,41 +102,10 @@
     }
 }
 
+
 - (void)friendsRequestDidFinish:(FriendsListRequest *)request
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:PAFriendsListFinishedNotification object:nil];
-    [self refreshUser];
-    /*
-     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-     NSDate *lastDownloadedDate = [userDefaults valueForKey:PAImageDownloadedDateKey];
-     NSTimeInterval timeInterval = [lastDownloadedDate timeIntervalSinceNow];
-     if ((timeInterval <= -3600.0) || (timeInterval == 0)) {
-     [self getProfileImagesForUids:request.uids];
-     }
-     */
-}
-
-- (void)refreshUser
-{
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
-    
-    if (accessToken) {
-        
-        NSString *urlString = [NSString 
-                               stringWithFormat:@"https://graph.facebook.com/me?access_token=%@", 
-                               [accessToken stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        NSURL *url = [NSURL URLWithString:urlString];
-        UserRequest *request = [UserRequest requestWithURL:url];
-        [request setTimeOutSeconds:600];
-        [request setDelegate:self];
-        [request setDidFinishSelector:@selector(userRequestDidFinish:)];
-        [request startAsynchronous];
-    }
-}
-
-- (void)userRequestDidFinish:(ASIHTTPRequest *)request
-{
 }
 
 - (void)refreshStalkers
@@ -184,5 +158,5 @@
         self.downloadingImages = NO;
     }
 }
-
+	 
 @end

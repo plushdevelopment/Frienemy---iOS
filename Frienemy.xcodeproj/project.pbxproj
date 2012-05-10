@@ -103,6 +103,7 @@
 		FFC153C914CA369200377B37 /* FriendDetailGeneralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC153C814CA369200377B37 /* FriendDetailGeneralTableViewCell.xib */; };
 		FFC153CC14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */; };
 		FFC153CE14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */; };
+		FFCA2F93154BA15D00D621BE /* NSString+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = FFCA2F92154BA15D00D621BE /* NSString+Encode.m */; };
 		FFD45FDA14BFA8CC00F1D51B /* RequestsCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */; };
 		FFD45FE914BFB2B800F1D51B /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD45FE314BFB2B800F1D51B /* Icon-Small-50.png */; };
 		FFD45FEA14BFB2B800F1D51B /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD45FE414BFB2B800F1D51B /* Icon-Small.png */; };
@@ -467,6 +468,8 @@
 		FFC153CA14CA6E1100377B37 /* FriendDetailFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailFieldTableViewCell.h; sourceTree = "<group>"; };
 		FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailFieldTableViewCell.m; sourceTree = "<group>"; };
 		FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailFieldTableViewCell.xib; sourceTree = "<group>"; };
+		FFCA2F91154BA15D00D621BE /* NSString+Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSString+Encode.h"; sourceTree = "<group>"; };
+		FFCA2F92154BA15D00D621BE /* NSString+Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encode.m"; sourceTree = "<group>"; };
 		FFD45FD814BFA8CC00F1D51B /* RequestsCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsCoordinator.h; sourceTree = "<group>"; };
 		FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsCoordinator.m; sourceTree = "<group>"; usesTabs = 1; };
 		FFD45FE314BFB2B800F1D51B /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
@@ -888,6 +891,7 @@
 		FF1DD87A14BDFF9C002264C9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FFCA2F90154BA12300D621BE /* Categories */,
 				A7FD227C154723D60007802A /* MagicalRecord */,
 				FFE9BF2C1547148200B9C7F4 /* UITableView+PACategories */,
 				FF1DD80E14BDCF5C002264C9 /* SlideViewController */,
@@ -1066,6 +1070,15 @@
 				FFB5DC6614CEED49001B2AB2 /* Year.m */,
 			);
 			name = "Human Files";
+			sourceTree = "<group>";
+		};
+		FFCA2F90154BA12300D621BE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FFCA2F91154BA15D00D621BE /* NSString+Encode.h */,
+				FFCA2F92154BA15D00D621BE /* NSString+Encode.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		FFD45FE114BFB2B800F1D51B /* App Icons */ = {
@@ -1945,6 +1958,7 @@
 				A7FD227A154723D00007802A /* MagicalRecord+ShorthandSupport.m in Sources */,
 				A7FD227B154723D00007802A /* MagicalRecord.m in Sources */,
 				FFE9BF6115472BA200B9C7F4 /* JSONKit.m in Sources */,
+				FFCA2F93154BA15D00D621BE /* NSString+Encode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1973,17 +1987,15 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2001,7 +2013,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2016,9 +2028,11 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2034,8 +2048,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Frienemy/Frienemy-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "Frienemy/Frienemy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 1;

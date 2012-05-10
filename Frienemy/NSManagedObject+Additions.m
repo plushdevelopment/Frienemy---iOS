@@ -39,7 +39,10 @@
     for (NSString *attribute in attributes) {
         id value = nil;
         if ([attribute isEqualToString:@"uid"]) {
-            value = [keyedValues objectForKey:@"id"];
+            value = [keyedValues objectForKey:@"uid"];
+			if (!value) {
+				value = [keyedValues objectForKey:@"id"];
+			}
         } else {
             value = [keyedValues objectForKey:attribute];
         }
@@ -81,7 +84,11 @@
                 Class aClass = [NSClassFromString([entityDesc name]) class];
                 for (NSAttributeDescription *desc in [[aClass MR_entityDescription] attributesByName]) {
                     if ([desc.description isEqualToString:@"uid"]) {
-                        object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:[value valueForKey:@"id"] inContext:self.managedObjectContext];
+						id relationshipValue = [value valueForKey:@"uid"];
+						if (!relationshipValue) {
+							relationshipValue = [value valueForKey:@"id"];
+						}
+                        object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:relationshipValue inContext:self.managedObjectContext];
                         break;
                     }
                 }
@@ -100,7 +107,11 @@
                     Class aClass = [NSClassFromString([entityDesc name]) class];
                     for (NSAttributeDescription *desc in [[aClass MR_entityDescription] attributesByName]) {
                         if ([desc.description isEqualToString:@"uid"]) {
-                            object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:[subValue valueForKey:@"id"] inContext:self.managedObjectContext];
+							id relationshipValue = [subValue valueForKey:@"uid"];
+							if (!relationshipValue) {
+								relationshipValue = [subValue valueForKey:@"id"];
+							}
+                            object = [[NSClassFromString([entityDesc name]) class] PA_managedObjectForProperty:desc.description value:relationshipValue inContext:self.managedObjectContext];
                             break;
                         }
                     }
