@@ -10,6 +10,7 @@
 #import "FriendTableViewCell.h"
 #import "FriendDetailViewController.h"
 #import "RequestsCoordinator.h"
+#import "SVPullToRefresh.h"
 
 @interface FriendsViewController (Private)
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -46,6 +47,12 @@
 	}
     
     [[self tableView] setContentOffset:CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height)];
+	
+	// setup the pull-to-refresh view
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [[RequestsCoordinator sharedCoordinator] refreshFriends];
+        [self.tableView.pullToRefreshView performSelector:@selector(stopAnimating) withObject:nil afterDelay:2];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated

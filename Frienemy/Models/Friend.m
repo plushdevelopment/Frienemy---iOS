@@ -30,13 +30,6 @@
     return iconPath;
 }
 
-- (NSArray *)sections
-{
-    NSMutableArray *array = [NSMutableArray array];
-    
-    return array;
-}
-
 - (void)resetStalkerRank
 {
     for (StalkerRelationship *relationship in self.stalkingRelationships) {

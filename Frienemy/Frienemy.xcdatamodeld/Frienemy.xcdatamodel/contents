@@ -28,25 +28,25 @@
     </entity>
     <entity name="Friend" representedClassName="Friend" syncable="YES">
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="birthday" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
-        <attribute name="email" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
-        <attribute name="gender" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isCurrentUser" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <attribute name="isCurrentUsersFriend" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="isCurrentUsersFriend" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="isFrienemy" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locale" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="political" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
+        <attribute name="political" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quotes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="relationship_status" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
-        <attribute name="religion" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
+        <attribute name="relationship_status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="religion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="section" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="stalking" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="uid" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="updated_time" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
-        <attribute name="username" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
-        <attribute name="website" attributeType="String" defaultValueString="Unknown" syncable="YES"/>
+        <attribute name="updated_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="education" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Education" inverseName="friend" inverseEntity="Education" syncable="YES"/>
         <relationship name="hometown" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="hometownOfFriends" inverseEntity="Location" syncable="YES"/>
         <relationship name="languages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Language" inverseName="friends" inverseEntity="Language" syncable="YES"/>

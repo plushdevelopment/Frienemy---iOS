@@ -13,3 +13,6 @@ url=git@github.com:plushdevelopment/facebook-ios-sdk.git
 [submodule "Libraries/UITableView+PACategories"]
 	path = Libraries/UITableView+PACategories
 	url = git@github.com:plushdevelopment/UITableView-PACategories.git
+[submodule "Libraries/SVPullToRefresh"]
+	path = Libraries/SVPullToRefresh
+	url = git://github.com/samvermette/SVPullToRefresh.git

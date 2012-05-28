@@ -38,26 +38,26 @@ enum FDBasicRowIndex
 @implementation FriendDetailViewController
 
 @synthesize tableView = _tableView;
-@synthesize friend = _friend;
+@synthesize fbFriend = _fbFriend;
 @synthesize educationArray = _educationArray;
 @synthesize workArray = _workArray;
 
-- (id)initWithFriend:(Friend *)friend
+- (id)initWithFriend:(Friend *)fbFriend
 {
     self = [self initWithNibName:@"FriendDetailViewController" bundle:nil];
     if (self) {
-        self.friend = friend;
+        self.fbFriend = fbFriend;
         NSSortDescriptor *educationSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"year.name" ascending:YES];
-        self.educationArray = [self.friend.education.allObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:educationSortDescriptor]];
+        self.educationArray = [self.fbFriend.education.allObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:educationSortDescriptor]];
         NSSortDescriptor *workSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"start_date" ascending:YES];
-		self.workArray = [self.friend.work.allObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:workSortDescriptor]];
+		self.workArray = [self.fbFriend.work.allObjects sortedArrayUsingDescriptors:[NSArray arrayWithObject:workSortDescriptor]];
     }
     return self;
 }
 
 - (IBAction)showStalkers:(id)sender
 {
-	StalkersViewController *viewController = [[StalkersViewController alloc] initWithFriend:self.friend];
+	StalkersViewController *viewController = [[StalkersViewController alloc] initWithFriend:self.fbFriend];
 	[self.navigationController pushViewController:viewController animated:YES];
 }
 
@@ -114,7 +114,7 @@ enum FDBasicRowIndex
         case FDGeneralSection:
         {
             FriendDetailGeneralTableViewCell *detailCell = (FriendDetailGeneralTableViewCell *)cell;
-            [detailCell configureCellForFriend:self.friend];
+            [detailCell configureCellForFriend:self.fbFriend];
 			[detailCell.stalkersButton addTarget:self action:@selector(showStalkers:) forControlEvents:UIControlEventTouchUpInside];
         }
             break;
@@ -125,49 +125,49 @@ enum FDBasicRowIndex
                 {
                     FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
                     detailCell.fieldKeyLabel.text = @"Sex";
-                    detailCell.fieldValueLabel.text = self.friend.gender;
+                    detailCell.fieldValueLabel.text = self.fbFriend.gender;
                 }
                     break;
                 case FDBasicBirthdayRow:
                 {
                     FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
                     detailCell.fieldKeyLabel.text = @"Birthday";
-                    detailCell.fieldValueLabel.text = self.friend.birthday;
+                    detailCell.fieldValueLabel.text = self.fbFriend.birthday;
                 }    
                     break;
                 case FDBasicCurrentCityRow:
                 {
                     FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
                     detailCell.fieldKeyLabel.text = @"Hometown";
-                    detailCell.fieldValueLabel.text = self.friend.hometown.name;
+                    detailCell.fieldValueLabel.text = self.fbFriend.hometown.name;
                 }   
                     break;
                 case FDBasicHometownRow:
                 {
                     FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
                     detailCell.fieldKeyLabel.text = @"Current City";
-                    detailCell.fieldValueLabel.text = self.friend.location.name;
+                    detailCell.fieldValueLabel.text = self.fbFriend.location.name;
                 }
                     break;
                 case FDBasicRelationshipRow:
                 {
                     FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
                     detailCell.fieldKeyLabel.text = @"Relationship Status";
-                    detailCell.fieldValueLabel.text = self.friend.relationship_status;
+                    detailCell.fieldValueLabel.text = self.fbFriend.relationship_status;
                 }   
                     break;
                 case FDBasicReligionRow:
                 {
                     FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
                     detailCell.fieldKeyLabel.text = @"Religious Views";
-                    detailCell.fieldValueLabel.text = self.friend.religion;
+                    detailCell.fieldValueLabel.text = self.fbFriend.religion;
                 }   
                     break;
                 case FDBasicPoliticsRow:
                 {
                     FriendDetailFieldTableViewCell *detailCell = (FriendDetailFieldTableViewCell *)cell;
                     detailCell.fieldKeyLabel.text = @"Political Views";
-                    detailCell.fieldValueLabel.text = self.friend.political;
+                    detailCell.fieldValueLabel.text = self.fbFriend.political;
                 }   
                     break;
                 default:
@@ -316,20 +316,12 @@ enum FDBasicRowIndex
             break;
         case FDEducationSection:
         {
-            if (self.educationArray.count > 0) {
-				rowsCount = self.educationArray.count;
-			} else {
-				rowsCount = 1;
-			}
+			rowsCount = self.educationArray.count;
         }
             break;
         case FDWorkSection:
         {
-			if (self.workArray.count > 0) {
-				rowsCount = self.workArray.count;
-			} else {
-				rowsCount = 1;
-			}
+			rowsCount = self.workArray.count;
         }
             break;
         default:
@@ -366,18 +358,27 @@ enum FDBasicRowIndex
             break;
         case FDEducationSection:
         {
-            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
-            
-            sectionView.titleLabel.text = @"Education";
-            view = sectionView;
+			if (self.educationArray.count) {
+				FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
+				sectionView.titleLabel.text = @"Education";
+				view = sectionView;
+			} else {
+				UIView *sectionView = [[UIView alloc] initWithFrame:CGRectZero];
+				view = sectionView;
+			}
         }
             break;
         case FDWorkSection:
         {
-            FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
+			if (self.workArray.count) {
+				FriendDetailSectionView *sectionView = [FriendDetailSectionView sectionViewFromNib:[FriendDetailSectionView nib]];
+				sectionView.titleLabel.text = @"Work";
+				view = sectionView;
+			} else {
+				UIView *sectionView = [[UIView alloc] initWithFrame:CGRectZero];
+				view = sectionView;
+			}
             
-            sectionView.titleLabel.text = @"Work";
-            view = sectionView;
         }
             break;
         default:

@@ -11,11 +11,11 @@
 @interface FriendDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) Friend *friend;
+@property (nonatomic, strong) Friend *fbFriend;
 @property (nonatomic, strong) NSArray *educationArray;
 @property (nonatomic, strong) NSArray *workArray;
 
-- (id)initWithFriend:(Friend *)friend;
+- (id)initWithFriend:(Friend *)fbFriend;
 - (IBAction)showStalkers:(id)sender;
 
 @end

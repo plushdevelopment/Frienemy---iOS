@@ -5,7 +5,6 @@
 
 - (NSString *)downloadPath;
 - (NSString *)normalDownloadPath;
-- (NSArray *)sections;
 
 - (void)resetStalkerRank;
 

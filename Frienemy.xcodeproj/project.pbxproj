@@ -53,6 +53,9 @@
 		FF3E98B71546078D00CA2BD8 /* button_stalker_rank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98AF1546078D00CA2BD8 /* button_stalker_rank@2x.png */; };
 		FF3E98B81546078D00CA2BD8 /* button_stalkers@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98B01546078D00CA2BD8 /* button_stalkers@2x.png */; };
 		FF3E98B91546078D00CA2BD8 /* button_stalking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF3E98B11546078D00CA2BD8 /* button_stalking@2x.png */; };
+		FF4DF59B1573E1DD0074280B /* SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4DF5991573E1DD0074280B /* SVPullToRefresh.m */; };
+		FF4DF59C1573E1DD0074280B /* SVPullToRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FF4DF59A1573E1DD0074280B /* SVPullToRefresh.bundle */; };
+		FF4DF5A21573E2460074280B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4DF5A11573E2460074280B /* QuartzCore.framework */; };
 		FF885FA115390987005F37EC /* friends_tb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9114BA23AF00C64963 /* friends_tb@2x.png */; };
 		FF885FA21539098B005F37EC /* friends_tb.png in Resources */ = {isa = PBXBuildFile; fileRef = FFE2DE9014BA23AF00C64963 /* friends_tb.png */; };
 		FF8FBD5B15436322002358A0 /* SmallerStalkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8FBD5A15436322002358A0 /* SmallerStalkButton.m */; };
@@ -382,6 +385,10 @@
 		FF3E98AF1546078D00CA2BD8 /* button_stalker_rank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_stalker_rank@2x.png"; sourceTree = "<group>"; };
 		FF3E98B01546078D00CA2BD8 /* button_stalkers@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_stalkers@2x.png"; sourceTree = "<group>"; };
 		FF3E98B11546078D00CA2BD8 /* button_stalking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_stalking@2x.png"; sourceTree = "<group>"; };
+		FF4DF5981573E1DD0074280B /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVPullToRefresh.h; path = SVPullToRefresh/SVPullToRefresh.h; sourceTree = "<group>"; };
+		FF4DF5991573E1DD0074280B /* SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVPullToRefresh.m; path = SVPullToRefresh/SVPullToRefresh.m; sourceTree = "<group>"; };
+		FF4DF59A1573E1DD0074280B /* SVPullToRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVPullToRefresh.bundle; path = SVPullToRefresh/SVPullToRefresh.bundle; sourceTree = "<group>"; };
+		FF4DF5A11573E2460074280B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FF8FBD5915436322002358A0 /* SmallerStalkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallerStalkButton.h; sourceTree = "<group>"; };
 		FF8FBD5A15436322002358A0 /* SmallerStalkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallerStalkButton.m; sourceTree = "<group>"; };
 		FF8FBD601543705D002358A0 /* FrienemiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrienemiesViewController.h; sourceTree = "<group>"; };
@@ -468,7 +475,7 @@
 		FFC153CA14CA6E1100377B37 /* FriendDetailFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailFieldTableViewCell.h; sourceTree = "<group>"; };
 		FFC153CB14CA6E1100377B37 /* FriendDetailFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailFieldTableViewCell.m; sourceTree = "<group>"; };
 		FFC153CD14CA6E3B00377B37 /* FriendDetailFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendDetailFieldTableViewCell.xib; sourceTree = "<group>"; };
-		FFCA2F91154BA15D00D621BE /* NSString+Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSString+Encode.h"; sourceTree = "<group>"; };
+		FFCA2F91154BA15D00D621BE /* NSString+Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encode.h"; sourceTree = "<group>"; };
 		FFCA2F92154BA15D00D621BE /* NSString+Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encode.m"; sourceTree = "<group>"; };
 		FFD45FD814BFA8CC00F1D51B /* RequestsCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsCoordinator.h; sourceTree = "<group>"; };
 		FFD45FD914BFA8CC00F1D51B /* RequestsCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsCoordinator.m; sourceTree = "<group>"; usesTabs = 1; };
@@ -759,6 +766,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF4DF5A21573E2460074280B /* QuartzCore.framework in Frameworks */,
 				FFE65F1B14B63F0100D351BE /* libz.1.2.5.dylib in Frameworks */,
 				FF1DD87C14BDFFFC002264C9 /* CoreData.framework in Frameworks */,
 				FFE65F1F14B63F1400D351BE /* MobileCoreServices.framework in Frameworks */,
@@ -891,6 +899,7 @@
 		FF1DD87A14BDFF9C002264C9 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FF4DF56D1573E14E0074280B /* SVPullToRefresh */,
 				FFCA2F90154BA12300D621BE /* Categories */,
 				A7FD227C154723D60007802A /* MagicalRecord */,
 				FFE9BF2C1547148200B9C7F4 /* UITableView+PACategories */,
@@ -954,6 +963,17 @@
 				FF3E98B11546078D00CA2BD8 /* button_stalking@2x.png */,
 			);
 			path = retina;
+			sourceTree = "<group>";
+		};
+		FF4DF56D1573E14E0074280B /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				FF4DF5981573E1DD0074280B /* SVPullToRefresh.h */,
+				FF4DF5991573E1DD0074280B /* SVPullToRefresh.m */,
+				FF4DF59A1573E1DD0074280B /* SVPullToRefresh.bundle */,
+			);
+			name = SVPullToRefresh;
+			path = Libraries/SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		FF92AF8514D1887C002C947F /* Views */ = {
@@ -1320,6 +1340,7 @@
 		FFE65E7C14B6397C00D351BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FF4DF5A11573E2460074280B /* QuartzCore.framework */,
 				FFE65F1A14B63F0100D351BE /* libz.1.2.5.dylib */,
 				FF1DD87B14BDFFFB002264C9 /* CoreData.framework */,
 				FFE65F1E14B63F1400D351BE /* MobileCoreServices.framework */,
@@ -1833,6 +1854,7 @@
 				FFE9BF7415472EFD00B9C7F4 /* LoginWithFacebookNormal@2x.png in Resources */,
 				FFE9BF7515472EFD00B9C7F4 /* LoginWithFacebookPressed.png in Resources */,
 				FFE9BF7615472EFD00B9C7F4 /* LoginWithFacebookPressed@2x.png in Resources */,
+				FF4DF59C1573E1DD0074280B /* SVPullToRefresh.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1959,6 +1981,7 @@
 				A7FD227B154723D00007802A /* MagicalRecord.m in Sources */,
 				FFE9BF6115472BA200B9C7F4 /* JSONKit.m in Sources */,
 				FFCA2F93154BA15D00D621BE /* NSString+Encode.m in Sources */,
+				FF4DF59B1573E1DD0074280B /* SVPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
